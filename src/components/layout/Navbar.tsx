@@ -62,7 +62,7 @@ const Navbar = () => {
             to="/" 
             className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white duration-300 flex items-center px-2 sm:px-4 py-2"
           >
-            <img src="logo_mobile.png" alt="SEAS Logo" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 inline-block mr-2" />
+            <img src="/images/logo/logo_mobile.png" alt="SEAS Logo" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 inline-block mr-2" />
             <div className="roboto-slab">
               SEAS
             </div>

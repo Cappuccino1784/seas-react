@@ -1,5 +1,3 @@
-import bankInfo from "../../assets/images/bank/bank_info.jpg";
-
 const DonateIntro = () => {
     return (
         <>
@@ -14,7 +12,7 @@ const DonateIntro = () => {
                     <p className="text-base sm:text-lg text-gray-700 leading-relaxed mt-4">
                         Mọi hỗ trợ tài chính xin quý vị vui lòng liên hệ qua email, Facebook hoặc chuyển khoản trực tiếp tới STK: 19073810358015, Techcombank, Nguyễn Thế Quỳnh, mã QR:
                     </p>
-                    <img src={bankInfo} alt="QR Code" className="w-48 sm:w-56 md:w-64 mt-4" />
+                    <img src="/images/bank/bank_info.jpg" alt="QR Code" className="w-48 sm:w-56 md:w-64 mt-4" />
                     <p className="text-base sm:text-lg text-gray-700 leading-relaxed mt-4">
                         Nhằm đảm bảo tính minh bạch, sau khi nhận được sự ủng hộ, thông tin của các nhà tài trợ sẽ được đăng tải công khai trên trang web:
                     </p>

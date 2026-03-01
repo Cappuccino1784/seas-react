@@ -34,7 +34,7 @@ const Footer = () => {
             className="text-white no-underline text-sm transition-colors duration-300 hover:text-[#4a9eff]"
             aria-label="GitHub"
           >
-            <img src="/src/assets/images/icons/github.svg" alt="GitHub" className="w-5 h-5 sm:w-6 sm:h-6" />
+            <img src="/images/icons/github.svg" alt="GitHub" className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
           <a 
             href="https://www.facebook.com/seas.cvn" 
@@ -43,7 +43,7 @@ const Footer = () => {
             className="text-white no-underline text-sm transition-colors duration-300 hover:text-[#4a9eff]"
             aria-label="Facebook"
           >
-            <img src="/src/assets/images/icons/facebook.svg" alt="Facebook" className="w-5 h-5 sm:w-6 sm:h-6" />
+            <img src="/images/icons/facebook.svg" alt="Facebook" className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
           <a 
             href="mailto:seas.cvn@gmail.com" 
@@ -52,7 +52,7 @@ const Footer = () => {
             className="text-white no-underline text-sm transition-colors duration-300 hover:text-[#4a9eff]"
             aria-label="Email"
           >
-            <img src="/src/assets/images/icons/email.svg" alt="Email" className="w-5 h-5 sm:w-6 sm:h-6" />
+            <img src="/images/icons/email.svg" alt="Email" className="w-5 h-5 sm:w-6 sm:h-6" />
           </a>
         </div>
         <div className="text-xs sm:text-sm text-white text-center sm:text-right">

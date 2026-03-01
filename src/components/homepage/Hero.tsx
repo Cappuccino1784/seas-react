@@ -1,12 +1,10 @@
-import heroBg from '../../assets/images/layout/hero-bg.JPG'
-
 const Hero = () => {
   return (
     <section className="relative py-20 sm:py-24 md:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 min-h-[500px] sm:min-h-[600px] flex items-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroBg}
+          src="/images/layout/hero-bg.JPG"
           alt="Hero background"
           className="w-full h-full object-cover"
         />

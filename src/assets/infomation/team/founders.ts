@@ -1,13 +1,8 @@
-import hoangSeas from "../../images/team/founders/hoang-seas.jpg";
-import ducHoang from "../../images/team/founders/Duc_Hoang.jpg";
-import minhTran from "../../images/team/founders/minh-tran-huu-binh.jpg";
-import quynhNguyen from "../../images/team/founders/Quynh-Nguyen.jpeg";
-
 const persons = {
     "nguyen-canh-hoang": {
         name: "Nguyễn Cảnh Hoàng",
         title: "Sáng Lập & Ban Tổ Chức (Founder & Organizer)",
-        image: hoangSeas,
+        image: "/images/team/founders/hoang-seas.jpg",
         bio: `Nghiên Cứu Sinh Tiến Sĩ tại Stony Brook, Chuyên Phan Bội Châu K43.
 
 🎓 Nghiên cứu sinh Khoa học Máy tính tại Đại học Stony Brook, Hoa Kỳ, chuyên về thị giác máy tính và ứng dụng AI trong y khoa.
@@ -27,7 +22,7 @@ const persons = {
     "hoang-minh-duc": {
         name: "Hoàng Minh Đức",
         title: "Sáng Lập & Ban Tổ Chức (Founder & Organizer)",
-        image: ducHoang,
+        image: "/images/team/founders/Duc_Hoang.jpg",
         bio:`Nghiên Cứu Sinh Tiến Sĩ tại MIT và CERN, Chuyên Võ Nguyên Giáp K21.
 
 🎓 Nghiên cứu sinh tiến sĩ tại Viện công nghệ Massachusetts (MIT) và nhận học bổng để chuyển tới Thuỵ Sĩ làm việc tại Hiệp hội nghiên cứu hạt nhân châu Âu (CERN), chuyên về AI cho vật lý hạt lượng tử và xử lý dữ liệu lớn.
@@ -47,7 +42,7 @@ const persons = {
     "tran-huu-binh-minh": {
         name: "Trần Hữu Bình Minh",
         title: "Sáng Lập & Ban Tổ Chức (Founder & Organizer)",
-        image: minhTran,
+        image: "/images/team/founders/minh-tran-huu-binh.jpg",
         bio: `Researcher @ Ericsson Research, Chuyên Phan Bội Châu K43, tranhuubinhminh.com.
 
 🎓 Chuyên viên nghiên cứu tại Ericsson Research, tập trung vào công nghệ lõi cho mạng viễn thông 6G.
@@ -73,7 +68,7 @@ const persons = {
     "nguyen-the-quynh": {
         name: "Nguyễn Thế Quỳnh",
         title: "Sáng Lập & Ban Tổ Chức (Founder & Organizer)",
-        image: quynhNguyen,
+        image: "/images/team/founders/Quynh-Nguyen.jpeg",
         bio: `Nghiên Cứu Sinh Tiến Sĩ tại Harvard, Chuyên Võ Nguyên Giáp K21.
 
 🎓 Hiện là nghiên cứu sinh tiến sĩ ngành Vật lý lượng tử tại Đại học Harvard, nghiên cứu về điện toán lượng tử, lý thuyết khoa học máy tính, và các mối liên kết với vật lý cơ bản.
