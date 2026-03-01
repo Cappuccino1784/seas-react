@@ -9,8 +9,8 @@ interface ScheduleTableProps {
 const ScheduleTable = ({ schedule, title, hasFridaySpecialSlot = false }: ScheduleTableProps) => {
   return (
     <div className='flex flex-col items-center'>
-      <div className="mb-6 text-center">
-        <h2 className="text-xl font-bold text-gray-800 mb-2">{title}</h2>
+      <div className="mb-4 sm:mb-6 text-center">
+        <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{title}</h2>
       </div>
 
       {/* Table View */}

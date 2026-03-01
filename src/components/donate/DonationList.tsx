@@ -14,10 +14,10 @@ const DonationList = () => {
                 </h1>
                 
                 {/* Tab Navigation */}
-                <div className="flex gap-4 mb-8 border-b border-gray-300">
+                <div className="flex gap-2 sm:gap-4 mb-6 sm:mb-8 border-b border-gray-300">
                     <button
                         onClick={() => setActiveTab("2025")}
-                        className={`px-6 py-3 font-semibold transition-colors ${
+                        className={`px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold transition-colors ${
                             activeTab === "2025"
                                 ? "text-blue-600 border-b-2 border-blue-600"
                                 : "text-gray-600 hover:text-gray-900"
@@ -27,7 +27,7 @@ const DonationList = () => {
                     </button>
                     <button
                         onClick={() => setActiveTab("2026")}
-                        className={`px-6 py-3 font-semibold transition-colors ${
+                        className={`px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold transition-colors ${
                             activeTab === "2026"
                                 ? "text-blue-600 border-b-2 border-blue-600"
                                 : "text-gray-600 hover:text-gray-900"
@@ -72,11 +72,11 @@ const DonationList = () => {
                         </table>
                     </div>
                 ) : (
-                    <div className="text-center py-16">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                    <div className="text-center py-12 sm:py-16">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
                             Coming Soon
                         </h2>
-                        <p className="text-gray-600">
+                        <p className="text-sm sm:text-base text-gray-600">
                             Thông tin nhà hảo tâm 2026 sẽ được cập nhật sớm.
                         </p>
                     </div>

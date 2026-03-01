@@ -6,6 +6,7 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0)
   const [scrollUpDistance, setScrollUpDistance] = useState(0)
   const [scrollDownDistance, setScrollDownDistance] = useState(0)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,14 +60,31 @@ const Navbar = () => {
         <div className="flex justify-between items-center">
           <Link
             to="/" 
-            className="text-4xl font-bold text-white duration-300 flex items-center px-4 py-2"
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white duration-300 flex items-center px-2 sm:px-4 py-2"
           >
-            <img src="/src/assets/images/logo/logo_mobile.png" alt="SEAS Logo" className="w-12 h-12 inline-block mr-2" />
-            <div className="text-4xl roboto-slab">
+            <img src="/src/assets/images/logo/logo_mobile.png" alt="SEAS Logo" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 inline-block mr-2" />
+            <div className="roboto-slab">
               SEAS
             </div>
           </Link>
-          <ul className="flex list-none m-0 p-0">
+          
+          {/* Mobile menu button */}
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden text-white p-2"
+            aria-label="Toggle menu"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+          
+          {/* Desktop menu */}
+          <ul className="hidden lg:flex list-none m-0 p-0">
             <li>
               <Link 
                 to="/" 
@@ -119,6 +137,75 @@ const Navbar = () => {
               <Link 
                 to="/contact" 
                 className="text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+              >
+                Liên Hệ
+              </Link>
+            </li>
+          </ul>
+        </div>
+        
+        {/* Mobile menu */}
+        <div className={`lg:hidden transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <ul className="py-4 space-y-2">
+            <li>
+              <Link 
+                to="/" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/about" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+              >
+                Giới Thiệu
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/programs" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+              >
+                Chương Trình
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/team" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+              >
+                Đội Ngũ
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/apply" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+              >
+                Đăng Ký
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/donate" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+              >
+                Tài trợ
+              </Link>
+            </li>
+            <li>
+              <Link 
+                to="/contact" 
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
               >
                 Liên Hệ
               </Link>
