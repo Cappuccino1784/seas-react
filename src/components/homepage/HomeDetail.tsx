@@ -21,11 +21,11 @@ const HomeDetail = () => {
               to={card.link}
               className="group bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2"
             >
-              <div className={`${card.bgColor} p-6 sm:p-8 flex items-center justify-center h-40 sm:h-48`}>
+              <div className={`${card.bgColor} relative h-40 sm:h-48 overflow-hidden`}>
                 <img
                   src={card.image}
                   alt={card.title}
-                  className="h-24 w-24 sm:h-32 sm:w-32 object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="p-4 sm:p-6">
@@ -36,7 +36,7 @@ const HomeDetail = () => {
                   {card.description}
                 </p>
                 <div className="mt-3 sm:mt-4 flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform text-sm sm:text-base">
-                  Learn More
+                  Tìm Hiểu Thêm
                   <svg 
                     className="w-4 h-4 sm:w-5 sm:h-5 ml-2" 
                     fill="none" 

@@ -17,10 +17,10 @@ const ScheduleTable = ({ schedule, title, hasFridaySpecialSlot = false }: Schedu
       <div className="overflow-x-auto w-full max-w-6xl">
         <table className="mx-auto bg-white border border-gray-300 shadow-lg text-sm">
           <thead>
-            <tr className="bg-blue-600 text-white">
-              <th className="py-2 px-3 border-r border-blue-500 font-semibold text-left text-xs">Thời gian</th>
+            <tr className="bg-[#00637E] text-white">
+              <th className="py-2 px-3 border-r border-[#004d61] font-semibold text-left text-xs">Thời gian</th>
               {schedule.map((day, index) => (
-                <th key={index} className="py-2 px-3 border-r border-blue-500 font-semibold text-center min-w-[120px] text-xs">
+                <th key={index} className="py-2 px-3 border-r border-[#004d61] font-semibold text-center min-w-[120px] text-xs">
                   <div>{day.day}</div>
                   <div className="text-sm font-normal">{day.date}</div>
                 </th>

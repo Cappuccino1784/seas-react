@@ -20,7 +20,7 @@ const persons = {
     'hoang-khoi-nguyen': {
         name: "Hoàng Khôi Nguyên",
         title: "Trợ Giảng (Teaching Assistant)",
-        image: "/images/team/2025/nguyen-huynh.jpg",
+        image: "/images/team/2025/Nguyen-Hoang.jpg",
         bio: `Kỹ sư AI tại Fsoft-AIC (AI Engineer, FSoft-AIC). Chuyên Võ Nguyên Giáp 17-20.`
     },
     'hoang-minh-quang': {
@@ -90,7 +90,7 @@ const persons = {
         bio: "Kỹ sư tại Vinbrain-Nvidia Vietnam"
     },
     'do-hoang-khanh-linh': {
-        name: "Đỗ Hoàng Khánh Lịnh",
+        name: "Đỗ Hoàng Khánh Linh",
         title: "Fundraiser",
         image: "/images/team/2025/do-hoang-khanh-linh.jpg",
         bio: "Concordia International School Hanoi"

@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
+
 const AboutInfo = () => {
-  const [activeTab, setActiveTab] = useState<'2025' | '2026'>('2025')
+  const [activeTab, setActiveTab] = useState<'2025' | '2026'>('2026')
 
   return (
     <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
@@ -38,7 +39,6 @@ const AboutInfo = () => {
           <div className="space-y-4 sm:space-y-6">
             {/* Time Period */}
             <div className="flex items-start">
-              <span className="text-xl sm:text-2xl mr-3 sm:mr-4 mt-1">📅</span>
               <div>
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   <span className="font-semibold">Thời gian:</span> 21/7 - 01/8/2025
@@ -48,7 +48,6 @@ const AboutInfo = () => {
 
             {/* Location */}
             <div className="flex items-start">
-              <span className="text-xl sm:text-2xl mr-3 sm:mr-4 mt-1">📍</span>
               <div>
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   <span className="font-semibold">Địa điểm:</span> THPT Chuyên Võ Nguyên Giáp, Quảng Bình (luân phiên các tỉnh miền Trung).
@@ -58,7 +57,6 @@ const AboutInfo = () => {
 
             {/* Theme */}
             <div className="flex items-start">
-              <span className="text-xl sm:text-2xl mr-3 sm:mr-4 mt-1">🎯</span>
               <div>
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   <span className="font-semibold">Chủ đề 2025:</span> Trí tuệ nhân tạo & Ứng dụng.
@@ -68,7 +66,6 @@ const AboutInfo = () => {
 
             {/* Scale */}
             <div className="flex items-start">
-              <span className="text-xl sm:text-2xl mr-3 sm:mr-4 mt-1">🎓</span>
               <div>
                 <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                   <span className="font-semibold">Quy mô:</span> Tối đa khoảng 40 học sinh xuất sắc (uu tiên đến từ miền Trung).

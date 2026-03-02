@@ -7,6 +7,7 @@ const Home = () => {
     <PageTemplate title="Trang chủ">
       <Hero />
       <HomeDetail />
+
     </PageTemplate>
   )
 }

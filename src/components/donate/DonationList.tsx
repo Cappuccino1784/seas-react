@@ -2,7 +2,7 @@ import { useState } from "react";
 import donations2025 from "../../assets/infomation/donations/donations.2025";
 
 const DonationList = () => {
-  const [activeTab, setActiveTab] = useState<"2025" | "2026">("2025");
+  const [activeTab, setActiveTab] = useState<"2025" | "2026">("2026");
 
   return (
     <>

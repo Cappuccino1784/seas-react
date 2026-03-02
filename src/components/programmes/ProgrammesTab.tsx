@@ -3,7 +3,7 @@ import { weekSchedule2025, weekSchedule2025Week2 } from '../../assets/infomation
 import ScheduleTable from './ScheduleTable'
 
 const ProgrammeTabs = () => {
-  const [activeTab, setActiveTab] = useState<'2025' | '2026'>('2025')
+  const [activeTab, setActiveTab] = useState<'2025' | '2026'>('2026')
 
   return (
     <>

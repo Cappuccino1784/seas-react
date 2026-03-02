@@ -1,3 +1,8 @@
+import { IoRocket } from "react-icons/io5";
+import { FaCheckSquare } from "react-icons/fa";
+
+
+
 const AboutIntro = () => {
     return (
         <section className="bg-[#F8F8F8] py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
@@ -19,30 +24,26 @@ const AboutIntro = () => {
                 {/* Benefits List */}
                 <div className="space-y-3 sm:space-y-4">
                     <div className="flex items-start">
-                        <span className="text-xl sm:text-2xl mr-3 sm:mr-4 mt-1">🚀</span>
                         <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
                             SEAS được thành lập để tạo cơ hội cho học sinh THPT:
                         </p>
                     </div>
 
                     <div className="flex items-start">
-                        <span className="text-xl sm:text-2xl mr-3 sm:mr-4 mt-1">✅</span>
                         <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-                            Tiếp cận kiến thức khoa học và kỹ thuật tiên tiến.
+                            ● Tiếp cận kiến thức khoa học và kỹ thuật tiên tiến.
                         </p>
                     </div>
 
                     <div className="flex items-start">
-                        <span className="text-xl sm:text-2xl mr-3 sm:mr-4 mt-1">✅</span>
                         <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-                            Gặp gỡ, giao lưu với bạn bè và các anh chị đi trước có cùng chí hướng.
+                            ● Gặp gỡ, giao lưu với bạn bè và các anh chị đi trước có cùng chí hướng.
                         </p>
                     </div>
 
                     <div className="flex items-start">
-                        <span className="text-xl sm:text-2xl mr-3 sm:mr-4 mt-1">✅</span>
                         <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed">
-                            Định hướng nghề nghiệp, trang bị kỹ năng và hồ sơ để ứng tuyển đại học, du học.
+                            ● Định hướng nghề nghiệp, trang bị kỹ năng và hồ sơ để ứng tuyển đại học, du học.
                         </p>
                     </div>
                 </div>

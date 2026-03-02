@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 
+const NAVBAR_HIDE_THRESHOLD = 200
+const NAVBAR_TOP_THRESHOLD = 150
+
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
@@ -13,8 +16,7 @@ const Navbar = () => {
       const currentScrollY = window.scrollY
       const scrollDifference = lastScrollY - currentScrollY
 
-      // Always show navbar at the top portion (within 150px from top)
-      if (currentScrollY < 150) {
+      if (currentScrollY < NAVBAR_TOP_THRESHOLD) {
         setIsVisible(true)
         setScrollUpDistance(0)
         setScrollDownDistance(0)
@@ -25,19 +27,17 @@ const Navbar = () => {
         setScrollUpDistance(newScrollUpDistance)
         setScrollDownDistance(0) // Reset down counter when scrolling up
         
-        // Show navbar after scrolling up at least 200px
-        if (newScrollUpDistance >= 200) {
+        if (newScrollUpDistance >= NAVBAR_HIDE_THRESHOLD) {
           setIsVisible(true)
         }
       }
       // Scrolling down
-      else if (currentScrollY > lastScrollY && currentScrollY > 150) {
+      else if (currentScrollY > lastScrollY && currentScrollY > NAVBAR_TOP_THRESHOLD) {
         const newScrollDownDistance = scrollDownDistance + (currentScrollY - lastScrollY)
         setScrollDownDistance(newScrollDownDistance)
         setScrollUpDistance(0) // Reset up counter when scrolling down
         
-        // Hide navbar after scrolling down at least 200px
-        if (newScrollDownDistance >= 200) {
+        if (newScrollDownDistance >= NAVBAR_HIDE_THRESHOLD) {
           setIsVisible(false)
         }
       }
@@ -54,24 +54,23 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[1000] bg-[#001f3f] bg-cover bg-center transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-      <div className="absolute inset-0 backdrop-blur-md"></div>
-      <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#62B3D1]/60 to-[#62B3D1] opacity-80"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 relative z-10">
-        <div className="flex justify-between items-center">
+      <div className="absolute inset-0 backdrop-blur-md shadow-md"></div>
+      <div className="absolute inset-0 bg-[#FBF6F6]"></div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex justify-between items-stretch h-24">
           <Link
             to="/" 
-            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white duration-300 flex items-center px-2 sm:px-4 py-2"
+            tabIndex={-1}
+            className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white duration-300 flex items-center px-2 sm:px-4"
           >
-            <img src="/images/logo/logo_mobile.png" alt="SEAS Logo" className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 inline-block mr-2" />
-            <div className="roboto-slab">
-              SEAS
-            </div>
+            <img src="/images/logo/SEAS_LOGO_Transparent.png" alt="SEAS Logo" className="w-20 h-20 inline-block mr-2" />
           </Link>
           
           {/* Mobile menu button */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-white p-2"
+            tabIndex={-1}
+            className="lg:hidden text-blue-600 p-2 flex items-center"
             aria-label="Toggle menu"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,59 +83,66 @@ const Navbar = () => {
           </button>
           
           {/* Desktop menu */}
-          <ul className="hidden lg:flex list-none m-0 p-0">
-            <li>
+          <ul className="hidden lg:flex list-none m-0 p-0 h-full items-stretch">
+            <li className="flex items-stretch">
               <Link 
                 to="/" 
-                className="text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Home
               </Link>
             </li>
-            <li>
+            <li className="flex items-stretch">
               <Link 
                 to="/about" 
-                className="text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Giới Thiệu
               </Link>
             </li>
-            <li>
+            <li className="flex items-stretch">
               <Link 
                 to="/programs" 
-                className="text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Chương Trình
               </Link>
             </li>
-            <li>
+            <li className="flex items-stretch">
               <Link 
                 to="/team" 
-                className="text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Đội Ngũ
               </Link>
             </li>
-            <li>
+            <li className="flex items-stretch">
               <Link 
                 to="/apply" 
-                className="text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
-                Đăng Ký
+                Đăng Ký Tham Gia
               </Link>
             </li>
-            <li>
+            <li className="flex items-stretch">
               <Link 
                 to="/donate" 
-                className="text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Tài trợ
               </Link>
             </li>
-            <li>
+            <li className="flex items-stretch">
               <Link 
                 to="/contact" 
-                className="text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Liên Hệ
               </Link>
@@ -151,7 +157,8 @@ const Navbar = () => {
               <Link 
                 to="/" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Home
               </Link>
@@ -160,7 +167,8 @@ const Navbar = () => {
               <Link 
                 to="/about" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Giới Thiệu
               </Link>
@@ -169,7 +177,8 @@ const Navbar = () => {
               <Link 
                 to="/programs" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Chương Trình
               </Link>
@@ -178,7 +187,8 @@ const Navbar = () => {
               <Link 
                 to="/team" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Đội Ngũ
               </Link>
@@ -187,7 +197,8 @@ const Navbar = () => {
               <Link 
                 to="/apply" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Đăng Ký
               </Link>
@@ -196,7 +207,8 @@ const Navbar = () => {
               <Link 
                 to="/donate" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Tài trợ
               </Link>
@@ -205,7 +217,8 @@ const Navbar = () => {
               <Link 
                 to="/contact" 
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="block text-white no-underline text-base px-4 py-2 rounded hover:text-green-500 hover:bg-green-500/10 transition-all duration-300"
+                tabIndex={-1}
+                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Liên Hệ
               </Link>
