@@ -1,6 +1,3 @@
-import { IoRocket } from "react-icons/io5";
-import { FaCheckSquare } from "react-icons/fa";
-
 
 
 const AboutIntro = () => {
