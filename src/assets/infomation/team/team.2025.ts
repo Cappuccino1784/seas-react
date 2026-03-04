@@ -1,4 +1,4 @@
-const persons = {
+const team2025 = {
     'le-anh-vu': {
         name: "Lê Anh Vũ",
         title: "Ban tổ chức tại địa phương",
@@ -121,4 +121,4 @@ const persons = {
     }
 }
 
-export default persons;
+export default team2025;

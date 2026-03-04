@@ -9,7 +9,7 @@ const AboutInfo = () => {
       <div className="max-w-5xl mx-auto">
         {/* Title */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-900 mb-6 sm:mb-8 roboto-slab">
-          Thông tin chương Trình
+          Thông tin chương trình
         </h2>
 
         {/* Tab Navigation */}

@@ -4,7 +4,7 @@ import persons from "../../assets/infomation/team/founders";
 const Founders = () => {
   return (
     <>
-        <section className="bg-[#F8F8F8] py-12 sm:py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+        <section className="bg-[#F8F8F8] pt-12 sm:pt-16 md:pt-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-5xl mx-auto">
                 {/* Title */}
                 <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-900 mb-6 sm:mb-8 roboto-slab">

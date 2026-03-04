@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { weekSchedule2025, weekSchedule2025Week2 } from '../../assets/infomation/schedules/schedule.2025'
 import ScheduleTable from './ScheduleTable'
+import ComingSoon from '../layout/ComingSoon';
 
 const ProgrammeTabs = () => {
   const [activeTab, setActiveTab] = useState<'2025' | '2026'>('2026')
@@ -50,15 +51,12 @@ const ProgrammeTabs = () => {
                   hasFridaySpecialSlot={false}
                 />
               </div>
+              <a target='blank' href='https://docs.google.com/spreadsheets/d/10Gu7gnMYNpCZytfNseEYpgpg9r20BPSzPDEoonEzDDQ/edit?usp=sharing' className='block text-center mt-8 text-blue-600 hover:text-blue-800 font-medium'>
+                Xem chi tiết lịch trình SEAS 2025
+              </a>
             </div>
           ) : (
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-12 shadow-md text-center">
-              <div className="text-6xl mb-6">🚀</div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">Coming Soon</h3>
-              <p className="text-xl text-gray-600">
-                Chương trình SEAS 2026 đang được lên kế hoạch và sẽ được công bố sớm!
-              </p>
-            </div>
+            <ComingSoon text="Lịch trình chi tiết cho SEAS 2026 sẽ sớm được cập nhật. Hãy theo dõi để không bỏ lỡ thông tin quan trọng!" />
           )}
         </div>
       </div>

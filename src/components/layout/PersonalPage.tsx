@@ -13,7 +13,7 @@ const PersonalPage = () => {
                     <p className="text-gray-600 mb-8">The person you're looking for doesn't exist.</p>
                     <Link 
                         to="/team" 
-                        className="text-blue-600 hover:text-blue-800 underline"
+                        className="text-blue-400 hover:text-blue-800 underline"
                     >
                         Back to Team
                     </Link>
@@ -27,11 +27,11 @@ const PersonalPage = () => {
     return (
         <PageTemplate title={person.name}>
             <section className="bg-white py-16 px-6 sm:px-6 lg:px-8">
-                <div className="max-w-6xl mx-auto">
+                <div className="max-w-5xl mx-auto">
                     {/* Back Button */}
                     <Link 
                         to="/team" 
-                        className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8"
+                        className="inline-flex items-center text-blue-400 hover:text-blue-800 mb-8"
                     >
                         <svg 
                             className="w-5 h-5 mr-2" 
@@ -50,31 +50,34 @@ const PersonalPage = () => {
                     </Link>
 
                     {/* Person Info */}
-                    <div className="bg-[#F8F8F8] rounded-lg shadow-lg overflow-hidden">
-                        <div className="md:flex">
+                    <div className="bg-[#F8F8F8] rounded-lg shadow-lg overflow-hidden p-8">
+                        {/* Top Section: Image and Name/Title */}
+                        <div className="flex flex-col sm:flex-row gap-6 mb-8">
                             {/* Image Section */}
-                            <div className="md:w-1/3 bg-white overflow-hidden">
+                            <div className="flex-shrink-0">
                                 <img
                                     src={person.image}
                                     alt={person.name}
-                                    className="w-full h-full object-cover"
+                                    className="w-48 h-48 sm:w-64 sm:h-64 object-cover rounded-lg shadow-md"
                                 />
                             </div>
 
-                            {/* Content Section */}
-                            <div className="md:w-2/3 p-8">
-                                <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 roboto-slab">
+                            {/* Name and Title Section */}
+                            <div className="flex flex-col justify-center">
+                                <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-3 playfair-display">
                                     {person.name}
                                 </h1>
-                                <p className="text-lg text-gray-600 mb-6 italic">
+                                <p className="text-xl text-gray-600 italic">
                                     {person.title}
                                 </p>
-                                <div className="prose prose-lg max-w-none">
-                                    <p className="text-gray-700 whitespace-pre-line leading-relaxed">
-                                        {person.bio}
-                                    </p>
-                                </div>
                             </div>
+                        </div>
+
+                        {/* Bio Section */}
+                        <div className="prose prose-lg max-w-none">
+                            <p className="text-gray-700 whitespace-pre-line leading-relaxed">
+                                {person.bio}
+                            </p>
                         </div>
                     </div>
                 </div>

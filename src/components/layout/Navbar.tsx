@@ -86,27 +86,18 @@ const Navbar = () => {
           <ul className="hidden lg:flex list-none m-0 p-0 h-full items-stretch">
             <li className="flex items-stretch">
               <Link 
-                to="/" 
-                tabIndex={-1}
-                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
-              >
-                Home
-              </Link>
-            </li>
-            <li className="flex items-stretch">
-              <Link 
                 to="/about" 
                 tabIndex={-1}
-                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
-                Giới Thiệu
+                Về Chúng Tôi
               </Link>
             </li>
             <li className="flex items-stretch">
               <Link 
                 to="/programs" 
                 tabIndex={-1}
-                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
                 Chương Trình
               </Link>
@@ -115,7 +106,7 @@ const Navbar = () => {
               <Link 
                 to="/team" 
                 tabIndex={-1}
-                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
                 Đội Ngũ
               </Link>
@@ -124,7 +115,7 @@ const Navbar = () => {
               <Link 
                 to="/apply" 
                 tabIndex={-1}
-                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
                 Đăng Ký Tham Gia
               </Link>
@@ -133,7 +124,7 @@ const Navbar = () => {
               <Link 
                 to="/donate" 
                 tabIndex={-1}
-                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
                 Tài trợ
               </Link>
@@ -142,7 +133,7 @@ const Navbar = () => {
               <Link 
                 to="/contact" 
                 tabIndex={-1}
-                className="text-blue-400 no-underline text-base px-4 flex items-center hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
                 Liên Hệ
               </Link>
@@ -155,20 +146,10 @@ const Navbar = () => {
           <ul className="py-4 space-y-2">
             <li>
               <Link 
-                to="/" 
-                onClick={() => setIsMobileMenuOpen(false)}
-                tabIndex={-1}
-                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link 
                 to="/about" 
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
-                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Giới Thiệu
               </Link>
@@ -178,7 +159,7 @@ const Navbar = () => {
                 to="/programs" 
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
-                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Chương Trình
               </Link>
@@ -188,7 +169,7 @@ const Navbar = () => {
                 to="/team" 
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
-                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Đội Ngũ
               </Link>
@@ -198,7 +179,7 @@ const Navbar = () => {
                 to="/apply" 
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
-                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Đăng Ký
               </Link>
@@ -208,7 +189,7 @@ const Navbar = () => {
                 to="/donate" 
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
-                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Tài trợ
               </Link>
@@ -218,7 +199,7 @@ const Navbar = () => {
                 to="/contact" 
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
-                className="block text-blue-400 no-underline text-base px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
+                className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
                 Liên Hệ
               </Link>

@@ -1,3 +1,4 @@
+import ComingSoon from "../layout/ComingSoon";
 
 const ApplyIntro = () => {
     return (
@@ -13,6 +14,7 @@ const ApplyIntro = () => {
                     <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-6 sm:mb-8">
                         Đơn ứng tuyển cho học sinh THPT và sinh viên đại học tham gia trại hè SEAS:
                     </p>
+                    <ComingSoon text="Thông tin chi tiết về quy trình nộp đơn và các yêu cầu sẽ sớm được cập nhật. Hãy theo dõi để không bỏ lỡ cơ hội tham gia vào một trải nghiệm học tập và phát triển tuyệt vời!" />
                 </div>
             </section>
         </>

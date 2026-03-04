@@ -1,5 +1,6 @@
 import { useState } from "react";
 import donations2025 from "../../assets/infomation/donations/donations.2025";
+import ComingSoon from "../layout/ComingSoon";
 
 const DonationList = () => {
   const [activeTab, setActiveTab] = useState<"2025" | "2026">("2026");
@@ -72,14 +73,7 @@ const DonationList = () => {
                         </table>
                     </div>
                 ) : (
-                    <div className="text-center py-12 sm:py-16">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-                            Coming Soon
-                        </h2>
-                        <p className="text-sm sm:text-base text-gray-600">
-                            Thông tin nhà hảo tâm 2026 sẽ được cập nhật sớm.
-                        </p>
-                    </div>
+                    <ComingSoon text="Danh sách nhà hảo tâm cho SEAS 2026 sẽ sớm được công bố. Hãy theo dõi để biết thêm thông tin về những người đã đóng góp cho sự thành công của chúng tôi!" />  
                 )}
             </div>
         </section>

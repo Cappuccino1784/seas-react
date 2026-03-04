@@ -1,5 +1,6 @@
 import { useState } from "react";
-import persons2025 from "../../assets/infomation/team/team.2025";
+import team2025 from "../../assets/infomation/team/team.2025";
+import ComingSoon from "../layout/ComingSoon";
 
 const Members = () => {
     const [activeTab, setActiveTab] = useState<"2025" | "2026">("2026");
@@ -38,7 +39,7 @@ const Members = () => {
                     {/* Content */}
                     {activeTab === "2025" ? (
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                            {Object.entries(persons2025).map(([key, person]) => (
+                            {Object.entries(team2025).map(([key, person]) => (
                                 <div
                                     key={key}
                                     className="bg-white rounded-lg shadow-md p-4 text-center"
@@ -61,13 +62,7 @@ const Members = () => {
                             ))}
                         </div>
                     ) : activeTab === "2026" ? (
-                        <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-8 sm:p-12 shadow-md text-center">
-                            <div className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6">🚀</div>
-                            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Coming Soon</h3>
-                            <p className="text-base sm:text-lg md:text-xl text-gray-600">
-                                Thành viên SEAS 2026 sẽ được công bố sớm!
-                            </p>
-                        </div>
+                        <ComingSoon text="Danh sách thành viên SEAS 2026 sẽ sớm được công bố. Hãy theo dõi để biết thêm thông tin về đội ngũ tuyệt vời của chúng tôi!" />
                     ) : null}
                 </div>
             </section>
