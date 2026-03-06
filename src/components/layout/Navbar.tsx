@@ -20,13 +20,13 @@ const Navbar = () => {
         setIsVisible(true)
         setScrollUpDistance(0)
         setScrollDownDistance(0)
-      } 
+      }
       // Scrolling up
       else if (currentScrollY < lastScrollY) {
         const newScrollUpDistance = scrollUpDistance + scrollDifference
         setScrollUpDistance(newScrollUpDistance)
         setScrollDownDistance(0) // Reset down counter when scrolling up
-        
+
         if (newScrollUpDistance >= NAVBAR_HIDE_THRESHOLD) {
           setIsVisible(true)
         }
@@ -36,7 +36,7 @@ const Navbar = () => {
         const newScrollDownDistance = scrollDownDistance + (currentScrollY - lastScrollY)
         setScrollDownDistance(newScrollDownDistance)
         setScrollUpDistance(0) // Reset up counter when scrolling down
-        
+
         if (newScrollDownDistance >= NAVBAR_HIDE_THRESHOLD) {
           setIsVisible(false)
         }
@@ -59,15 +59,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex justify-between items-stretch h-24">
           <Link
-            to="/" 
+            to="/"
             tabIndex={-1}
             className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white duration-300 flex items-center px-2 sm:px-4"
           >
             <img src="/images/logo/SEAS_LOGO_Transparent.png" alt="SEAS Logo" className="w-20 h-20 inline-block mr-2" />
           </Link>
-          
+
           {/* Mobile menu button */}
-          <button 
+          <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             tabIndex={-1}
             className="lg:hidden text-blue-600 p-2 flex items-center"
@@ -81,12 +81,12 @@ const Navbar = () => {
               )}
             </svg>
           </button>
-          
+
           {/* Desktop menu */}
           <ul className="hidden lg:flex list-none m-0 p-0 h-full items-stretch">
             <li className="flex items-stretch">
-              <Link 
-                to="/about" 
+              <Link
+                to="/about"
                 tabIndex={-1}
                 className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
@@ -94,8 +94,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="flex items-stretch">
-              <Link 
-                to="/programs" 
+              <Link
+                to="/programs"
                 tabIndex={-1}
                 className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
@@ -103,8 +103,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="flex items-stretch">
-              <Link 
-                to="/team" 
+              <Link
+                to="/team"
                 tabIndex={-1}
                 className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
@@ -112,8 +112,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="flex items-stretch">
-              <Link 
-                to="/apply" 
+              <Link
+                to="/apply"
                 tabIndex={-1}
                 className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
@@ -121,8 +121,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="flex items-stretch">
-              <Link 
-                to="/donate" 
+              <Link
+                to="/donate"
                 tabIndex={-1}
                 className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
@@ -130,8 +130,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="flex items-stretch">
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 tabIndex={-1}
                 className="text-[#2d8bba] no-underline text-lg px-4 flex items-center hover:translate-x-1 hover:text-blue-500 hover:font-semibold hover:bg-blue-100 transition-all duration-300"
               >
@@ -140,23 +140,23 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        
+
         {/* Mobile menu */}
         <div className={`lg:hidden transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
           <ul className="py-4 space-y-2">
             <li>
-              <Link 
-                to="/about" 
+              <Link
+                to="/about"
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
                 className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
               >
-                Giới Thiệu
+                Về Chúng Tôi
               </Link>
             </li>
             <li>
-              <Link 
-                to="/programs" 
+              <Link
+                to="/programs"
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
                 className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
@@ -165,8 +165,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link 
-                to="/team" 
+              <Link
+                to="/team"
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
                 className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
@@ -175,8 +175,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link 
-                to="/apply" 
+              <Link
+                to="/apply"
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
                 className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
@@ -185,8 +185,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link 
-                to="/donate" 
+              <Link
+                to="/donate"
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
                 className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"
@@ -195,8 +195,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 tabIndex={-1}
                 className="block text-blue-400 no-underline text-lg px-4 py-2 rounded hover:text-blue-500 hover:bg-blue-100 transition-all duration-300"

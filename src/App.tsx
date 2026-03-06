@@ -1,4 +1,4 @@
-import { Route, Routes, BrowserRouter } from "react-router-dom"
+import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom"
 
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -13,13 +13,17 @@ import Navbar from "./components/layout/Navbar"
 import Footer from "./components/layout/Footer"
 import ScrollToTop from "./components/layout/ScrollToTop"
 
-const App = () => {
+const AppContent = () => {
+  const location = useLocation();
+
   return (
-    <BrowserRouter>
+    <>
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
-        <main className="flex-grow">
+        {/* The key prop forces Remix/React to remount this main element on route change,
+            re-triggering the animate-fadeIn animation */}
+        <main key={location.pathname} className="flex-grow animate-fadeIn">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -33,6 +37,14 @@ const App = () => {
         </main>
         <Footer />
       </div>
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <AppContent />
     </BrowserRouter>
   )
 }

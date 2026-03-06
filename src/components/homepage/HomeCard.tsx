@@ -21,20 +21,22 @@ const HomeCard = (card: any) => {
             <Link
                 key={card.id}
                 to={card.link}
-                className="group bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 flex flex-col h-full"
+                className="group relative bg-white/80 backdrop-blur-sm rounded-[24px] shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 flex flex-col h-full border border-blue-50/50"
             >
-                <div className={`${card.bgColor} relative h-40 sm:h-48 overflow-hidden`}>
+                {/* Top colorful gradient border on hover */}
+                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#2d8bba] via-teal-400 to-[#1e6181] opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                <div className={`${card.bgColor} relative h-32 sm:h-48 overflow-hidden`}>
                     <img
                         src={card.image}
                         alt={card.title}
                         className="w-full h-full object-cover"
                     />
                 </div>
-                <div className="p-4 sm:p-6 flex flex-col flex-grow">
-                    <h3 className="text-lg sm:text-xl font-bold text-[#2d8bba] mb-2 sm:mb-3 group-hover:text-teal-600 transition-colors">
+                <div className="p-3 sm:p-6 flex flex-col flex-grow">
+                    <h3 className="text-base sm:text-xl font-bold text-[#2d8bba] mb-2 sm:mb-3 group-hover:text-teal-600 transition-colors">
                         {card.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-3 sm:mb-4">
+                    <p className="text-xs sm:text-base text-gray-600 leading-relaxed mb-3 sm:mb-4">
                         {card.description}
                     </p>
                     <div className="mt-auto flex items-center text-blue-600 font-semibold group-hover:translate-x-2 transition-transform text-sm sm:text-base">

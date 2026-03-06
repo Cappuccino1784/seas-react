@@ -8,17 +8,18 @@ interface ScheduleTableProps {
 
 const ScheduleTable = ({ schedule, title, hasFridaySpecialSlot = false }: ScheduleTableProps) => {
   return (
-    <div className='flex flex-col items-center'>
-      <div className="mb-4 sm:mb-6 text-center">
-        <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">{title}</h2>
+    <div className='flex flex-col items-center animate-fadeIn'>
+      <div className="mb-6 sm:mb-8 text-center relative inline-block">
+        <h2 className="text-xl sm:text-2xl font-bold text-[#004d61] mb-2">{title}</h2>
+        <div className="absolute -bottom-2 left-1/4 w-1/2 h-1 bg-gradient-to-r from-transparent via-[#2d8bba] to-transparent"></div>
       </div>
 
       {/* Table View */}
-      <div className="overflow-x-auto w-full max-w-6xl">
-        <table className="mx-auto bg-white border border-gray-300 shadow-lg text-sm">
+      <div className="overflow-x-auto w-full max-w-6xl rounded-2xl shadow-md border border-blue-50 bg-white">
+        <table className="mx-auto w-full bg-white text-sm">
           <thead>
-            <tr className="bg-[#00637E] text-white">
-              <th className="py-2 px-3 border-r border-[#004d61] font-semibold text-left text-xs">Thời gian</th>
+            <tr className="bg-gradient-to-r from-[#004d61] to-[#2d8bba] text-white">
+              <th className="py-4 px-3 border-r border-white/20 font-semibold text-left text-xs uppercase tracking-wider">Thời gian</th>
               {schedule.map((day, index) => (
                 <th key={index} className="py-2 px-3 border-r border-[#004d61] font-semibold text-center min-w-[120px] text-xs">
                   <div>{day.day}</div>

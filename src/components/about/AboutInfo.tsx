@@ -12,22 +12,22 @@ const AboutInfo = () => {
           Thông tin chương trình
         </h2>
 
-        {/* Tab Navigation */}
-        <div className="flex gap-2 sm:gap-4 mb-6 sm:mb-8 border-b border-gray-300">
+        {/* Tab Navigation (Pills) */}
+        <div className="flex gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center sm:justify-start">
           <button
             onClick={() => setActiveTab('2025')}
-            className={`px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold transition-colors ${activeTab === '2025'
-                ? 'text-blue-600 border-b-2 border-blue-600'
-                : 'text-gray-600 hover:text-gray-900'
+            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 shadow-sm ${activeTab === '2025'
+              ? 'bg-[#2d8bba] text-white shadow-[#2d8bba]/30 scale-105'
+              : 'bg-white text-gray-600 border border-gray-200 hover:bg-blue-50 hover:border-blue-200 hover:text-[#2d8bba]'
               }`}
           >
             SEAS 2025
           </button>
           <button
             onClick={() => setActiveTab('2026')}
-            className={`px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base font-semibold transition-colors ${activeTab === '2026'
-                ? 'text-blue-600 border-b-2 border-blue-600'
-                : 'text-gray-600 hover:text-gray-900'
+            className={`px-6 sm:px-8 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 shadow-sm ${activeTab === '2026'
+              ? 'bg-[#2d8bba] text-white shadow-[#2d8bba]/30 scale-105'
+              : 'bg-white text-gray-600 border border-gray-200 hover:bg-blue-50 hover:border-blue-200 hover:text-[#2d8bba]'
               }`}
           >
             SEAS 2026
@@ -74,10 +74,10 @@ const AboutInfo = () => {
             </div>
           </div>
         ) : (
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-8 sm:p-12 shadow-md text-center">
-            <div className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6">🚀</div>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Coming Soon</h3>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600">
+          <div className="bg-white/80 backdrop-blur-sm border border-blue-100 rounded-2xl p-8 sm:p-12 shadow-md hover:shadow-xl transition-shadow text-center">
+            <div className="text-4xl sm:text-5xl md:text-6xl mb-4 sm:mb-6 animate-bounce">🚀</div>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#004d61] mb-3 sm:mb-4">Coming Soon</h3>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 font-medium">
               Chương trình SEAS 2026 đang được lên kế hoạch và sẽ được công bố sớm!
             </p>
           </div>
