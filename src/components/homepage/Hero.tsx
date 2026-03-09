@@ -16,7 +16,7 @@ const Hero = () => {
         {/* Content */}
         <div className="relative z-10 max-w-4xl w-full px-4 sm:px-8 lg:px-12">
           <div className="flex flex-col gap-6 sm:gap-8 items-start animate-[fadeInUp_1s_ease-out_forwards]">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white roboto-slab leading-tight drop-shadow-lg">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white roboto-slab leading-tight drop-shadow-lg">
               SEAS - Summer in Engineering and Applied Sciences
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-blue-50 leading-relaxed max-w-2xl drop-shadow-md animate-[fadeInUp_1.2s_ease-out_forwards]">

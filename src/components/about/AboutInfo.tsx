@@ -8,9 +8,9 @@ const AboutInfo = () => {
     <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Title */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl text-gray-900 mb-6 sm:mb-8 roboto-slab">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-[#004d61] font-bold mb-8 sm:mb-12 roboto-slab text-center sm:text-left">
           Thông tin chương trình
-        </h2>
+        </h1>
 
         {/* Tab Navigation (Pills) */}
         <div className="flex gap-3 sm:gap-4 mb-8 sm:mb-12 justify-center sm:justify-start">
@@ -36,7 +36,7 @@ const AboutInfo = () => {
 
         {/* Tab Content */}
         {activeTab === '2025' ? (
-          <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-4 sm:space-y-6 bg-white p-4 rounded-2xl shadow-md border border-blue-50">
             {/* Time Period */}
             <div className="flex items-start">
               <div>

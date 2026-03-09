@@ -12,35 +12,35 @@ const Founders = () => {
                 <div className="max-w-5xl mx-auto relative z-10">
                     {/* Title */}
                     <div className="text-center sm:text-left mb-8 sm:mb-12">
-                        <span className="text-[#2d8bba] font-bold uppercase tracking-wider text-sm sm:text-base mb-2 block">
+                        <span className="text-[#2d8bba] font-bold uppercase tracking-wider text-[10px] sm:text-base mb-1 sm:mb-2 block">
                             ĐỘI NGŨ
                         </span>
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl text-[#004d61] font-bold roboto-slab">
+                        <h1 className="text-2xl sm:text-4xl md:text-5xl text-[#004d61] font-bold roboto-slab drop-shadow-sm">
                             Người Sáng Lập SEAS
                         </h1>
                     </div>
                     {/* Persons List */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
                         {Object.entries(persons).map(([key, person]) => (
                             <Link
                                 key={key}
                                 to={`/team/${key}`}
-                                className="relative bg-white/80 backdrop-blur-sm rounded-[24px] shadow-sm hover:shadow-2xl transition-all duration-300 p-6 sm:p-8 text-center cursor-pointer group transform hover:-translate-y-2 border border-blue-50 overflow-hidden"
+                                className="relative bg-white/80 backdrop-blur-sm rounded-[20px] sm:rounded-[24px] shadow-sm hover:shadow-2xl transition-all duration-300 p-4 sm:p-8 text-center cursor-pointer group transform hover:-translate-y-2 border border-blue-50 overflow-hidden"
                             >
                                 {/* Top bright border on hover */}
-                                <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-[#2d8bba] to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2d8bba] to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
 
-                                <div className="relative mx-auto w-28 h-28 sm:w-36 sm:h-36 mb-5 overflow-hidden rounded-full ring-4 ring-blue-50 group-hover:ring-[#2d8bba]/30 transition-all duration-300 shadow-md">
+                                <div className="relative mx-auto w-20 h-20 sm:w-36 sm:h-36 mb-4 sm:mb-5 overflow-hidden rounded-full ring-2 ring-blue-50 group-hover:ring-[#2d8bba]/30 transition-all duration-300 shadow-md">
                                     <img
                                         src={person.image}
                                         alt={person.name}
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                                     />
                                 </div>
-                                <h2 className="text-lg sm:text-xl font-bold text-[#004d61] mb-2 group-hover:text-[#2d8bba] transition-colors duration-300">
+                                <h2 className="text-sm sm:text-xl font-bold text-[#004d61] mb-1 sm:mb-2 group-hover:text-[#2d8bba] transition-colors duration-300 leading-tight">
                                     {person.name}
                                 </h2>
-                                <p className="text-sm text-gray-500 italic font-medium leading-relaxed">
+                                <p className="text-[10px] sm:text-sm text-gray-500 italic font-medium leading-tight">
                                     {person.title}
                                 </p>
                             </Link>

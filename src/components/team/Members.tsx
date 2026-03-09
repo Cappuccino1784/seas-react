@@ -13,7 +13,7 @@ const Members = () => {
 
                 <div className="max-w-6xl mx-auto relative z-10">
                     {/* Title */}
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl text-[#004d61] font-bold mb-8 sm:mb-12 roboto-slab text-center sm:text-left">
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl text-[#004d61] font-bold mb-8 sm:mb-12 roboto-slab text-center sm:text-left drop-shadow-sm">
                         Thành Viên SEAS
                     </h1>
 
@@ -46,12 +46,12 @@ const Members = () => {
                                 {Object.entries(team2025).map(([key, person]) => (
                                     <div
                                         key={key}
-                                        className="group relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-5 text-center transform hover:-translate-y-2 border border-blue-50/50 flex flex-col h-full"
+                                        className="group relative bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 p-3 sm:p-5 text-center transform hover:-translate-y-2 border border-blue-50/50 flex flex-col h-full"
                                     >
                                         {/* Top bright border on hover */}
                                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2d8bba] to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-t-2xl"></div>
 
-                                        <div className="relative mx-auto w-20 h-20 sm:w-24 sm:h-24 mb-4 rounded-full ring-2 ring-blue-50 group-hover:ring-[#2d8bba]/40 transition-all duration-300 p-1">
+                                        <div className="relative mx-auto w-16 h-16 sm:w-24 sm:h-24 mb-3 sm:mb-4 rounded-full ring-2 ring-blue-50 group-hover:ring-[#2d8bba]/40 transition-all duration-300 p-1">
                                             <img
                                                 src={person.image}
                                                 alt={person.name}
@@ -59,13 +59,13 @@ const Members = () => {
                                             />
                                         </div>
 
-                                        <h2 className="text-sm sm:text-base font-bold text-[#004d61] mb-1 group-hover:text-[#2d8bba] transition-colors">
+                                        <h2 className="text-[12px] sm:text-base font-bold text-[#004d61] mb-0.5 sm:mb-1 group-hover:text-[#2d8bba] transition-colors leading-tight">
                                             {person.name}
                                         </h2>
-                                        <p className="text-xs text-[#2d8bba] font-medium italic mb-3">
+                                        <p className="text-[10px] text-[#2d8bba] font-medium italic mb-2 sm:mb-3 leading-tight">
                                             {person.title}
                                         </p>
-                                        <p className="text-xs text-gray-600 whitespace-pre-line leading-relaxed mt-auto border-t border-gray-100 pt-3">
+                                        <p className="text-[9px] sm:text-xs text-gray-600 whitespace-pre-line leading-snug mt-auto border-t border-gray-100 pt-2 sm:pt-3 lg:line-clamp-none line-clamp-3">
                                             {person.bio}
                                         </p>
                                     </div>

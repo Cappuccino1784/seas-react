@@ -9,7 +9,7 @@ const TeamIntro = () => {
 
                 <div className="max-w-5xl mx-auto relative z-10 animate-fadeIn">
                     {/* Title */}
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#004d61] font-bold mb-6 sm:mb-8 roboto-slab drop-shadow-sm">
+                    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-[#004d61] font-bold mb-6 sm:mb-8 roboto-slab drop-shadow-sm">
                         Đội Ngũ SEAS
                     </h1>
 
