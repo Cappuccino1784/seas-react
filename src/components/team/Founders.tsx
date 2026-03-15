@@ -13,7 +13,7 @@ const Founders = () => {
                     {/* Title */}
                     <div className="text-center sm:text-left mb-8 sm:mb-12">
                         <span className="text-[#2d8bba] font-bold uppercase tracking-wider text-[10px] sm:text-base mb-1 sm:mb-2 block">
-                            ĐỘI NGŨ
+                            FOUNDERS
                         </span>
                         <h1 className="text-2xl sm:text-4xl md:text-5xl text-[#004d61] font-bold roboto-slab drop-shadow-sm">
                             Người Sáng Lập SEAS

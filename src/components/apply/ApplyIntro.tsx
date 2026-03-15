@@ -11,7 +11,7 @@ const ApplyIntro = () => {
                 <div className="absolute top-0 right-0 w-80 h-80 bg-white/5 rounded-full filter blur-3xl transform translate-x-1/3 -translate-y-1/3"></div>
                 <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-300/10 rounded-full filter blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
 
-                <div className="max-w-4xl mx-auto relative z-10 text-center sm:text-left animate-fadeIn">
+                <div className="max-w-5xl mx-auto relative z-10 text-center sm:text-left animate-fadeIn">
                     {/* Title */}
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 roboto-slab drop-shadow-md">
                         Đăng Ký Tham Gia

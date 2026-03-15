@@ -9,6 +9,14 @@ const ProgrammeTabs = () => {
     <>
       <div className="bg-white py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
+          <div className="text-center sm:text-left mb-8 sm:mb-12">
+            <span className="text-[#2d8bba] font-bold uppercase tracking-wider text-[10px] sm:text-base mb-1 sm:mb-2 block">
+              SCHEDULES
+            </span>
+            <h1 className="text-2xl sm:text-4xl md:text-5xl text-[#004d61] font-bold roboto-slab drop-shadow-sm">
+              Lịch Trình SEAS
+            </h1>
+          </div>
           {/* Tab Navigation (Pills) */}
           <div className="flex gap-3 sm:gap-4 mb-10 sm:mb-12 justify-center sm:justify-start">
             <button
