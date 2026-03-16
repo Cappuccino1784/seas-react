@@ -11,11 +11,16 @@ const Members = () => {
                 {/* Decorative Theme Blobs */}
                 <div className="absolute top-20 right-10 w-64 h-64 bg-teal-100/60 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
 
-                <div className="max-w-6xl mx-auto relative z-10">
+                <div className="max-w-5xl mx-auto relative z-10">
                     {/* Title */}
-                    <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-5xl text-[#004d61] font-bold mb-8 sm:mb-12 roboto-slab text-center sm:text-left drop-shadow-sm">
-                        Thành Viên SEAS
-                    </h1>
+                    <div className="text-center sm:text-left mb-8 sm:mb-12">
+                        <span className="text-[#2d8bba] font-bold uppercase tracking-wider text-[10px] sm:text-base mb-1 sm:mb-2 block">
+                            MEMBERS
+                        </span>
+                        <h1 className="text-2xl sm:text-4xl md:text-5xl text-[#004d61] font-bold roboto-slab drop-shadow-sm">
+                            Thành Viên SEAS
+                        </h1>
+                    </div>
 
                     {/* Tab Navigation (Pills) */}
                     <div className="flex gap-3 sm:gap-4 mb-10 sm:mb-12 justify-center sm:justify-start">
