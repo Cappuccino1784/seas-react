@@ -1,19 +1,20 @@
 "use client";
 
-import Link from "next/link";
 import { HiOutlineMail } from "react-icons/hi";
-import { RiFacebookFill, RiGithubFill } from "react-icons/ri";
+import { RiFacebookFill, RiGithubFill, RiYoutubeFill } from "react-icons/ri";
 import { FooterSection } from "@/components/shared/footer-section";
 
 const iconMap = {
   GitHub: RiGithubFill,
   Facebook: RiFacebookFill,
+  YouTube: RiYoutubeFill,
   Email: HiOutlineMail,
 };
 
 const socialLinks = [
   { href: "https://github.com/SEAS-CVN", label: "GitHub" },
   { href: "https://www.facebook.com/seas.cvn", label: "Facebook" },
+  { href: "https://www.youtube.com/@SEASummerCamp", label: "YouTube" },
   { href: "mailto:seas.cvn@gmail.com", label: "Email" },
 ];
 
@@ -65,18 +66,17 @@ export function SiteFooter() {
         <div className="flex flex-col items-end gap-6 max-md:w-full max-md:items-start max-md:gap-5">
           <nav className="flex flex-wrap items-center gap-10 font-lexend text-[1.2rem] md:gap-6 md:text-[1.1rem] max-md:flex-col max-md:items-start max-md:gap-4 max-md:text-[1.05rem]">
             <a
-              href="#top"
               onClick={handleScrollToTop}
               className="relative pb-1 text-[#414141] after:absolute after:right-0 after:bottom-0 after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:rounded-full after:bg-[linear-gradient(90deg,#1397cb,#56c6f2)] after:transition-transform after:duration-200 hover:after:scale-x-100"
             >
               Về đầu trang
             </a>
-            <Link
+            <a
               href="/home"
               className="relative pb-1 text-[#414141] after:absolute after:right-0 after:bottom-0 after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:rounded-full after:bg-[linear-gradient(90deg,#1397cb,#56c6f2)] after:transition-transform after:duration-200 hover:after:scale-x-100"
             >
               Trang chủ
-            </Link>
+            </a>
             <a
               href="/contact"
               className="relative pb-1 text-[#414141] after:absolute after:right-0 after:bottom-0 after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:rounded-full after:bg-[linear-gradient(90deg,#1397cb,#56c6f2)] after:transition-transform after:duration-200 hover:after:scale-x-100"

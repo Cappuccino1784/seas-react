@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 import { PillButton } from "@/components/shared/pill-button";
 import { ComingSoonCard } from "../shared/coming-soon-card";
 
@@ -9,53 +10,65 @@ const donorYears = ["SEAS 2025", "SEAS 2026"] as const;
 const donors2025 = [
   {
     date: "25/07/2025",
-    name: "Công Ty TNHH Tư Vấn KS-TK Hoành Sơn",
-    support: "5,000,000 đ",
+    name: "Cong Ty TNHH Tu Van KS-TK Hoanh Son",
+    support: "5,000,000 d",
     highlighted: true,
   },
   {
     date: "24/04/2025",
-    name: "Trung tâm ngoại ngữ CELALS - 35 Ngô Quyền Đồng Hới",
+    name: "Trung tam ngoai ngu CELALS - 35 Ngo Quyen Dong Hoi",
     support:
-      "Tài trợ khóa học tiếng Anh 120h trong 2 tuần cho toàn bộ học sinh tham gia chương trình, trị giá 60.000.000 VND",
+      "Tai tro khoa hoc tieng Anh 120h trong 2 tuan cho toan bo hoc sinh tham gia chuong trinh, tri gia 60.000.000 vnd",
   },
   {
     date: "19/04/2025",
-    name: "Tân Phát Sport",
+    name: "Tan Phat Sport",
     support:
-      "Toàn bộ áo quần, mũ, phù hiệu, ngoài ra còn hỗ trợ nước uống và hỗ trợ thêm trong chuyến đi Phong Nha",
+      "Toan bo ao quan, mu, phu hieu, ngoai ra con ho tro nuoc uong va ho tro them trong chuyen di Phong Nha",
   },
   {
     date: "25/07/2025",
-    name: "Công Ty TNHH Tư Vấn KS-TK Hoành Sơn",
-    support: "5,000,000 đ",
+    name: "Cong Ty TNHH Tu Van KS-TK Hoanh Son",
+    support: "5,000,000 d",
     highlighted: true,
   },
   {
     date: "25/07/2025",
-    name: "Công Ty TNHH Tư Vấn KS-TK Hoành Sơn",
-    support: "5,000,000 đ",
+    name: "Cong Ty TNHH Tu Van KS-TK Hoanh Son",
+    support: "5,000,000 d",
     highlighted: true,
   },
   {
     date: "25/07/2025",
-    name: "Công Ty TNHH Tư Vấn KS-TK Hoành Sơn",
-    support: "5,000,000 đ",
+    name: "Cong Ty TNHH Tu Van KS-TK Hoanh Son",
+    support: "5,000,000 d",
     highlighted: true,
   },
   {
     date: "25/07/2025",
-    name: "Công Ty TNHH Tư Vấn KS-TK Hoành Sơn",
-    support: "5,000,000 đ",
+    name: "Cong Ty TNHH Tu Van KS-TK Hoanh Son",
+    support: "5,000,000 d",
     highlighted: true,
   },
   {
     date: "25/07/2025",
-    name: "Công Ty TNHH Tư Vấn KS-TK Hoành Sơn",
-    support: "5,000,000 đ",
+    name: "Cong Ty TNHH Tu Van KS-TK Hoanh Son",
+    support: "5,000,000 d",
     highlighted: true,
   },
 ];
+
+function formatMobileDate(date: string) {
+  const [day, month, year] = date.split("/");
+
+  return (
+    <>
+      {day}/{month}
+      <br />
+      {year}
+    </>
+  );
+}
 
 export function SponsorDonorsSection() {
   const [activeYear, setActiveYear] =
@@ -87,25 +100,36 @@ export function SponsorDonorsSection() {
 
         {activeYear === "SEAS 2025" ? (
           <div className="overflow-hidden rounded-[24px] border border-[#b9e7f7] bg-white shadow-[0_20px_48px_rgba(150,199,224,0.14)]">
-            <div className="grid grid-cols-[170px_1.5fr_1.4fr] bg-[#dff2fb] font-space-grotesk text-[1rem] font-bold uppercase text-[#04536E]">
-              <div className="border-r border-[#b9e7f7] px-5 py-5">Ngày</div>
-              <div className="border-r border-[#b9e7f7] px-5 py-5">Tên</div>
-              <div className="px-5 py-5">Số tiền hoặc vật chất</div>
+            <div className="grid grid-cols-[72px_1.2fr_1.2fr] bg-[#dff2fb] font-space-grotesk text-[0.98rem] font-bold uppercase text-[#04536E] md:grid-cols-[170px_1.5fr_1.4fr] md:text-[1rem]">
+              <div className="border-r border-[#b9e7f7] px-3 py-4 md:px-5 md:py-5">
+                Ngay
+              </div>
+              <div className="border-r border-[#b9e7f7] px-3 py-4 md:px-5 md:py-5">
+                Ten
+              </div>
+              <div className="px-3 py-4 md:px-5 md:py-5">
+                So tien hoac vat chat
+              </div>
             </div>
 
             {donors2025.map((donor, index) => (
               <div
                 key={`${donor.name}-${index}`}
                 className={[
-                  "grid grid-cols-[170px_1.5fr_1.4fr] border-t border-[#d7eaf4] font-lexend text-[1rem]",
+                  "grid grid-cols-[72px_1.2fr_1.2fr] border-t border-[#d7eaf4] font-lexend text-[0.98rem] md:grid-cols-[170px_1.5fr_1.4fr] md:text-[1rem]",
                   donor.highlighted ? "bg-[#f7fbff]" : "bg-white",
                 ].join(" ")}
               >
-                <div className="px-5 py-5 text-[#4D5761]">{donor.date}</div>
-                <div className="px-5 py-5 font-semibold text-[#111111]">
+                <div className="px-3 py-4 leading-[1.35] text-[#4D5761] md:px-5 md:py-5">
+                  <span className="md:hidden">
+                    {formatMobileDate(donor.date)}
+                  </span>
+                  <span className="hidden md:inline">{donor.date}</span>
+                </div>
+                <div className="px-3 py-4 font-semibold text-[#111111] md:px-5 md:py-5">
                   {donor.name}
                 </div>
-                <div className="px-5 py-5 font-medium text-[#2D8BBA]">
+                <div className="px-3 py-4 font-medium text-[#2D8BBA] md:px-5 md:py-5">
                   {donor.support}
                 </div>
               </div>

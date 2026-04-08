@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { PillArrowButton } from "@/components/shared/pill-arrow-button";
 
@@ -29,8 +29,7 @@ function getTimeLeft() {
 
 export function HomeHeroSection() {
   const [countdown, setCountdown] = useState(INITIAL_COUNTDOWN);
-  const sectionRef = useRef<HTMLElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [animationCycle, setAnimationCycle] = useState(0);
 
   useEffect(() => {
     const updateCountdown = () => {
@@ -38,9 +37,7 @@ export function HomeHeroSection() {
     };
 
     const timeoutId = window.setTimeout(updateCountdown, 0);
-    const intervalId = window.setInterval(() => {
-      updateCountdown();
-    }, 1000);
+    const intervalId = window.setInterval(updateCountdown, 1000);
 
     return () => {
       window.clearTimeout(timeoutId);
@@ -49,66 +46,34 @@ export function HomeHeroSection() {
   }, []);
 
   useEffect(() => {
-    const section = sectionRef.current;
+    const replayAnimations = () => {
+      setAnimationCycle((current) => current + 1);
+    };
 
-    if (!section) {
-      return;
-    }
+    window.addEventListener("pageshow", replayAnimations);
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      {
-        threshold: 0.3,
-      },
-    );
-
-    observer.observe(section);
-
-    return () => observer.disconnect();
+    return () => window.removeEventListener("pageshow", replayAnimations);
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-8 pb-10 max-md:pt-5">
+    <section className="py-8 pb-10 max-md:pt-5">
       <div className="container grid gap-4">
         <div className="relative overflow-hidden rounded-[28px] bg-[linear-gradient(90deg,#2D8BBA_0%,#004D61_100%)] px-12 py-14 shadow-[0_4px_40px_rgba(45,139,186,0.2)] max-lg:px-8 max-md:px-5 max-md:py-8">
-          <div className="relative z-[1] flex min-h-[156px] items-center justify-between gap-10 max-lg:flex-col max-lg:items-start max-lg:gap-8">
+          <div
+            key={`hero-banner-${animationCycle}`}
+            className="relative z-[1] flex min-h-[156px] items-center justify-between gap-10 max-lg:flex-col max-lg:items-start max-lg:gap-8"
+          >
             <div className="space-y-3 font-space-grotesk">
-              <p
-                className={[
-                  "mb-4 text-7xl font-bold uppercase leading-[0.9] text-[#7CEFF1] transition-all duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)]",
-                  isVisible
-                    ? "translate-y-0 opacity-100 [transition-delay:120ms]"
-                    : "translate-y-10 opacity-0",
-                ].join(" ")}
-              >
+              <p className="hero-rise-up mb-4 text-7xl font-bold uppercase leading-[0.9] text-[#7CEFF1] [animation-delay:120ms]">
                 SEAS 2026
               </p>
-              <h1
-                className={[
-                  "m-0 text-3xl font-bold uppercase leading-none text-white transition-all duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)]",
-                  isVisible
-                    ? "translate-y-0 opacity-100 [transition-delay:240ms]"
-                    : "translate-y-12 opacity-0",
-                ].join(" ")}
-              >
+              <h1 className="hero-rise-up m-0 text-3xl font-bold uppercase leading-none text-white [animation-delay:240ms]">
                 Trí tuệ nhân tạo và Ứng dụng
               </h1>
             </div>
 
             <dl className="grid gap-2 font-space-grotesk text-white">
-              <div
-                className={[
-                  "grid grid-cols-[auto_auto] items-baseline gap-x-5 gap-y-1 transition-all duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)] max-md:grid-cols-1 max-md:gap-x-0",
-                  isVisible
-                    ? "translate-y-0 opacity-100 [transition-delay:360ms]"
-                    : "translate-y-12 opacity-0",
-                ].join(" ")}
-              >
+              <div className="hero-rise-up grid grid-cols-[auto_auto] items-baseline gap-x-5 gap-y-1 [animation-delay:360ms] max-md:grid-cols-1 max-md:gap-x-0">
                 <dt className="font-lexend text-[1.05rem] font-normal text-[#E6F8FF]">
                   Thời gian dự kiến
                 </dt>
@@ -116,14 +81,7 @@ export function HomeHeroSection() {
                   13/07/2026 - 24/07/2026
                 </dd>
               </div>
-              <div
-                className={[
-                  "grid grid-cols-[auto_auto] items-baseline gap-x-5 gap-y-1 transition-all duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)] max-md:grid-cols-1 max-md:gap-x-0",
-                  isVisible
-                    ? "translate-y-0 opacity-100 [transition-delay:460ms]"
-                    : "translate-y-12 opacity-0",
-                ].join(" ")}
-              >
+              <div className="hero-rise-up grid grid-cols-[auto_auto] items-baseline gap-x-5 gap-y-1 [animation-delay:460ms] max-md:grid-cols-1 max-md:gap-x-0">
                 <dt className="font-lexend text-[1.05rem] font-normal text-[#E6F8FF]">
                   Địa điểm
                 </dt>
@@ -135,10 +93,13 @@ export function HomeHeroSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-4 gap-4 max-md:grid-cols-2">
+        <div
+          key={`hero-countdown-${animationCycle}`}
+          className="grid grid-cols-4 gap-4 max-md:grid-cols-2"
+        >
           {countdown.map((item, index) => (
             <article
-              key={item.label}
+              key={`${item.label}-${animationCycle}`}
               className="hero-rise-up hero-countdown-card rounded-[22px] bg-white px-3 py-5 text-center font-space-grotesk shadow-[0_4px_30px_rgba(45,139,186,0.18)] [animation-delay:calc(560ms+var(--item-delay))]"
               style={{ ["--item-delay" as string]: `${index * 90}ms` }}
             >
@@ -152,11 +113,14 @@ export function HomeHeroSection() {
           ))}
         </div>
 
-        <div className="flex justify-center pt-4 transition-all duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)]">
+        <div
+          key={`hero-cta-${animationCycle}`}
+          className="hero-rise-up flex justify-center pt-4 [animation-delay:900ms]"
+        >
           <PillArrowButton
             href="/apply"
             label="Đăng Ký Tham Gia"
-            className="min-h-[58px] min-w-[220px] px-7 max-md:min-h-[54px] max-md:w-full max-md:min-w-0 border-[2.5px] border-white"
+            className="min-h-[58px] min-w-[220px] border-[2.5px] border-white px-7 max-md:min-h-[54px] max-md:w-full max-md:min-w-0"
           />
         </div>
       </div>

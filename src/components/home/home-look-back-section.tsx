@@ -78,7 +78,7 @@ export function HomeLookBackSection() {
                 </h3>
 
                 <PillArrowButton
-                  href="https://www.youtube.com/watch?v=uoPzPfnbkak"
+                  href="https://baoquangtri.vn/khoa-hoc-cong-nghe/202508/khoi-day-dam-me-khoa-hoc-cong-nghe-9344c18/"
                   label="Tìm hiểu thêm"
                   className="min-h-[48px] min-w-[176px] px-6 text-[0.9rem] md:min-h-[44px] md:min-w-[232px] md:text-[1.05rem]"
                 />

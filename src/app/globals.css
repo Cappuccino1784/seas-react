@@ -71,6 +71,12 @@ a:hover {
   margin: 0 auto;
 }
 
+@media (max-width: 767px) {
+  .container {
+    padding-inline: 8px;
+  }
+}
+
 @keyframes review-marquee-track {
   from {
     transform: translateX(0);

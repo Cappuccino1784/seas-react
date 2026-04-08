@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 
 const navigation = [
@@ -19,7 +18,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b bg-white/92 backdrop-blur-[18px]">
       <div className="container relative flex min-h-[92px] items-center justify-between gap-6">
-        <Link
+        <a
           href="/home"
           aria-label="SEAS Home"
           className="header-fly-down"
@@ -32,7 +31,7 @@ export function SiteHeader() {
             height={68}
             priority
           />
-        </Link>
+        </a>
 
         <button
           type="button"
@@ -53,7 +52,7 @@ export function SiteHeader() {
           ].join(" ")}
         >
           {navigation.map((item, index) => (
-            <Link
+            <a
               key={item.label}
               href={item.href}
               onClick={() => setOpen(false)}
@@ -63,7 +62,7 @@ export function SiteHeader() {
               }}
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
       </div>
