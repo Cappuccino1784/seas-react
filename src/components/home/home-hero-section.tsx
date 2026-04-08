@@ -6,10 +6,10 @@ import { PillArrowButton } from "@/components/shared/pill-arrow-button";
 
 const COUNTDOWN_TARGET = new Date("2026-05-31T23:59:59").getTime();
 const INITIAL_COUNTDOWN = [
-  { value: "00", label: "NGAY" },
-  { value: "00", label: "GIO" },
-  { value: "00", label: "PHUT" },
-  { value: "00", label: "GIAY" },
+  { value: "00", label: "NGÀY" },
+  { value: "00", label: "GIỜ" },
+  { value: "00", label: "PHÚT" },
+  { value: "00", label: "GIÂY" },
 ];
 
 function getTimeLeft() {
@@ -20,10 +20,10 @@ function getTimeLeft() {
   const seconds = Math.floor((difference / 1000) % 60);
 
   return [
-    { value: String(days).padStart(2, "0"), label: "NGAY" },
-    { value: String(hours).padStart(2, "0"), label: "GIO" },
-    { value: String(minutes).padStart(2, "0"), label: "PHUT" },
-    { value: String(seconds).padStart(2, "0"), label: "GIAY" },
+    { value: String(days).padStart(2, "0"), label: "NGÀY" },
+    { value: String(hours).padStart(2, "0"), label: "GIỜ" },
+    { value: String(minutes).padStart(2, "0"), label: "PHÚT" },
+    { value: String(seconds).padStart(2, "0"), label: "GIÂY" },
   ];
 }
 
@@ -96,7 +96,7 @@ export function HomeHeroSection() {
                     : "translate-y-12 opacity-0",
                 ].join(" ")}
               >
-                Tri tue nhan tao va Ung dung
+                Trí tuệ nhân tạo và Ứng dụng
               </h1>
             </div>
 
@@ -110,7 +110,7 @@ export function HomeHeroSection() {
                 ].join(" ")}
               >
                 <dt className="font-lexend text-[1.05rem] font-normal text-[#E6F8FF]">
-                  Thoi gian du kien
+                  Thời gian dự kiến
                 </dt>
                 <dd className="m-0 text-[1.15rem] font-semibold uppercase">
                   13/07/2026 - 24/07/2026
@@ -125,10 +125,10 @@ export function HomeHeroSection() {
                 ].join(" ")}
               >
                 <dt className="font-lexend text-[1.05rem] font-normal text-[#E6F8FF]">
-                  Dia diem
+                  Địa điểm
                 </dt>
                 <dd className="m-0 text-[1.15rem] font-semibold uppercase">
-                  TP. Dong Hoi, tinh Quang Binh
+                  TP. Đồng Hới, tỉnh Quảng Bình
                 </dd>
               </div>
             </dl>
@@ -155,7 +155,7 @@ export function HomeHeroSection() {
         <div className="flex justify-center pt-4 transition-all duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)]">
           <PillArrowButton
             href="#apply"
-            label="Dang Ky Tham Gia"
+            label="Đăng Ký Tham Gia"
             className="min-h-[58px] min-w-[220px] px-7 max-md:min-h-[54px] max-md:w-full max-md:min-w-0 border-[2.5px] border-white"
           />
         </div>

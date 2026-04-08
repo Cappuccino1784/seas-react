@@ -80,31 +80,32 @@ export function StaffMembersSection() {
           <>
             <div className="grid grid-cols-2 gap-5 md:hidden">
               {mobileMembers.map((member) => (
-                <Link
+                <div
                   key={member.name}
-                  href={`/staff/${member.slug}`}
-                  className="rounded-[20px] border border-[#edf3f8] bg-white px-6 py-5 text-center shadow-[0_16px_38px_rgba(150,199,224,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[1.6px] hover:border-[#2D8BBA] hover:bg-white hover:shadow-[0_22px_50px_rgba(45,139,186,0.2)]"
+                  className="group bg-white rounded-[20px] border-[2px] border-[#edf3f8] px-6 py-5 text-center shadow-[0_16px_38px_rgba(150,199,224,0.12)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#2D8BBA] hover:shadow-[0_22px_50px_rgba(45,139,186,0.2)]"
                 >
-                  <div className="mx-auto mb-5 h-[92px] w-[92px] overflow-hidden rounded-full border-[3px] border-[#dff2fb]">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={140}
-                      height={140}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
+                  <Link href={`/staff/${member.slug}`}>
+                    <div className="mx-auto mb-5 h-[92px] w-[92px] overflow-hidden rounded-full border-[3px] border-[#dff2fb]">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={140}
+                        height={140}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
 
-                  <h3 className="font-space-grotesk text-[1.2rem] font-bold text-[#04536E]">
-                    {member.name}
-                  </h3>
-                  <p className="font-lexend text-[0.9rem] leading-[1.4] text-[#2D8BBA]">
-                    {member.role}
-                  </p>
-                  <p className="mt-6 font-lexend text-[0.9rem] leading-[1.4] text-[#72777d]">
-                    {member.bio}
-                  </p>
-                </Link>
+                    <h3 className="font-space-grotesk text-[1.2rem] font-bold text-[#04536E]">
+                      {member.name}
+                    </h3>
+                    <p className="font-lexend text-[0.9rem] leading-[1.4] text-[#2D8BBA]">
+                      {member.role}
+                    </p>
+                    <p className="mt-6 font-lexend text-[0.9rem] leading-[1.4] text-[#72777d]">
+                      {member.bio}
+                    </p>
+                  </Link>
+                </div>
               ))}
             </div>
 
@@ -161,31 +162,32 @@ export function StaffMembersSection() {
 
             <div className="hidden gap-5 md:grid md:grid-cols-2 xl:grid-cols-4">
               {staffMembers2025.map((member) => (
-                <Link
+                <div
                   key={member.name}
-                  href={`/staff/${member.slug}`}
-                  className="rounded-[24px] border border-[#edf3f8] bg-white px-5 py-6 text-center shadow-[0_16px_38px_rgba(150,199,224,0.12)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[1.6px] hover:border-[#2D8BBA] hover:bg-white hover:shadow-[0_22px_50px_rgba(45,139,186,0.2)]"
+                  className="group bg-white rounded-[20px] border-[2px] border-[#edf3f8] px-6 py-5 text-center shadow-[0_16px_38px_rgba(150,199,224,0.12)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#2D8BBA] hover:shadow-[0_22px_50px_rgba(45,139,186,0.2)]"
                 >
-                  <div className="mx-auto mb-6 h-[104px] w-[104px] overflow-hidden rounded-full border-[3px] border-[#dff2fb]">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      width={140}
-                      height={140}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
+                  <Link href={`/staff/${member.slug}`}>
+                    <div className="mx-auto mb-6 h-[104px] w-[104px] overflow-hidden rounded-full border-[3px] border-[#dff2fb]">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        width={140}
+                        height={140}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
 
-                  <h3 className="font-space-grotesk text-[1.05rem] font-bold text-[#04536E] md:text-[1.2rem]">
-                    {member.name}
-                  </h3>
-                  <p className="font-lexend text-[0.9rem] leading-[1.45] text-[#2D8BBA]">
-                    {member.role}
-                  </p>
-                  <p className="mt-7 font-lexend text-[0.9rem] leading-[1.4] text-[#72777d]">
-                    {member.bio}
-                  </p>
-                </Link>
+                    <h3 className="font-space-grotesk text-[1.05rem] font-bold text-[#04536E] md:text-[1.2rem]">
+                      {member.name}
+                    </h3>
+                    <p className="font-lexend text-[0.9rem] leading-[1.45] text-[#2D8BBA]">
+                      {member.role}
+                    </p>
+                    <p className="mt-7 font-lexend text-[0.9rem] leading-[1.4] text-[#72777d]">
+                      {member.bio}
+                    </p>
+                  </Link>
+                </div>
               ))}
             </div>
           </>

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { HiOutlineMail } from "react-icons/hi";
 import { RiFacebookFill, RiGithubFill } from "react-icons/ri";
@@ -16,6 +18,11 @@ const socialLinks = [
 ];
 
 export function SiteFooter() {
+  const handleScrollToTop = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="bg-[#F9FCFF] py-12 md:pt-7" id="contact">
       <div id="sponsor">
@@ -59,6 +66,7 @@ export function SiteFooter() {
           <nav className="flex flex-wrap items-center gap-10 font-lexend text-[1.2rem] md:gap-6 md:text-[1.1rem] max-md:flex-col max-md:items-start max-md:gap-4 max-md:text-[1.05rem]">
             <a
               href="#top"
+              onClick={handleScrollToTop}
               className="relative pb-1 text-[#414141] after:absolute after:right-0 after:bottom-0 after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:rounded-full after:bg-[linear-gradient(90deg,#1397cb,#56c6f2)] after:transition-transform after:duration-200 hover:after:scale-x-100"
             >
               Về đầu trang

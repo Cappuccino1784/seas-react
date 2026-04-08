@@ -18,9 +18,9 @@ export function ProgramIntroSection() {
                   : "translate-y-10 opacity-0",
               ].join(" ")}
             >
-              CHUONG TRINH
+              CHƯƠNG TRÌNH
               <br />
-              DAY HOC
+              DẠY HỌC
             </h1>
           </div>
 
@@ -33,19 +33,19 @@ export function ProgramIntroSection() {
             ].join(" ")}
           >
             <p className="font-lexend text-[1rem] leading-[1.9] text-[#4D5761] md:text-[1.06rem]">
-              Chuong trinh hoc duoc thiet ke thanh hai tuan. Tuan dau tien la{" "}
+              Chương trình học được thiết kế thành hai tuần. Tuần đầu tiên là{" "}
               <span className="font-semibold text-[#2D8BBA]">
-                &quot;Bootcamp Nen tang&quot;
+                &quot;Bootcamp Nền tảng&quot;
               </span>
-              , tap trung vao Python, Dai so tuyen tinh va Machine Learning.
-              Tuan thu hai tap trung vao{" "}
+              , tập trung vào Python, Đại số tuyến tính và Machine Learning.
+              Tuần thứ hai tập trung vào{" "}
               <span className="font-semibold text-[#2D8BBA]">
-                &quot;Ung dung cua AI&quot;
+                &quot;Ứng dụng của AI&quot;
               </span>
-              , voi cac noi dung ve Thi giac may tinh, AI trong khoa hoc va AI
-              trong mang may tinh. Ngoai ra, hoc vien con duoc tham gia cac du
-              an nhom de thuc hanh va ap dung kien thuc vao giai quyet cac van
-              de thuc tien.
+              , với các nội dung về Thị giác máy tính, AI trong khoa học và AI
+              trong mạng máy tính. Ngoài ra, học viên còn được tham gia các dự
+              án nhóm để thực hành và áp dụng kiến thức vào giải quyết các vấn
+              đề thực tiễn.
             </p>
           </div>
         </div>

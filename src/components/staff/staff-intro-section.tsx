@@ -18,7 +18,7 @@ export function StaffIntroSection() {
                   : "translate-y-10 opacity-0",
               ].join(" ")}
             >
-              DOI NGU SEAS
+              ĐỘI NGŨ SEAS
             </h1>
           </div>
 
@@ -31,10 +31,10 @@ export function StaffIntroSection() {
             ].join(" ")}
           >
             <p className="font-lexend text-[1rem] leading-[1.9] text-[#4D5761] md:text-[1.06rem]">
-              Doi ngu giang vien cua SEAS bao gom cac chuyen gia hang dau trong
-              linh vuc khoa hoc cong nghe, voi kinh nghiem giang day va nghien
-              cuu tai cac vien nghien cuu va truong dai hoc danh tieng trong va
-              ngoai nuoc.
+              Đội ngũ giảng viên của SEAS bao gồm các chuyên gia hàng đầu trong
+              lĩnh vực khoa học công nghệ, với kinh nghiệm giảng dạy và nghiên
+              cứu tại các viện nghiên cứu và trường đại học danh tiếng trong và
+              ngoài nước.
             </p>
           </div>
         </div>

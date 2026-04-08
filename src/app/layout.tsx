@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Lexend, Space_Grotesk } from 'next/font/google';
 import '@/app/globals.css';
+import { CustomCursor } from '@/components/shared/custom-cursor';
 
 const lexend = Lexend({
   subsets: ['latin', 'latin-ext'],
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body className={`${lexend.variable} ${spaceGrotesk.variable} font-space-grotesk`}>
+        <CustomCursor />
         {children}
       </body>
     </html>

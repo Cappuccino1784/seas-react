@@ -19,7 +19,7 @@ export function AboutIntroSection() {
                 : "translate-y-10 opacity-0",
             ].join(" ")}
           >
-            VE CHUNG TOI
+            VỀ CHÚNG TÔI
           </h1>
 
           <div
@@ -34,16 +34,16 @@ export function AboutIntroSection() {
               <span className="font-semibold text-[#4D5761]">
                 SEAS (Summer in Engineering and Applied Sciences)
               </span>{" "}
-              la{" "}
+              là{" "}
               <span className="font-semibold text-[#2D8BBA]">
-                truong he mien phi
+                trường hè miễn phí
               </span>{" "}
-              danh cho hoc sinh THPT mien Trung, duoc thanh lap boi cac chuyen
-              vien nghien cuu nguoi mien Trung dang lam viec tai cac vien nghien
-              cuu hang dau trong nuoc va the gioi. Muc tieu cua SEAS la giup cac
-              ban hoc sinh tiep can voi cac nganh khoa hoc cong nghe moi nhu tri
-              tue nhan tao (AI), khoa hoc du lieu, lap trinh, nang luong tai
-              tao, cong nghe luong tu, va hon the nua.
+              dành cho học sinh THPT miền Trung, được thành lập bởi các chuyên
+              viên nghiên cứu người miền Trung đang làm việc tại các viện nghiên
+              cứu hàng đầu trong nước và thế giới. Mục tiêu của SEAS là giúp các
+              bạn học sinh tiếp cận với các ngành khoa học công nghệ mới như trí
+              tuệ nhân tạo (AI), khoa học dữ liệu, lập trình, năng lượng tái
+              tạo, công nghệ lượng tử, và hơn thế nữa.
             </p>
           </div>
         </div>

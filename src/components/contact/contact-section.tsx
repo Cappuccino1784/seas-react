@@ -7,13 +7,13 @@ import { useRevealOnView } from "@/components/shared/use-reveal-on-view";
 
 const contactItems = [
   {
-    title: "Email lien he",
+    title: "Email liên hệ",
     value: "seas.cvn@gmail.com",
     href: "mailto:seas.cvn@gmail.com",
     icon: HiOutlineMail,
   },
   {
-    title: "Cong dong Facebook",
+    title: "Cộng đồng Facebook",
     value: "facebook.com/seas.cvn",
     href: "https://facebook.com/seas.cvn",
     icon: RiFacebookFill,
@@ -36,7 +36,7 @@ export function ContactSection() {
                   : "translate-y-10 opacity-0",
               ].join(" ")}
             >
-              LIEN HE
+              LIÊN HỆ
             </h1>
           </div>
 
@@ -49,8 +49,8 @@ export function ContactSection() {
             ].join(" ")}
           >
             <p className="max-w-[620px] font-lexend text-[1rem] leading-[1.9] text-[#4D5761] md:text-[1.06rem]">
-              Neu ban co bat ky cau hoi nao ve SEAS, vui long lien he voi chung
-              toi qua email hoac nhan tin truc tiep tren trang Facebook.
+              Nếu bạn có bất kỳ câu hỏi nào về SEAS, vui lòng liên hệ với chúng
+              tôi qua email hoặc nhắn tin trực tiếp trên trang Facebook.
             </p>
 
             <div
@@ -69,7 +69,9 @@ export function ContactSection() {
                     key={item.title}
                     href={item.href}
                     target={item.href.startsWith("http") ? "_blank" : undefined}
-                    rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                    rel={
+                      item.href.startsWith("http") ? "noreferrer" : undefined
+                    }
                     className="flex items-center gap-4"
                   >
                     <span className="grid h-[40px] w-[40px] place-items-center rounded-full bg-[#2D8BBA] text-[1.2rem] text-white md:h-[44px] md:w-[44px] md:text-[1.3rem]">

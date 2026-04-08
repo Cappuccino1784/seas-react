@@ -164,3 +164,87 @@ a:hover {
 .hero-countdown-digit {
   animation: hero-digit-glow 1.9s ease-in-out infinite;
 }
+
+.seas-cursor {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+}
+
+.seas-cursor-dot,
+.seas-cursor-ring,
+.seas-cursor-sparkle {
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition:
+    opacity 180ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+.seas-cursor-dot {
+  height: 14px;
+  width: 14px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 35% 35%, #f4ffff 0%, #8defff 45%, #2d8bba 100%);
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.45),
+    0 0 22px rgba(45, 139, 186, 0.36);
+}
+
+.seas-cursor-ring {
+  height: 38px;
+  width: 38px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(45, 139, 186, 0.34);
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.03) 62%, transparent 75%);
+  box-shadow:
+    0 0 0 1px rgba(145, 224, 246, 0.2),
+    0 10px 28px rgba(45, 139, 186, 0.14);
+  backdrop-filter: blur(4px);
+}
+
+.seas-cursor-sparkle {
+  display: grid;
+  place-items: center;
+  height: 18px;
+  width: 18px;
+  color: #7ceff1;
+  font-size: 12px;
+  text-shadow: 0 0 12px rgba(124, 239, 241, 0.7);
+}
+
+.seas-cursor[data-visible="true"] .seas-cursor-dot,
+.seas-cursor[data-visible="true"] .seas-cursor-ring,
+.seas-cursor[data-visible="true"] .seas-cursor-sparkle {
+  opacity: 1;
+}
+
+.seas-cursor[data-interactive="true"] .seas-cursor-ring {
+  border-color: rgba(45, 139, 186, 0.52);
+  box-shadow:
+    0 0 0 1px rgba(145, 224, 246, 0.3),
+    0 14px 34px rgba(45, 139, 186, 0.22);
+}
+
+.seas-cursor[data-interactive="true"] .seas-cursor-dot {
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 0.55),
+    0 0 30px rgba(45, 139, 186, 0.44);
+}
+
+.seas-cursor[data-pressed="true"] .seas-cursor-ring {
+  border-color: rgba(4, 77, 97, 0.46);
+}
+
+@media (pointer: fine) {
+  body.custom-cursor-enabled,
+  body.custom-cursor-enabled * {
+    cursor: none !important;
+  }
+}

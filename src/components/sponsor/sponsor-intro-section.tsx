@@ -18,7 +18,7 @@ export function SponsorIntroSection() {
                   : "translate-y-10 opacity-0",
               ].join(" ")}
             >
-              TAI TRO
+              TÀI TRỢ
             </h1>
           </div>
 
@@ -31,10 +31,10 @@ export function SponsorIntroSection() {
             ].join(" ")}
           >
             <p className="font-lexend text-[1rem] leading-[1.9] text-[#4D5761] md:text-[1.06rem]">
-              Chung toi keu goi doi tac tai tro de nang cao chuong trinh SEAS,
-              mo rong co hoi hoc tap cho hoc sinh THPT mien Trung. Su dong hanh
-              cua quy vi se gop phan phat trien khoa hoc cong nghe tien tien va
-              kien tao tuong lai cho the he tre Viet Nam.
+              Chúng tôi kêu gọi đối tác tài trợ để nâng cao chương trình SEAS,
+              mở rộng cơ hội học tập cho học sinh THPT miền Trung. Sự đồng hành
+              của quý vị sẽ góp phần phát triển khoa học công nghệ tiên tiến và
+              kiến tạo tương lai cho thế hệ trẻ Việt Nam.
             </p>
           </div>
         </div>
