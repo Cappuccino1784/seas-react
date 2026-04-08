@@ -73,7 +73,7 @@ export function HomeHeroSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-8 pb-10 max-md:pt-5" id="apply">
+    <section ref={sectionRef} className="py-8 pb-10 max-md:pt-5">
       <div className="container grid gap-4">
         <div className="relative overflow-hidden rounded-[28px] bg-[linear-gradient(90deg,#2D8BBA_0%,#004D61_100%)] px-12 py-14 shadow-[0_4px_40px_rgba(45,139,186,0.2)] max-lg:px-8 max-md:px-5 max-md:py-8">
           <div className="relative z-[1] flex min-h-[156px] items-center justify-between gap-10 max-lg:flex-col max-lg:items-start max-lg:gap-8">
@@ -154,7 +154,7 @@ export function HomeHeroSection() {
 
         <div className="flex justify-center pt-4 transition-all duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)]">
           <PillArrowButton
-            href="#apply"
+            href="/apply"
             label="Đăng Ký Tham Gia"
             className="min-h-[58px] min-w-[220px] px-7 max-md:min-h-[54px] max-md:w-full max-md:min-w-0 border-[2.5px] border-white"
           />

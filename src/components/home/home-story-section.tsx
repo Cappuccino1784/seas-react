@@ -3,7 +3,7 @@ import { PillArrowButton } from "@/components/shared/pill-arrow-button";
 
 export function HomeStorySection() {
   return (
-    <section className="py-[72px] md:py-20" id="about">
+    <section className="py-[72px] md:py-20">
       <div className="container">
         <div className="mb-8">
           <div className="mb-6 flex items-center gap-5 font-space-grotesk uppercase max-md:flex-col max-md:items-start max-md:gap-2">
@@ -25,7 +25,7 @@ export function HomeStorySection() {
             </p>
 
             <PillArrowButton
-              href="#discover"
+              href="/about"
               label="CÂU CHUYỆN VỀ SEAS"
               className="min-w-[226px]"
             />

@@ -7,24 +7,27 @@ const exploreCards = [
     description:
       "Khám phá các chương trình hè toàn diện của chúng tôi trong lĩnh vực kỹ thuật và khoa học ứng dụng dành cho học sinh trung học phổ thông.",
     image: "/images/layout/explore-card-1.jpg",
+    href: "/program",
   },
   {
-    title: "Gặp gỡ đội ngũ SEAS",
+    title: "Gặp Gỡ Đội Ngũ SEAS",
     description:
       "Tìm hiểu về đội ngũ nghiên cứu và chuyên gia của chúng tôi từ các trường đại học danh tiếng và các công ty công nghệ hàng đầu.",
     image: "/images/layout/explore-card-2.jpg",
+    href: "/staff",
   },
   {
     title: "Nộp Đơn Tham Gia",
     description:
       "Tham gia chúng tôi vào mùa hè này! Gửi đơn đăng ký và trở thành một phần của cộng đồng học tập của chúng tôi.",
     image: "/images/layout/explore-card-3.jpg",
+    href: "/apply",
   },
 ];
 
 export function HomeExploreSection() {
   return (
-    <section className="py-[72px] pb-[96px] max-md:py-14" id="program">
+    <section className="py-[72px] pb-[96px] max-md:py-14">
       <div className="container">
         <div className="mb-10 text-left md:text-center">
           <h2 className="font-space-grotesk text-[2.5rem] font-bold uppercase leading-[1.08] tracking-[-0.03em] text-[#04536E] md:text-6xl md:leading-[1.05]">
@@ -63,7 +66,7 @@ export function HomeExploreSection() {
 
                 <div className="mt-auto pt-6 pb-2 flex justify-center">
                   <PillArrowButton
-                    href="#apply"
+                    href={card.href}
                     label="TÌM HIỂU THÊM"
                     className="min-h-[44px] min-w-[190px] px-6 text-[0.95rem] normal-case"
                   />

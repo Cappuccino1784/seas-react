@@ -9,7 +9,7 @@ const navigation = [
   { href: "/program", label: "Chương Trình" },
   { href: "/staff", label: "Đội Ngũ" },
   { href: "/apply", label: "Đăng Ký Tham Gia" },
-  { href: "/sponsor", label: "Tài trợ" },
+  { href: "/sponsor", label: "Tài Trợ" },
   { href: "/contact", label: "Liên Hệ" },
 ];
 
@@ -36,7 +36,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="inline-block h-12 w-12 rounded-[14px] border border-[rgba(19,151,203,0.18)] bg-white lg:hidden"
+          className="relative z-50 inline-block h-12 w-12 rounded-[14px] bg-white lg:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-label="Mở điều hướng"
@@ -48,8 +48,8 @@ export function SiteHeader() {
 
         <nav
           className={[
-            "absolute right-0 left-0 top-[calc(100%+8px)] hidden flex-col items-start gap-2.5 rounded-[22px] border border-[rgba(19,151,203,0.16)] bg-white/98 p-[18px] shadow-[0_24px_50px_rgba(4,35,56,0.16)] lg:static lg:flex lg:flex-row lg:items-center lg:gap-6 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none",
-            open ? "flex" : "",
+            "absolute right-0 left-0 top-[calc(100%+8px)] z-40 flex-col items-start gap-2.5 rounded-[22px] border border-[rgba(19,151,203,0.16)] bg-white/98 p-[18px] shadow-[0_24px_50px_rgba(4,35,56,0.16)] lg:static lg:z-auto lg:flex lg:flex-row lg:items-center lg:gap-6 lg:rounded-none lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none",
+            open ? "flex" : "hidden",
           ].join(" ")}
         >
           {navigation.map((item, index) => (

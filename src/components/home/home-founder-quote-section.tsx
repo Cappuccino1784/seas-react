@@ -2,10 +2,7 @@ import Image from "next/image";
 
 export function HomeFounderQuoteSection() {
   return (
-    <section
-      className="bg-[url('/images/layout/founder-bg.png')] bg-cover bg-center bg-no-repeat py-12 md:py-25"
-      id="team"
-    >
+    <section className="bg-[url('/images/layout/founder-bg.png')] bg-cover bg-center bg-no-repeat py-12 md:py-25">
       <div className="container flex items-center justify-center">
         <div className="relative max-w-[750px] rounded-[34px] bg-white px-10 py-12 shadow-[0_16px_50px_rgba(104,187,227,0.18)] md:px-14 md:py-14">
           <div className="pointer-events-none absolute top-[-160] right-10 leading-none text-[#2D8BBA] transform rotate-180 scale-x-[-1] md:text-[14rem]">

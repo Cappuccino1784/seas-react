@@ -30,8 +30,8 @@ export function SiteFooter() {
           title="SẴN SÀNG"
           subtitle="BẮT ĐẦU HÀNH TRÌNH CỦA BẠN?"
           description="Đừng bỏ lỡ cơ hội khám phá tiềm năng của bản thân trong lĩnh vực Khoa học, Công nghệ, Kỹ thuật và Toán học cùng cộng đồng SEAS."
-          primaryAction={{ href: "#apply", label: "ĐĂNG KÝ THAM GIA" }}
-          secondaryAction={{ href: "#sponsor", label: "TÀI TRỢ SEAS" }}
+          primaryAction={{ href: "/apply", label: "ĐĂNG KÝ THAM GIA" }}
+          secondaryAction={{ href: "/sponsor", label: "TÀI TRỢ SEAS" }}
           backgroundImage="/images/layout/footer-bg.png"
         />
       </div>

@@ -78,7 +78,7 @@ export function HomeLookBackSection() {
                 </h3>
 
                 <PillArrowButton
-                  href="#discover"
+                  href="https://www.youtube.com/watch?v=uoPzPfnbkak"
                   label="Tìm hiểu thêm"
                   className="min-h-[48px] min-w-[176px] px-6 text-[0.9rem] md:min-h-[44px] md:min-w-[232px] md:text-[1.05rem]"
                 />
