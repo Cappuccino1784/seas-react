@@ -17,9 +17,9 @@ export function ComingSoonCard() {
         Coming Soon
       </h3>
       <p className="mx-auto mt-5 max-w-[920px] font-lexend text-[1.05rem] leading-[1.8] text-[#4D5761] md:text-[1.18rem]">
-        Thong tin chi tiet ve SEAS 2026 se som duoc cap nhat. Hay theo doi de
-        khong bo lo co hoi tham gia vao mot trai nghiem hoc tap va phat trien
-        tuyet voi!
+        Thông tin chi tiết về SEAS 2026 sẽ sớm được cập nhật. Hãy theo dõi để
+        không bỏ lỡ cơ hội tham gia vào một trải nghiệm học tập và phát triển
+        tuyệt vời!
       </p>
     </div>
   );
