@@ -42,6 +42,7 @@ export function StaffMemberProfilePage({ member }: { member: StaffMember }) {
                     alt={member.name}
                     width={320}
                     height={360}
+                    loading="eager"
                     className="h-[220px] w-full object-cover md:h-[250px]"
                   />
                 </div>

@@ -31,6 +31,7 @@ export function SponsorDonationSection() {
                 alt="SEAS bank QR"
                 width={520}
                 height={700}
+                loading="eager"
                 className="h-auto w-full rounded-[18px]"
               />
             </div>
@@ -48,6 +49,7 @@ export function SponsorDonationSection() {
               alt="SEAS bank QR"
               width={520}
               height={700}
+              loading="eager"
               className="h-auto w-full rounded-[18px]"
             />
           </div>
