@@ -58,7 +58,14 @@ export function HomeHeroSection() {
   return (
     <section className="py-8 pb-10 max-md:pt-5">
       <div className="container grid gap-4">
-        <div className="relative overflow-hidden rounded-[28px] bg-[linear-gradient(90deg,#2D8BBA_0%,#004D61_100%)] px-12 py-14 shadow-[0_4px_40px_rgba(45,139,186,0.2)] max-lg:px-8 max-md:px-5 max-md:py-8">
+        <div
+          className="relative overflow-hidden rounded-[28px] px-12 py-14 shadow-[0_4px_40px_rgba(45,139,186,0.2)] max-lg:px-8 max-md:px-5 max-md:py-8"
+          style={{
+            backgroundImage: `linear-gradient(100deg, rgba(45, 139, 186, 0.9), rgba(0, 77, 97, 0.9)), url('/images/layout/quang-binh.jpg')`,
+            backgroundPosition: "center 35%",
+            backgroundSize: "cover",
+          }}
+        >
           <div
             key={`hero-banner-${animationCycle}`}
             className="relative z-[1] flex min-h-[156px] items-center justify-between gap-10 max-lg:flex-col max-lg:items-start max-lg:gap-8"
@@ -78,7 +85,7 @@ export function HomeHeroSection() {
                   Thời gian dự kiến
                 </dt>
                 <dd className="m-0 text-[1.15rem] font-semibold uppercase">
-                  13/07/2026 - 24/07/2026
+                  20/07/2026 - 31/07/2026
                 </dd>
               </div>
               <div className="hero-rise-up grid grid-cols-[auto_auto] items-baseline gap-x-5 gap-y-1 [animation-delay:460ms] max-md:grid-cols-1 max-md:gap-x-0">

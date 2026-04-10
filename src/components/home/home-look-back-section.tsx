@@ -41,7 +41,7 @@ export function HomeLookBackSection() {
               {stats.map((item) => (
                 <article
                   key={item.label}
-                  className="cursor-pointer min-h-[126px] rounded-[22px] bg-white px-4 py-4 shadow-[0_14px_32px_rgba(150,199,224,0.2)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:border-[#7fc8ef] hover:shadow-[0_18px_42px_rgba(45,139,186,0.18)] md:min-h-0 md:rounded-[24px] md:px-6 md:py-5 md:shadow-[0_16px_38px_rgba(150,199,224,0.2)] text-[#4D5761] hover:text-[#2D8BBA] border-2 border-[rgba(180,216,234,0.4)]"
+                  className="cursor-pointer min-h-[126px] rounded-[22px] border-2 border-[#e8edf2] bg-white px-4 py-4 shadow-[0_14px_32px_rgba(150,199,224,0.2)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:border-[#2D8BBA] hover:shadow-[0_18px_42px_rgba(45,139,186,0.18)] md:min-h-0 md:rounded-[24px] md:px-6 md:py-5 md:shadow-[0_16px_38px_rgba(150,199,224,0.2)] text-[#4D5761] hover:text-[#2D8BBA]"
                 >
                   <strong className="block font-space-grotesk text-[2.55rem] font-bold leading-none tracking-[-0.05em] text-[#2D8BBA] md:text-[3rem]">
                     {item.value}

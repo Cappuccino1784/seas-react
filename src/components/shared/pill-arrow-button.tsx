@@ -3,10 +3,13 @@ import { HiArrowRight } from "react-icons/hi";
 type PillArrowButtonVariant = "brand" | "light" | "outline-light";
 
 type PillArrowButtonProps = {
-  href: string;
+  href?: string;
   label: string;
   className?: string;
   variant?: PillArrowButtonVariant;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 };
 
 const variantClasses: Record<PillArrowButtonVariant, string> = {
@@ -23,13 +26,35 @@ export function PillArrowButton({
   label,
   className = "",
   variant = "brand",
+  onClick,
+  type = "button",
+  disabled = false,
 }: PillArrowButtonProps) {
+  const sharedClassName = `group relative isolate inline-flex min-h-[44px] min-w-[232px] items-center justify-center gap-3 overflow-hidden rounded-full px-6 font-space-grotesk text-[1.05rem] font-semibold uppercase transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] before:absolute before:inset-0 before:-translate-x-[130%] before:transition-transform before:duration-700 before:ease-[cubic-bezier(0.16,1,0.3,1)] hover:before:translate-x-[130%] after:absolute after:inset-0 after:opacity-0 after:transition-opacity after:duration-300 after:ease-[cubic-bezier(0.16,1,0.3,1)] hover:after:opacity-100 ${variantClasses[variant]} ${disabled ? "cursor-not-allowed opacity-60 hover:before:translate-x-[-130%] hover:after:opacity-0" : ""} ${className}`.trim();
+
+  if (!href) {
+    return (
+      <button
+        type={type}
+        onClick={onClick}
+        disabled={disabled}
+        className={sharedClassName}
+      >
+        <span className="relative z-[1]">{label}</span>
+        <HiArrowRight
+          aria-hidden="true"
+          className="relative z-[1] text-[1.35rem]"
+        />
+      </button>
+    );
+  }
+
   return (
     <a
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
-      className={`group relative isolate inline-flex min-h-[44px] min-w-[232px] items-center justify-center gap-3 overflow-hidden rounded-full px-6 font-space-grotesk text-[1.05rem] font-semibold uppercase transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] before:absolute before:inset-0 before:-translate-x-[130%] before:transition-transform before:duration-700 before:ease-[cubic-bezier(0.16,1,0.3,1)] hover:before:translate-x-[130%] after:absolute after:inset-0 after:opacity-0 after:transition-opacity after:duration-300 after:ease-[cubic-bezier(0.16,1,0.3,1)] hover:after:opacity-100 ${variantClasses[variant]} ${className}`.trim()}
+      className={sharedClassName}
     >
       <span className="relative z-[1]">{label}</span>
       <HiArrowRight
