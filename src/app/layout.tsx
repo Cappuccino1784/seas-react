@@ -18,6 +18,9 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: 'SEAS 2026',
   description: 'SEAS - Summer in Engineering and Applied Sciences',
+  icons: {
+    icon: '/images/logo/logo_mobile.png',
+  },
 };
 
 export default function RootLayout({

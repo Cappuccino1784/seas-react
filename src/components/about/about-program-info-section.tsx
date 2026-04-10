@@ -15,7 +15,7 @@ const programInfo = {
   ],
   "SEAS 2025": [
     { label: "Chủ đề", value: "Trí tuệ nhân tạo & Ứng dụng" },
-    { label: "Thoi gian", value: "15/07/2025 - 26/07/2025" },
+    { label: "Thời gian", value: "15/07/2025 - 26/07/2025" },
     { label: "Địa điểm", value: "THPT Chuyên Võ Nguyên Giáp, Quảng Bình" },
     { label: "Quy mô", value: "43 học viên và 12 trợ giảng tham gia" },
   ],

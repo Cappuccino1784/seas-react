@@ -11,7 +11,7 @@ export function StaffFoundersSection() {
           Founders
         </p>
         <h2 className="mb-8 font-space-grotesk text-[2.5rem] font-bold uppercase leading-[0.98] tracking-[-0.03em] text-[#04536E] md:mb-12 md:text-6xl md:leading-[1.05]">
-          Nguoi sang lap SEAS
+          Người sáng lập SEAS
         </h2>
 
         <div className="grid grid-cols-2 gap-4 xl:grid-cols-4 xl:gap-5">

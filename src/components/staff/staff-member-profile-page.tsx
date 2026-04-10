@@ -27,7 +27,7 @@ export function StaffMemberProfilePage({ member }: { member: StaffMember }) {
           className="mb-6 inline-flex items-center gap-2 font-lexend text-[1rem] font-medium text-[#2D8BBA] transition-colors hover:text-[#0f6e98]"
         >
           <HiArrowLeft className="text-[1.1rem]" />
-          <span>Quay ve</span>
+          <span>Quay về</span>
         </Link>
 
         <div className="relative pt-4 md:pt-6">

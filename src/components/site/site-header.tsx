@@ -16,7 +16,7 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-white/92 backdrop-blur-[18px]">
+    <header className="sticky top-0 z-40 border-b bg-white/92 backdrop-blur-[18px] shadow-md">
       <div className="container relative flex min-h-[92px] items-center justify-between gap-6">
         <a
           href="/home"
