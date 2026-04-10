@@ -259,12 +259,12 @@ export function ApplySection() {
                   <p className="relative pl-4">
                     <span className="absolute left-0 top-[0.55rem] h-[6px] w-[6px] rounded-full bg-[#c0d8e8]" />
                     Thời gian nộp đơn:{" "}
-                    <span className="font-semibold">05/04 - 31/05/2026</span>
+                    <span className="font-semibold">11/04 - 12/06/2026</span>
                   </p>
                   <p className="relative pl-4">
                     <span className="absolute left-0 top-[0.55rem] h-[6px] w-[6px] rounded-full bg-[#c0d8e8]" />
                     Thời gian dự kiến công bố kết quả:{" "}
-                    <span className="font-semibold">15/6/2026</span>
+                    <span className="font-semibold">22/06/2026</span>
                   </p>
                 </div>
               </section>

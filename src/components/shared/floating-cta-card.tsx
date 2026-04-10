@@ -6,7 +6,7 @@ import { HiChevronDown } from "react-icons/hi2";
 
 import { PillArrowButton } from "@/components/shared/pill-arrow-button";
 
-const COUNTDOWN_TARGET = new Date("2026-05-31T23:59:59").getTime();
+const COUNTDOWN_TARGET = new Date("2026-06-22T23:59:59").getTime();
 const INITIAL_COUNTDOWN = [
   { value: "00", label: "NGÀY" },
   { value: "00", label: "GIỜ" },
@@ -65,20 +65,20 @@ export function FloatingCtaCard() {
 
       <aside
         className={[
-          "fixed bottom-5 left-4 z-30 w-[min(392px,calc(100vw-32px))] rounded-[28px] bg-[linear-gradient(180deg,#2D8BBA_0%,#62B3D1_100%)] p-4 text-white shadow-[0_22px_48px_rgba(16,61,86,0.28)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] md:bottom-7 md:left-7 md:w-[392px] md:rounded-[30px] md:p-5",
+          "fixed bottom-5 left-4 z-30 w-[min(320px,calc(100vw-32px))] rounded-[24px] bg-[linear-gradient(180deg,#2D8BBA_0%,#62B3D1_100%)] p-3 text-white shadow-[0_22px_48px_rgba(16,61,86,0.28)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] md:bottom-7 md:left-7 md:w-[320px] md:rounded-[28px] md:p-4",
           isCollapsed
             ? "pointer-events-none translate-x-[-110%] opacity-0"
             : "translate-x-0 opacity-100",
         ].join(" ")}
       >
-        <div className="pointer-events-none absolute inset-0 rounded-[28px] bg-[radial-gradient(circle_at_bottom_right,rgba(126,236,255,0.16),transparent_26%),radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_28%)] md:rounded-[30px]" />
+        <div className="pointer-events-none absolute inset-0 rounded-[24px] bg-[radial-gradient(circle_at_bottom_right,rgba(126,236,255,0.16),transparent_26%),radial-gradient(circle_at_top_left,rgba(255,255,255,0.14),transparent_28%)] md:rounded-[28px]" />
         <div className="pointer-events-none absolute inset-x-5 bottom-2 h-16 rounded-full bg-[radial-gradient(circle,rgba(137,237,255,0.22),transparent_68%)] blur-2xl" />
 
         <button
           type="button"
           onClick={() => setIsCollapsed(true)}
           aria-label="Thu gon the dang ky"
-          className="absolute -right-3 top-4 grid h-[46px] w-[46px] place-items-center rounded-full border-2 border-[#78caeb] bg-white text-[#0d6d99] shadow-[0_12px_26px_rgba(16,61,86,0.22)] md:h-[50px] md:w-[50px]"
+          className="absolute -right-3 top-3 grid h-[40px] w-[40px] place-items-center rounded-full border-2 border-[#78caeb] bg-white text-[#0d6d99] shadow-[0_12px_26px_rgba(16,61,86,0.22)] md:h-[44px] md:w-[44px]"
         >
           <span className="hidden md:inline">
             <HiChevronDoubleLeft className="text-[1.5rem]" />
@@ -89,35 +89,35 @@ export function FloatingCtaCard() {
         </button>
 
         <div className="relative">
-          <p className="font-space-grotesk text-[1.9rem] font-bold uppercase leading-[1] md:text-[3.05rem]">
+          <p className="font-space-grotesk text-[1.6rem] font-bold uppercase leading-[1] md:text-[2.2rem]">
             SEAS 2026
           </p>
-          <p className="mt-2 max-w-[280px] font-space-grotesk text-[1rem] font-semibold uppercase leading-[1.12] md:max-w-none md:text-[1.05rem]">
+          <p className="mt-1 max-w-[280px] font-space-grotesk text-[0.9rem] font-semibold uppercase leading-[1.12] md:max-w-none md:text-[0.95rem]">
             Trí tuệ nhân tạo và ứng dụng
           </p>
 
-          <div className="mt-4 grid grid-cols-4 gap-2 md:mt-5 md:gap-3">
+          <div className="mt-3 grid grid-cols-4 gap-2 md:mt-4 md:gap-2">
             {countdown.map((item) => (
               <div
                 key={item.label}
-                className="rounded-[14px] bg-[#04536E] px-2 py-3 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] md:rounded-[16px] md:px-3 md:py-4"
+                className="rounded-[12px] bg-[#04536E] px-1 py-2 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] md:rounded-[14px] md:px-2 md:py-2.5"
               >
-                <strong className="block font-space-grotesk text-[2.1rem] font-bold leading-none text-[#7CEFF1] md:text-[2.35rem]">
+                <strong className="block font-space-grotesk text-[1.6rem] font-bold leading-none text-[#7CEFF1] md:text-[1.8rem]">
                   {item.value}
                 </strong>
-                <span className="mt-2 block font-space-grotesk text-[0.82rem] font-bold uppercase tracking-[-0.01em] text-white/85 md:text-[0.95rem]">
+                <span className="mt-1 block font-space-grotesk text-[0.75rem] font-bold uppercase tracking-[-0.01em] text-white/85 md:text-[0.8rem]">
                   {item.label}
                 </span>
               </div>
             ))}
           </div>
 
-          <div className="mt-5 md:mt-6">
+          <div className="mt-4 md:mt-4">
             <PillArrowButton
               href="/apply"
               label="Đăng Ký Tham Gia"
               variant="light"
-              className="min-h-[54px] w-full min-w-0 border-2 border-white px-6 text-[0.98rem] md:min-h-[56px] md:text-[1.05rem]"
+              className="min-h-[46px] w-full min-w-0 border-2 border-white px-5 text-[0.9rem] md:min-h-[48px] md:text-[0.95rem]"
             />
           </div>
         </div>

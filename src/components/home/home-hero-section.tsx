@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { PillArrowButton } from "@/components/shared/pill-arrow-button";
 
-const COUNTDOWN_TARGET = new Date("2026-05-31T23:59:59").getTime();
+const COUNTDOWN_TARGET = new Date("2026-06-22T23:59:59").getTime();
 const INITIAL_COUNTDOWN = [
   { value: "00", label: "NGÀY" },
   { value: "00", label: "GIỜ" },
