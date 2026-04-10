@@ -35,7 +35,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="relative z-50 inline-block h-12 w-12 rounded-[14px] bg-white lg:hidden"
+          className="relative z-50 inline-block h-12 w-12 rounded-[14px] lg:hidden"
           onClick={() => setOpen((value) => !value)}
           aria-expanded={open}
           aria-label="Mở điều hướng"
