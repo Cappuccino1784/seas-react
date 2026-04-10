@@ -84,7 +84,9 @@ export function StaffMemberProfilePage({ member }: { member: StaffMember }) {
                             <span className="font-semibold text-[#04536E]">
                               {link.label}:
                             </span>{" "}
-                            <span>{link.href}</span>
+                            <a href={link.href} target="_blank" rel="noopener noreferrer">
+                              <span className="hover:underline hover:text-[#2D8BBA] text-blue-400">{link.href}</span>
+                            </a>
                           </div>
                         </div>
                       );
@@ -93,7 +95,7 @@ export function StaffMemberProfilePage({ member }: { member: StaffMember }) {
                 ) : null}
 
                 <div className="mt-8 space-y-5">
-                  {member.highlights.map((highlight, index) => {
+                  {member.highlights?.map((highlight, index) => {
                     const Icon = highlightIcons[index % highlightIcons.length];
 
                     return (
@@ -111,19 +113,40 @@ export function StaffMemberProfilePage({ member }: { member: StaffMember }) {
                     );
                   })}
 
-                  <div className="flex items-start gap-3">
-                    <span className="mt-1 text-[1.15rem] text-[#2D8BBA]">
-                      <HiOutlineLightBulb />
-                    </span>
-                    <div className="flex-1">
-                      <p className="font-lexend text-[0.98rem] leading-[1.8] text-[#4D5761] md:text-[1rem]">
-                        Chia se:
-                      </p>
-                      <blockquote className="mt-3 border-l-[3px] border-[#2D8BBA] pl-4 font-lexend text-[1rem] font-medium leading-[1.85] text-[#2D8BBA]">
-                        {member.quote}
-                      </blockquote>
+                  {member.quote ? (
+                    <div className="flex items-start gap-3">
+                      <span className="mt-1 text-[1.15rem] text-[#2D8BBA]">
+                        <HiOutlineLightBulb />
+                      </span>
+                      <div className="flex-1">
+                        <p className="font-lexend text-[0.98rem] leading-[1.8] text-[#4D5761] md:text-[1rem]">
+                          Chia sẻ:
+                        </p>
+                        <blockquote className="mt-3 border-l-[3px] border-[#2D8BBA] pl-4 font-lexend text-[1rem] font-medium leading-[1.85] text-[#2D8BBA]">
+                          {member.quote}
+                        </blockquote>
+                      </div>
                     </div>
-                  </div>
+                  ) : null}
+
+                  {member.favQuote ? (
+                    <div className="flex items-start gap-3">
+                      <span className="mt-1 text-[1.15rem] text-[#2D8BBA]">
+                        <HiOutlineLightBulb />
+                      </span>
+                      <div className="flex-1">
+                        <p className="font-lexend text-[0.98rem] leading-[1.8] text-[#4D5761] md:text-[1rem]">
+                          Favorite quote:
+                        </p>
+                        <blockquote className="mt-3 border-l-[3px] border-[#2D8BBA] pl-4 font-lexend text-[1rem] font-medium leading-[1.85] text-[#2D8BBA]">
+                          {member.favQuote.quote}
+                        </blockquote>
+                        <p className="mt-3 text-right font-lexend text-[1rem] font-medium leading-[1.85] text-[#4D5761]">
+                          - {member.favQuote.author}
+                        </p>
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </div>

@@ -119,7 +119,7 @@ export function StaffMembersSection() {
                 className="inline-flex items-center gap-1 font-lexend text-[1rem] text-[#4D5761] disabled:opacity-45"
               >
                 <HiChevronLeft className="text-[1.2rem]" />
-                <span>Truoc</span>
+                <span>Trước</span>
               </button>
 
               <div className="flex items-center gap-3">

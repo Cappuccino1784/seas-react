@@ -50,7 +50,7 @@ export function AboutIntroSection() {
 
         <div className="overflow-hidden rounded-[28px] shadow-[0_22px_52px_rgba(150,199,224,0.2)] md:rounded-[34px]">
           <Image
-            src="/images/layout/about-hero-bg.png"
+            src="/images/layout/about-hero-bg-2.jpg"
             alt="SEAS team"
             width={1440}
             height={800}
