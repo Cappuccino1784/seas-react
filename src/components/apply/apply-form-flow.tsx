@@ -157,20 +157,26 @@ function FormStepPill({
 }) {
   return (
     <div
-      className={`flex items-center gap-3 rounded-full px-3 py-2 transition-colors duration-300 ${
+      className={`flex min-w-0 items-center gap-2 rounded-full px-2 py-1.5 transition-colors duration-300 sm:gap-3 sm:px-3 sm:py-2 ${
         active || completed ? "text-[#2D8BBA]" : "text-[#B9C3CF]"
       }`}
     >
       <span
-        className={`grid h-8 w-8 place-items-center rounded-full font-lexend text-[0.95rem] font-bold ${
+        className={`grid h-7 w-7 shrink-0 place-items-center rounded-full font-lexend text-[0.85rem] font-bold sm:h-8 sm:w-8 sm:text-[0.95rem] ${
           active || completed
             ? "bg-[#2D8BBA] text-white"
             : "bg-[#D9DEE7] text-white"
         }`}
       >
-        {completed ? <HiCheck className="text-[1.2rem]" /> : stepNumber}
+        {completed ? (
+          <HiCheck className="text-[1rem] sm:text-[1.2rem]" />
+        ) : (
+          stepNumber
+        )}
       </span>
-      <span className="font-lexend text-[1rem] font-semibold">{label}</span>
+      <span className="min-w-0 font-lexend text-[0.84rem] font-semibold leading-[1.2] sm:text-[1rem]">
+        {label}
+      </span>
     </div>
   );
 }
@@ -1031,13 +1037,13 @@ export function ApplyFormFlow() {
               </div>
             )}
 
-            <div className="mt-6 flex flex-col items-center justify-center gap-4 md:mt-8 md:flex-row">
+            <div className="mt-6 flex flex-row items-center justify-center gap-3 md:mt-8 sm:gap-4">
               {isReadOnly ? (
                 <>
                   <Link href="/apply" className="inline-flex">
                     <PillButton
                       label="Quay lại trang đăng ký"
-                      className="min-h-[50px] min-w-[180px] px-7 py-3 font-space-grotesk text-[1rem] font-bold uppercase"
+                      className="min-h-[50px] min-w-0 px-4 py-3 font-space-grotesk text-[0.9rem] font-bold uppercase sm:min-w-[180px] sm:px-7 sm:text-[1rem]"
                     />
                   </Link>
                 </>
@@ -1046,14 +1052,14 @@ export function ApplyFormFlow() {
                   <Link href="/apply" className="inline-flex">
                     <PillButton
                       label="Quay lại"
-                      className="min-h-[50px] min-w-[180px] px-7 py-3 font-space-grotesk text-[1rem] font-bold uppercase"
+                      className="min-h-[50px] min-w-0 px-4 py-3 font-space-grotesk text-[0.9rem] font-bold uppercase sm:min-w-[180px] sm:px-7 sm:text-[1rem]"
                     />
                   </Link>
                   <PillButton
                     isActive
                     label="Tiếp tục"
                     onClick={handleNextStep}
-                    className="min-h-[50px] min-w-[180px] px-7 py-3 font-space-grotesk text-[1rem] font-bold uppercase"
+                    className="min-h-[50px] min-w-0 px-4 py-3 font-space-grotesk text-[0.9rem] font-bold uppercase sm:min-w-[180px] sm:px-7 sm:text-[1rem]"
                   />
                 </>
               ) : (
@@ -1064,13 +1070,13 @@ export function ApplyFormFlow() {
                       setCurrentStep("personal");
                       window.scrollTo({ top: 0, behavior: "smooth" });
                     }}
-                    className="min-h-[50px] min-w-[180px] px-7 py-3 font-space-grotesk text-[1rem] font-bold uppercase"
+                    className="min-h-[50px] min-w-0 px-4 py-3 font-space-grotesk text-[0.9rem] font-bold uppercase sm:min-w-[180px] sm:px-7 sm:text-[1rem]"
                   />
                   <PillButton
                     label="Nộp đơn"
                     isActive
                     onClick={() => setConfirmAction("submit")}
-                    className="min-h-[50px] min-w-[180px] px-7 py-3 font-space-grotesk text-[1rem] font-bold uppercase"
+                    className="min-h-[50px] min-w-0 px-4 py-3 font-space-grotesk text-[0.9rem] font-bold uppercase sm:min-w-[180px] sm:px-7 sm:text-[1rem]"
                   />
                 </>
               )}

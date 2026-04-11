@@ -102,9 +102,12 @@ export const staffFounders: StaffMember[] = [
     quote:
       "Ngoài yếu tố học thuật, mình hi vọng SEAS sẽ còn là cơ hội cho các bạn học sinh gặp gỡ bạn bè có cùng chí hướng, xây dựng tình bạn. Những tình bạn hình thành từ sớm (như chính 4 người trong nhóm tụi mình!) có thể trở thành mối quan hệ gắn bó lâu dài, cùng giúp đỡ nhau phát triển trong suốt sự nghiệp học tập và nghiên cứu. Hơn thế nữa, mình tin rằng đây còn là nguồn động viên tinh thần, giúp các bạn kiên trì hơn trên con đường chinh phục tri thức.",
     links: [
-      { label: "LinkedIn", href: "Thêm link LinkedIn tại đây" },
-      { label: "GitHub", href: "Thêm link GitHub tại đây" },
-      { label: "Website", href: "Thêm website cá nhân tại đây" },
+      {
+        label: "LinkedIn",
+        href: "https://www.linkedin.com/in/quynh-the-nguyen/",
+      },
+      //{ label: "GitHub", href: "Thêm link GitHub tại đây" },
+      //{ label: "Website", href: "Thêm website cá nhân tại đây" },
     ],
     group: "founder",
   },
