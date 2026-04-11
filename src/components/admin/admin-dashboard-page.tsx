@@ -7,7 +7,7 @@ import { PillArrowButton } from "@/components/shared/pill-arrow-button";
 import { PillButton } from "@/components/shared/pill-button";
 import { SelectDropdown } from "@/components/shared/select-dropdown";
 
-const ADMIN_STORAGE_KEY = "seas2026";
+const ADMIN_STORAGE_KEY = "random-seas-2026";
 
 const personalFields: Array<{
   key: keyof ApplicationRow;
