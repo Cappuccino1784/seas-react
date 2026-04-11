@@ -44,7 +44,7 @@ export const staffFounders: StaffMember[] = [
     name: "Hoàng Minh Đức",
     role: "Sáng Lập & Ban Tổ Chức (Founder & Organizer)",
     bio: "Nghiên Cứu Sinh Tiến Sĩ tại MIT và CERN, Chuyên Võ Nguyên Giáp K21.",
-    image: "/images/team/founders/Duc_Hoang.jpg",
+    image: "/images/team/founders/duc-hoang.jpg",
     profileSummary:
       "Nghiên cứu sinh tiến sĩ tại Viện công nghệ Massachusetts (MIT) và nhận học bổng để chuyển tới Thuỵ Sĩ làm việc tại Hiệp hội nghiên cứu hạt nhân châu Âu (CERN), chuyên về AI cho vật lý hạt lượng tử và xử lý dữ liệu lớn.",
     highlights: [
@@ -89,7 +89,7 @@ export const staffFounders: StaffMember[] = [
     name: "Nguyễn Thế Quỳnh",
     role: "Sáng Lập & Ban Tổ Chức (Founder & Organizer)",
     bio: "Nghiên Cứu Sinh Tiến Sĩ tại Harvard, Chuyên Võ Nguyên Giáp K21.",
-    image: "/images/team/founders/Quynh-Nguyen.jpeg",
+    image: "/images/team/founders/quynh-nguyen.jpeg",
     profileSummary:
       "Hiện là nghiên cứu sinh tiến sĩ ngành Vật lý lượng tử tại Đại học Harvard, nghiên cứu về điện toán lượng tử, lý thuyết khoa học máy tính, và các mối liên kết với vật lý cơ bản.",
     highlights: [

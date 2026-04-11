@@ -12,7 +12,7 @@ export function HomeFounderQuoteSection() {
           <div className="mx-auto flex flex-col items-center text-center">
             <div className="mb-5 overflow-hidden rounded-full border-[3px] border-[#2D8BBA] shadow-[0_10px_22px_rgba(45,139,186,0.24)]">
               <Image
-                src="/images/team/founders/Duc_Hoang.jpg"
+                src="/images/team/founders/duc-hoang.jpg"
                 alt="HOANG MINH DUC"
                 width={84}
                 height={84}
