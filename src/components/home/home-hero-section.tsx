@@ -93,7 +93,7 @@ export function HomeHeroSection() {
                   Địa điểm
                 </dt>
                 <dd className="m-0 text-[1.15rem] font-semibold uppercase">
-                  TP. Đồng Hới, tỉnh Quảng Bình
+                  THPT Chuyên Võ Nguyên Giáp, Quảng Trị
                 </dd>
               </div>
             </dl>

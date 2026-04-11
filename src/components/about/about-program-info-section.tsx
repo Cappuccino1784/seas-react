@@ -6,8 +6,8 @@ import { PillButton } from "@/components/shared/pill-button";
 const programInfo = {
   "SEAS 2026": [
     { label: "Chủ đề", value: "Trí tuệ nhân tạo & Ứng dụng" },
-    { label: "Thời gian dự kiến", value: "13/07/2026 - 24/07/2026" },
-    { label: "Địa điểm", value: "TP. Đồng Hới, tỉnh Quảng Bình" },
+    { label: "Thời gian dự kiến", value: "20/07/2026 - 31/07/2026" },
+    { label: "Địa điểm", value: "THPT Chuyên Võ Nguyên Giáp, Quảng Trị" },
     {
       label: "Quy mô",
       value: "Tối đa khoảng 40 học sinh xuất sắc, ưu tiên đến từ miền Trung",
