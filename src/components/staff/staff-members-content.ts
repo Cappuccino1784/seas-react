@@ -32,7 +32,7 @@ export const staffFounders: StaffMember[] = [
     highlights: [
       "Nghiên cứu & thực tập tại VinUni, VinBigData, tập trung vào xử lý ảnh y tế.",
       "Tốt nghiệp hệ song ngành Khoa học Máy tính & Toán tại Viện Khoa học & Công nghệ Tiên tiến Hàn Quốc (KAIST).",
-      "Huy chương Vàng Olympic Toán Quốc tế (IMO) 2017."
+      "Huy chương Vàng Olympic Toán Quốc tế (IMO) 2017.",
     ],
     quote:
       "Hồi cấp 3, mình tập trung hoàn toàn vào việc học trên lớp và các kỳ thi, nhưng sau này khi ra môi trường đại học, mình nhận ra còn rất nhiều yếu tố quan trọng khác giúp một người phát triển toàn diện. Việc tham gia các sự kiện học thuật từ sớm không chỉ giúp các bạn mở rộng tầm nhìn, mà còn rèn luyện tư duy khoa học, kỹ năng nghiên cứu và định hướng tốt hơn cho tương lai. SEAS được tổ chức với mong muốn mang đến cho học sinh miền Trung những cơ hội quý giá mà trước đây mình chưa từng có.",
@@ -71,17 +71,17 @@ export const staffFounders: StaffMember[] = [
       "Ngoài Ericsson Research, từng tham gia nghiên cứu về AI và mạng viễn thông ở Sony, Aerospaceresearch.net, và Quỹ Đầu tư Công nghệ Tiên tiến Đại học Tokyo (UTEC).",
       "Nhận Học bổng Chính phủ Nhật Bản (MEXT) để hoành thành bậc Đại học & Thạc sĩ tại Viện Khoa học Tokyo (Science Tokyo). Các dự án nghiên cứu ở Viện được tài trợ bởi Bộ Nội vụ & Truyền thông Nhật Bản (MIC) và Hội Kỹ sư Điện & Điện tử Hoa Kỳ (IEEE).",
       "Đại diện Viện tại Hội thảo Hiệp hội Các trường ĐH Kỹ thuật hàng đầu khu vực Châu Á - Thái Bình Dương (AOTULE) 2023.",
-      " Huy chương Vàng Olympic Vật lý Quốc tế (IPhO) 2017."
+      " Huy chương Vàng Olympic Vật lý Quốc tế (IPhO) 2017.",
     ],
     quote:
       "Đôi lúc một ý tưởng mà chúng ta nghe thoáng qua từ đâu đó có thể làm thay đổi cả một đời người. Mình mong muốn được nghe và học hỏi những ý tưởng hay từ các bạn, và cũng mong mỏi được truyền thật nhiều ý tưởng cũng như cảm hứng đến tất cả mọi người.",
     favQuote: {
-      quote: "They give luck a chance. Innovation happens when people are free to think, experiment and speculate. It happens when people can trade with each other. It happens where people are relatively prosperous, not desperate. It is somewhat contagious.",
-      author: "Matt Ridley, How Innovation Works: And Why It Flourishes in Freedom",
+      quote:
+        "They give luck a chance. Innovation happens when people are free to think, experiment and speculate. It happens when people can trade with each other. It happens where people are relatively prosperous, not desperate. It is somewhat contagious.",
+      author:
+        "Matt Ridley, How Innovation Works: And Why It Flourishes in Freedom",
     },
-    links: [
-      { label: "Website", href: "https://tranhuubinhminh.com/" },
-    ],
+    links: [{ label: "Website", href: "https://tranhuubinhminh.com/" }],
     group: "founder",
   },
   {
@@ -154,8 +154,9 @@ export const staffMembers2025: StaffMember[] = [
     name: "Hoàng Khôi Nguyên",
     role: "Trợ Giảng (Teaching Assistant)",
     bio: "Kỹ sư AI tại Fsoft-AIC (AI Engineer, FSoft-AIC). Chuyên Võ Nguyên Giáp 17-20.",
-    image: "/images/team/2025/Nguyen-Hoang.jpg",
-    profileSummary: "Kỹ sư AI tại Fsoft-AIC (AI Engineer, FSoft-AIC). Chuyên Võ Nguyên Giáp 17-20.",
+    image: "/images/team/2025/nguyen-hoang.jpg",
+    profileSummary:
+      "Kỹ sư AI tại Fsoft-AIC (AI Engineer, FSoft-AIC). Chuyên Võ Nguyên Giáp 17-20.",
     highlights: [],
     quote: "",
     links: [
@@ -168,8 +169,9 @@ export const staffMembers2025: StaffMember[] = [
     name: "Hoàng Minh Quang",
     role: "Trưởng Marketing (Director of Marketing)",
     bio: "Cử nhân Marketing.",
-    image: "/images/team/2025/Quang-Hoang.jpg",
-    profileSummary: "Cử nhân Marketing tại UEH-ISB International School of Business. Chuyên Võ Nguyên Giáp 18-21.",
+    image: "/images/team/2025/quang-hoang.jpg",
+    profileSummary:
+      "Cử nhân Marketing tại UEH-ISB International School of Business. Chuyên Võ Nguyên Giáp 18-21.",
     highlights: [],
     quote: "",
     links: [
@@ -201,7 +203,8 @@ export const staffMembers2025: StaffMember[] = [
     role: "Trợ Giảng (Teaching Assistant)",
     bio: "Cử nhân Khoa Học Máy Tính Chương Trình Tài Năng, Đại học Công nghệ thông tin, ĐHQG TPHCM",
     image: "/images/team/2025/ha-xuan-thien.jpeg",
-    profileSummary: "Cử nhân Khoa Học Máy Tính Chương Trình Tài Năng, Đại học Công nghệ thông tin, ĐHQG TPHCM",
+    profileSummary:
+      "Cử nhân Khoa Học Máy Tính Chương Trình Tài Năng, Đại học Công nghệ thông tin, ĐHQG TPHCM",
     highlights: [
       "Tham gia và đạt giải cao trong nhiều cuộc thi thuật toán",
       "Founder câu lạc bộ MaskTech Informatics Club",
@@ -219,7 +222,7 @@ export const staffMembers2025: StaffMember[] = [
     profileSummary: "Giảng viên, Đại học Công nghệ Thông tin, ĐHQG-HCM.",
     highlights: [
       "Thủ khoa tốt nghiệp cử nhân ngành CNTT, trường ĐH CNTT, ĐHQG-HCM.",
-      "Anh tốt nghiệp thạc sĩ ngành Khoa học Thông tin tại Viện Khoa học và Kỹ thuật Tiên tiến Nhật Bản"
+      "Anh tốt nghiệp thạc sĩ ngành Khoa học Thông tin tại Viện Khoa học và Kỹ thuật Tiên tiến Nhật Bản",
     ],
     quote: "",
     links: [],
@@ -275,7 +278,8 @@ export const staffMembers2025: StaffMember[] = [
     role: "Trợ Giảng (Teaching Assistant)",
     bio: "Chuyên Ngành: Cử nhân Trí Tuệ Nhân Tạo từ Đại học Khoa học Tự nhiên, ĐHQG TPHCM",
     image: "/images/team/2025/quang-minh.jpeg",
-    profileSummary: "Chuyên Ngành: Cử nhân Trí Tuệ Nhân Tạo từ Đại học Khoa học Tự nhiên, ĐHQG TPHCM",
+    profileSummary:
+      "Chuyên Ngành: Cử nhân Trí Tuệ Nhân Tạo từ Đại học Khoa học Tự nhiên, ĐHQG TPHCM",
     highlights: [
       "Tham gia nhiều cuộc thi về AI và đạt giải cao ở các vòng chung kết",
       "GPA: 9.34/10",
@@ -291,7 +295,8 @@ export const staffMembers2025: StaffMember[] = [
     role: "Trợ Giảng (Teaching Assistant)",
     bio: "Học bổng Toàn phần Du học cấp 3 United World College (UWC)",
     image: "/images/team/2025/thien-bui.jpg",
-    profileSummary: "Học bổng Toàn phần Du học cấp 3 United World College (UWC)",
+    profileSummary:
+      "Học bổng Toàn phần Du học cấp 3 United World College (UWC)",
     highlights: [
       "Mình tên là Đức Thiện, một cậu bạn học sinh lớp 12 đến từ Tây Nguyên đại ngàn đầy nắng và gió!!",
       "Mình hiện đang là thực tập sinh cho Lirvana Labs, một công ty công nghệ tại thung lũng Silicon chuyên về một ứng dụng dạy học sử dụng công nghệ AI và Machine Learning.",
@@ -306,7 +311,8 @@ export const staffMembers2025: StaffMember[] = [
     role: "Trợ Giảng (Teaching Assistant)",
     bio: "Sinh viên năm nhất ngành Khoa học máy tính, Trường Đại học Công nghệ - ĐHQGHN (VNU-UET)",
     image: "/images/team/2025/trinh-chau.jpg",
-    profileSummary: "Sinh viên năm nhất ngành Khoa học máy tính, Trường Đại học Công nghệ - ĐHQGHN (VNU-UET)",
+    profileSummary:
+      "Sinh viên năm nhất ngành Khoa học máy tính, Trường Đại học Công nghệ - ĐHQGHN (VNU-UET)",
     highlights: [
       "Hiện tại mình đang là sinh viên ngành Khoa học máy tính tại Trường Đại học Công nghệ - ĐHQGHN (VNU-UET). 💡 Mình hiện đang tham gia nghiên cứu tại SQA Lab.",
     ],
@@ -381,7 +387,9 @@ export const staffMembers2025: StaffMember[] = [
     bio: "Chuyên Võ Nguyên Giáp 23-26",
     image: "/images/team/2025/yen-nhi.jpg",
     profileSummary: "Chuyên Võ Nguyên Giáp 23-26",
-    highlights: ["You can call me chishiya (チシヤ), ain’t nothing but a fruit lover (๑>◡<๑)"],
+    highlights: [
+      "You can call me chishiya (チシヤ), ain’t nothing but a fruit lover (๑>◡<๑)",
+    ],
     quote: "",
     links: [],
     group: "member",

@@ -7,6 +7,7 @@ import { HiChevronDown } from "react-icons/hi2";
 import { PillArrowButton } from "@/components/shared/pill-arrow-button";
 
 const COUNTDOWN_TARGET = new Date("2026-06-22T23:59:59").getTime();
+const FLOATING_CTA_COLLAPSED_KEY = "seas-floating-cta-collapsed";
 const INITIAL_COUNTDOWN = [
   { value: "00", label: "NGÀY" },
   { value: "00", label: "GIỜ" },
@@ -32,6 +33,19 @@ function getTimeLeft() {
 export function FloatingCtaCard() {
   const [countdown, setCountdown] = useState(INITIAL_COUNTDOWN);
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [hasLoadedPreference, setHasLoadedPreference] = useState(false);
+
+  useEffect(() => {
+    const loadPreferenceId = window.setTimeout(() => {
+      const savedState = window.localStorage.getItem(FLOATING_CTA_COLLAPSED_KEY);
+      setIsCollapsed(savedState === "true");
+      setHasLoadedPreference(true);
+    }, 0);
+
+    return () => {
+      window.clearTimeout(loadPreferenceId);
+    };
+  }, []);
 
   useEffect(() => {
     const updateCountdown = () => {
@@ -46,6 +60,21 @@ export function FloatingCtaCard() {
       window.clearInterval(intervalId);
     };
   }, []);
+
+  useEffect(() => {
+    if (!hasLoadedPreference) {
+      return;
+    }
+
+    window.localStorage.setItem(
+      FLOATING_CTA_COLLAPSED_KEY,
+      isCollapsed ? "true" : "false",
+    );
+  }, [hasLoadedPreference, isCollapsed]);
+
+  if (!hasLoadedPreference) {
+    return null;
+  }
 
   return (
     <>

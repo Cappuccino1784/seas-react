@@ -108,7 +108,7 @@ export function CustomCursor() {
       <div ref={ringRef} className="seas-cursor-ring" />
       <div ref={dotRef} className="seas-cursor-dot" />
       <div ref={sparkleRef} className="seas-cursor-sparkle">
-        ✦
+        *
       </div>
     </div>
   );

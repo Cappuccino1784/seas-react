@@ -1,13 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import {
-  HiArrowLeft,
-  HiArrowRight,
-  HiChevronDown,
-  HiChevronUp,
-} from "react-icons/hi";
+import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 import { PillButton } from "@/components/shared/pill-button";
+import { SelectDropdown } from "@/components/shared/select-dropdown";
 import { ComingSoonCard } from "../shared/coming-soon-card";
 
 type PreviewSlot = {
@@ -252,7 +248,6 @@ export function ProgramSchedulePreviewSection() {
     useState<(typeof previewYears)[number]>("SEAS 2025");
   const [activeWeekIndex, setActiveWeekIndex] = useState(0);
   const [activeDayIndex, setActiveDayIndex] = useState(0);
-  const [mobileDayMenuOpen, setMobileDayMenuOpen] = useState(false);
 
   const weeks = previewSchedule[activeYear];
   const activeWeek = weeks[activeWeekIndex];
@@ -360,27 +355,16 @@ export function ProgramSchedulePreviewSection() {
                 <label className="sr-only" htmlFor="program-preview-day">
                   Chọn ngày
                 </label>
-                <div className="relative">
-                  <select
-                    id="program-preview-day"
-                    value={activeDayIndex}
-                    onFocus={() => setMobileDayMenuOpen(true)}
-                    onBlur={() => setMobileDayMenuOpen(false)}
-                    onChange={(event) =>
-                      setActiveDayIndex(Number(event.target.value))
-                    }
-                    className="w-full appearance-none rounded-[16px] border border-[#d7e3ec] bg-white px-5 py-4 pr-14 font-space-grotesk text-[1rem] font-bold uppercase text-[#2D8BBA] shadow-[0_12px_30px_rgba(105,140,170,0.2)] outline-none"
-                  >
-                    {activeWeek.days.map((day, index) => (
-                      <option key={`${day.label}-${day.date}`} value={index}>
-                        {day.label} - {day.date}
-                      </option>
-                    ))}
-                  </select>
-                  <span className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-[1.75rem] text-[#2D8BBA]">
-                    {mobileDayMenuOpen ? <HiChevronUp /> : <HiChevronDown />}
-                  </span>
-                </div>
+                <SelectDropdown
+                  id="program-preview-day"
+                  value={String(activeDayIndex)}
+                  onChange={(value) => setActiveDayIndex(Number(value))}
+                  options={activeWeek.days.map((day, index) => ({
+                    value: String(index),
+                    label: `${day.label} - ${day.date}`,
+                  }))}
+                  className="uppercase"
+                />
               </div>
             </div>
 

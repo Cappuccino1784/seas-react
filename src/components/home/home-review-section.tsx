@@ -1,6 +1,5 @@
 "use client";
 
-import { routeModule } from "next/dist/build/templates/pages";
 import Image from "next/image";
 
 const cards = [

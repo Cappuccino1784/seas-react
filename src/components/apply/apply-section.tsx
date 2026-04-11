@@ -61,7 +61,7 @@ export function ApplySection() {
                   </span>{" "}
                   với chủ đề{" "}
                   <span className="font-semibold text-[#2D8BBA]">
-                    "Trí tuệ nhân tạo (AI) & Ứng dụng."
+                    &quot;Trí tuệ nhân tạo (AI) & Ứng dụng.&quot;
                   </span>
                 </p>
                 <p className="mt-3">
@@ -215,8 +215,8 @@ export function ApplySection() {
                     </p>
                     <p className="relative pl-4">
                       <span className="absolute left-0 top-[0.55rem] h-[6px] w-[6px] rounded-full bg-[#c0d8e8]" />
-                      Thông tin mời giới về AI/BTC có thể liên lạc để nắm rõ hơn
-                      và xác thực các thành tích của bạn.
+                      Thông tin một giáo viên để BTC có thể liên lạc để nắm rõ
+                      hơn và xác thực các thành tích của bạn.
                     </p>
                   </div>
                 </div>

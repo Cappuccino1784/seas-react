@@ -1,94 +1,40 @@
 # SEAS Website
 
-**Science & Engineering Academic Summer (SEAS)** - Official website for the SEAS program.
-
-SEAS is an educational program bringing advanced science and technology opportunities to high school students in Central Vietnam.
-
-## Tech Stack
-
-- React 19
-- TypeScript
-- Vite
-- TailwindCSS 4
-- React Router DOM
+Official website for the SEAS program, built with Next.js and Tailwind CSS.
 
 ## Development
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
 ```
 
-## React Compiler
+## Application Submissions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The `/apply/form` flow now supports:
 
-## Expanding the ESLint configuration
+- local draft autosave in the browser
+- final submission to Supabase through `POST /api/applications`
+- CSV export through `GET /api/applications/export`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Excel can open the export CSV directly.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Supabase setup
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Create a Supabase project.
+2. Run [supabase/applications-schema.sql](C:/Users/Nqk/seas-cvn.github.io/supabase/applications-schema.sql) in the SQL editor.
+3. Copy `.env.example` to `.env.local`.
+4. Fill in:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+   - `APPLICATION_EXPORT_TOKEN`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Export submissions
+
+Use:
+
+```bash
+http://localhost:3000/api/applications/export?token=YOUR_EXPORT_TOKEN
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+That downloads a CSV file containing all submitted answers.

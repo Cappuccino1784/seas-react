@@ -33,7 +33,7 @@ export function StaffMemberProfilePage({ member }: { member: StaffMember }) {
         <div className="relative pt-4 md:pt-6">
           <div className="pointer-events-none absolute left-0 top-6 h-[92%] w-full rounded-[30px] bg-[#d6f0fb] md:left-[-18px] md:top-4 md:w-[96%] md:-rotate-[4deg]" />
 
-          <section className="relative rounded-[30px] bg-white px-6 py-6 shadow-[0_24px_56px_rgba(150,199,224,0.18)] md:px-8 md:py-8 lg:px-10 lg:py-10">
+          <section className="relative rounded-[30px] bg-white px-6 py-6 shadow-[0_16px_40px_rgba(45,139,186,0.18)] md:px-8 md:py-8 lg:px-10 lg:py-10">
             <div className="grid gap-8 lg:grid-cols-[220px_1fr] lg:gap-10">
               <div className="mx-auto w-full max-w-[220px]">
                 <div className="overflow-hidden rounded-[20px] border-[3px] border-[#2D8BBA] shadow-[0_16px_32px_rgba(45,139,186,0.16)]">
@@ -84,8 +84,14 @@ export function StaffMemberProfilePage({ member }: { member: StaffMember }) {
                             <span className="font-semibold text-[#04536E]">
                               {link.label}:
                             </span>{" "}
-                            <a href={link.href} target="_blank" rel="noopener noreferrer">
-                              <span className="hover:underline hover:text-[#2D8BBA] text-blue-400">{link.href}</span>
+                            <a
+                              href={link.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <span className="hover:underline hover:text-[#2D8BBA] text-blue-400">
+                                {link.href}
+                              </span>
                             </a>
                           </div>
                         </div>

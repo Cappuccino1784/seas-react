@@ -3,8 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { HiArrowLeft, HiCheck, HiOutlineArrowUpTray } from "react-icons/hi2";
-import { PillArrowButton } from "@/components/shared/pill-arrow-button";
+import { HiArrowLeft, HiCheck } from "react-icons/hi2";
 import { PillButton } from "@/components/shared/pill-button";
 
 type StepId = "personal" | "questions";
@@ -37,7 +36,6 @@ type ApplyFormData = {
   conditions: string;
   extraInfo: string;
   resumeName: string;
-  resumeSizeLabel: string;
 };
 
 type SubmittedPayload = {
@@ -73,7 +71,6 @@ const defaultFormData: ApplyFormData = {
   conditions: "",
   extraInfo: "",
   resumeName: "",
-  resumeSizeLabel: "",
 };
 
 const personalStepFields: Array<keyof ApplyFormData> = [
@@ -103,14 +100,6 @@ const questionStepFields: Array<keyof ApplyFormData> = [
 
 const labelClasses =
   "font-lexend text-[1rem] font-semibold text-[#111111] md:text-[1.05rem]";
-
-function formatFileSize(bytes: number) {
-  if (bytes >= 1024 * 1024) {
-    return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
-  }
-
-  return `${Math.max(1, Math.round(bytes / 1024))} KB`;
-}
 
 function getStepErrors(step: StepId, data: ApplyFormData) {
   const errors: Partial<Record<keyof ApplyFormData, string>> = {};
@@ -193,6 +182,7 @@ function ConfirmModal({
   confirmLabel,
   onConfirm,
   onCancel,
+  confirmDisabled = false,
 }: {
   open: boolean;
   title: string;
@@ -200,6 +190,7 @@ function ConfirmModal({
   confirmLabel: string;
   onConfirm: () => void;
   onCancel: () => void;
+  confirmDisabled?: boolean;
 }) {
   if (!open) {
     return null;
@@ -227,10 +218,43 @@ function ConfirmModal({
             label={confirmLabel}
             onClick={onConfirm}
             isActive
+            disabled={confirmDisabled}
             className="min-h-[48px] min-w-[160px] px-6 py-3 font-space-grotesk text-[1rem] font-bold uppercase"
           />
         </div>
       </div>
+    </div>
+  );
+}
+
+function SuccessCelebration() {
+  const confetti = [
+    { left: "10%", delay: "0ms", duration: "4.8s", color: "#2D8BBA" },
+    { left: "18%", delay: "380ms", duration: "5.4s", color: "#7FC8EF" },
+    { left: "29%", delay: "620ms", duration: "4.4s", color: "#F2A200" },
+    { left: "41%", delay: "180ms", duration: "5.6s", color: "#56B78F" },
+    { left: "57%", delay: "520ms", duration: "4.9s", color: "#2D8BBA" },
+    { left: "69%", delay: "260ms", duration: "5.3s", color: "#BDEBFF" },
+    { left: "82%", delay: "760ms", duration: "4.7s", color: "#F2A200" },
+    { left: "90%", delay: "120ms", duration: "5.1s", color: "#56B78F" },
+  ];
+
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div className="absolute inset-x-[8%] top-0 h-28 blur-2xl" />
+
+      {confetti.map((piece, index) => (
+        <span
+          key={`${piece.left}-${index}`}
+          className="apply-success-confetti"
+          style={{
+            left: piece.left,
+            backgroundColor: piece.color,
+            animationDelay: piece.delay,
+            animationDuration: piece.duration,
+          }}
+        />
+      ))}
     </div>
   );
 }
@@ -313,7 +337,7 @@ function TextField({
   multiline?: boolean;
   rows?: number;
 }) {
-  const baseClasses = `mt-4 w-full rounded-[18px] border bg-white px-5 font-lexend text-[1rem] text-[#263341] outline-none transition-all duration-200 placeholder:text-[#B9B9B9] ${
+  const baseClasses = `mt-4 w-full rounded-[18px] border bg-white px-5 font-lexend text-[1rem] text-[#263341] outline-none transition-[border-color,box-shadow,background-color,color] duration-200 placeholder:text-[#B9B9B9] ${
     disabled
       ? "pointer-events-none cursor-default select-none border-[#E2E8EE] bg-[#F3F7FB] text-[#40474F] caret-transparent shadow-none opacity-80"
       : error
@@ -427,61 +451,6 @@ function RadioField({
   );
 }
 
-function FileField({
-  label,
-  fileName,
-  fileSizeLabel,
-  onFileChange,
-  disabled = false,
-}: {
-  label: string;
-  fileName: string;
-  fileSizeLabel: string;
-  onFileChange: (file: File | null) => void;
-  disabled?: boolean;
-}) {
-  return (
-    <div className="space-y-4">
-      <QuestionHeading label={label} description="(Không bắt buộc)" />
-      <div className="space-y-4 bg-white">
-        <label
-          className={`inline-flex min-h-[68px] min-w-[0] items-center justify-center gap-3 rounded-[15px] border-2 border-[#2D8BBA] px-5 text-center font-space-grotesk text-[1.02rem] font-bold uppercase text-[#2D8BBA] ${
-            disabled
-              ? "cursor-not-allowed opacity-60"
-              : "cursor-pointer transition-colors duration-200 hover:bg-[#F5FBFF]"
-          }`}
-        >
-          <HiOutlineArrowUpTray className="text-[1.7rem]" />
-          <span>Chọn file</span>
-          <input
-            type="file"
-            className="sr-only"
-            accept=".pdf,.doc,.docx"
-            disabled={disabled}
-            onChange={(event) => {
-              const nextFile = event.target.files?.[0] ?? null;
-              onFileChange(nextFile);
-            }}
-          />
-        </label>
-        <p className="font-lexend text-[0.98rem] text-[#2D8BBA]">
-          Tải lên 1 tệp được hỗ trợ. Tối đa 10 MB.
-        </p>
-        {fileName ? (
-          <div className="rounded-[16px] bg-[#F7FBFF] px-4 py-3">
-            <p className="font-space-grotesk text-[1rem] font-semibold text-[#04536E]">
-              {fileName}
-            </p>
-            <p className="mt-1 font-lexend text-[0.92rem] text-[#6E7A86]">
-              {fileSizeLabel}
-            </p>
-          </div>
-        ) : null}
-      </div>
-    </div>
-  );
-}
-
 function StepSection({
   title,
   children,
@@ -524,6 +493,8 @@ export function ApplyFormFlow() {
   const [submitted, setSubmitted] = useState<SubmittedPayload | null>(null);
   const [showSubmittedReview, setShowSubmittedReview] = useState(false);
   const [confirmAction, setConfirmAction] = useState<ConfirmAction>(null);
+  const [submitError, setSubmitError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
@@ -565,6 +536,42 @@ export function ApplyFormFlow() {
     return () => window.clearTimeout(timeoutId);
   }, [formData, hasMounted, submitted]);
 
+  useEffect(() => {
+    if (!confirmAction) {
+      return;
+    }
+
+    const preventScroll = (event: Event) => {
+      event.preventDefault();
+    };
+
+    const preventKeyScroll = (event: KeyboardEvent) => {
+      const blockedKeys = [
+        "ArrowUp",
+        "ArrowDown",
+        "PageUp",
+        "PageDown",
+        "Home",
+        "End",
+        " ",
+      ];
+
+      if (blockedKeys.includes(event.key)) {
+        event.preventDefault();
+      }
+    };
+
+    window.addEventListener("wheel", preventScroll, { passive: false });
+    window.addEventListener("touchmove", preventScroll, { passive: false });
+    window.addEventListener("keydown", preventKeyScroll);
+
+    return () => {
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
+      window.removeEventListener("keydown", preventKeyScroll);
+    };
+  }, [confirmAction]);
+
   const canShowReview = useMemo(
     () => Boolean(submitted && showSubmittedReview),
     [submitted, showSubmittedReview],
@@ -592,16 +599,18 @@ export function ApplyFormFlow() {
 
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
+      setSubmitError("");
       scrollToFirstError();
       return;
     }
 
+    setSubmitError("");
     setErrors({});
     setCurrentStep("questions");
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  function handleSubmit() {
+  async function handleSubmit() {
     const nextErrors = {
       ...getStepErrors("personal", formData),
       ...getStepErrors("questions", formData),
@@ -610,24 +619,58 @@ export function ApplyFormFlow() {
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
       setCurrentStep("questions");
+      setSubmitError("");
       scrollToFirstError();
       return;
     }
 
-    const nextSubmitted: SubmittedPayload = {
-      submittedAt: new Date().toISOString(),
-      data: formData,
-    };
+    try {
+      setIsSubmitting(true);
+      setSubmitError("");
 
-    window.localStorage.setItem(
-      SUBMITTED_STORAGE_KEY,
-      JSON.stringify(nextSubmitted),
-    );
-    window.localStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify(formData));
-    setSubmitted(nextSubmitted);
-    setShowSubmittedReview(false);
-    setSaveState("saved");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+      const response = await fetch("/api/applications", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const payload = (await response.json()) as {
+        ok: boolean;
+        message?: string;
+        submittedAt?: string;
+      };
+
+      if (!response.ok || !payload.ok) {
+        throw new Error(
+          payload.message ?? "Unable to submit the application right now.",
+        );
+      }
+
+      const nextSubmitted: SubmittedPayload = {
+        submittedAt: payload.submittedAt ?? new Date().toISOString(),
+        data: formData,
+      };
+
+      window.localStorage.setItem(
+        SUBMITTED_STORAGE_KEY,
+        JSON.stringify(nextSubmitted),
+      );
+      window.localStorage.setItem(DRAFT_STORAGE_KEY, JSON.stringify(formData));
+      setSubmitted(nextSubmitted);
+      setShowSubmittedReview(false);
+      setSaveState("saved");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Unable to submit the application right now.",
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   function handleStartNewForm() {
@@ -688,34 +731,38 @@ export function ApplyFormFlow() {
         </div>
 
         {submitted && !showSubmittedReview ? (
-          <div className="mx-auto max-w-[960px] rounded-[34px] bg-white px-6 py-10 text-center shadow-[0_24px_64px_rgba(45,139,186,0.12)] md:px-10 md:py-16">
-            <h1 className="font-space-grotesk text-[2.8rem] font-bold uppercase leading-none tracking-[-0.04em] text-[#04536E] md:text-[4.6rem]">
-              Đã nhận đơn
-            </h1>
-            <div className="mx-auto my-8 flex items-center justify-center">
-              <Image
-                src="/images/illustrations/checklist.svg"
-                alt="Application submitted"
-                width={260}
-                height={260}
-                className="h-[170px] w-[170px] object-contain md:h-[240px] md:w-[240px]"
-              />
-            </div>
-            <p className="mx-auto max-w-[780px] font-lexend text-[1.08rem] leading-[1.8] text-[#4D5761] md:text-[1.22rem]">
-              Cảm ơn bạn, tụi mình đã nhận đơn đăng ký tham gia SEAS 2026.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <PillButton
-                label="Nộp đơn mới"
-                onClick={() => setConfirmAction("reset")}
-                className="min-h-[48px] min-w-[220px] px-5 py-3 font-space-grotesk text-[1rem] font-bold uppercase"
-              />
-              <PillButton
-                label="Xem lại đơn đã nộp"
-                isActive
-                onClick={() => setShowSubmittedReview(true)}
-                className="min-h-[48px] min-w-[220px] px-5 py-3 font-space-grotesk text-[1rem] font-bold uppercase"
-              />
+          <div className="relative mx-auto max-w-[960px] overflow-hidden rounded-[34px] bg-white px-6 py-10 text-center shadow-[0_24px_64px_rgba(45,139,186,0.12)] md:px-10 md:py-16">
+            <SuccessCelebration />
+            <div className="relative z-[1]">
+              <h1 className="font-space-grotesk text-[2.8rem] font-bold uppercase leading-none tracking-[-0.04em] text-[#04536E] md:text-[4.6rem]">
+                Đã nhận đơn
+              </h1>
+              <div className="mx-auto my-8 flex items-center justify-center">
+                <Image
+                  src="/images/illustrations/submit.svg"
+                  alt="Application submitted"
+                  width={260}
+                  height={260}
+                  loading="eager"
+                  className="h-[170px] w-[170px] object-contain md:h-[240px] md:w-[240px]"
+                />
+              </div>
+              <p className="mx-auto max-w-[780px] font-lexend text-[1.08rem] leading-[1.8] text-[#4D5761] md:text-[1.22rem]">
+                Cảm ơn bạn, tụi mình đã nhận đơn đăng ký tham gia SEAS 2026.
+              </p>
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <PillButton
+                  label="Nộp đơn mới"
+                  onClick={() => setConfirmAction("reset")}
+                  className="min-h-[48px] min-w-[220px] px-5 py-3 font-space-grotesk text-[1rem] font-bold uppercase"
+                />
+                <PillButton
+                  label="Xem lại đơn đã nộp"
+                  isActive
+                  onClick={() => setShowSubmittedReview(true)}
+                  className="min-h-[48px] min-w-[220px] px-5 py-3 font-space-grotesk text-[1rem] font-bold uppercase"
+                />
+              </div>
             </div>
           </div>
         ) : null}
@@ -807,7 +854,7 @@ export function ApplyFormFlow() {
                   placeholder="Nhập câu trả lời của bạn"
                   error={errors.academicAchievements}
                   multiline
-                  rows={5}
+                  rows={7}
                   disabled={isReadOnly}
                 />
                 <TextField
@@ -835,7 +882,7 @@ export function ApplyFormFlow() {
                   onChange={(value) => updateField("awards", value)}
                   placeholder="Nhập câu trả lời của bạn"
                   multiline
-                  rows={4}
+                  rows={7}
                   disabled={isReadOnly}
                 />
               </StepSection>
@@ -852,7 +899,7 @@ export function ApplyFormFlow() {
                     placeholder="Nhập câu trả lời của bạn"
                     error={errors.whyJoin}
                     multiline
-                    rows={5}
+                    rows={7}
                     disabled={isReadOnly}
                   />
                   <TextField
@@ -863,7 +910,7 @@ export function ApplyFormFlow() {
                     placeholder="Nhập câu trả lời của bạn"
                     error={errors.buildIdea}
                     multiline
-                    rows={5}
+                    rows={7}
                     disabled={isReadOnly}
                   />
                   <TextField
@@ -874,7 +921,7 @@ export function ApplyFormFlow() {
                     placeholder="Nhập câu trả lời của bạn"
                     error={errors.difficultSubject}
                     multiline
-                    rows={5}
+                    rows={7}
                     disabled={isReadOnly}
                   />
                   <TextField
@@ -885,7 +932,7 @@ export function ApplyFormFlow() {
                     placeholder="Nhập câu trả lời của bạn"
                     error={errors.helpingOthers}
                     multiline
-                    rows={5}
+                    rows={7}
                     disabled={isReadOnly}
                   />
                   <TextField
@@ -898,7 +945,7 @@ export function ApplyFormFlow() {
                     placeholder="Nhập câu trả lời của bạn"
                     error={errors.communityLongTerm}
                     multiline
-                    rows={5}
+                    rows={7}
                     disabled={isReadOnly}
                   />
                   <TextField
@@ -911,7 +958,7 @@ export function ApplyFormFlow() {
                     placeholder="Nhập câu trả lời của bạn"
                     error={errors.futureContribution}
                     multiline
-                    rows={5}
+                    rows={7}
                     disabled={isReadOnly}
                   />
                   <TextField
@@ -924,7 +971,7 @@ export function ApplyFormFlow() {
                     placeholder="Nhập câu trả lời của bạn"
                     error={errors.contributeToExperience}
                     multiline
-                    rows={5}
+                    rows={7}
                     disabled={isReadOnly}
                   />
                   <RadioField
@@ -950,7 +997,7 @@ export function ApplyFormFlow() {
                     placeholder="Nhập câu trả lời của bạn"
                     error={errors.financialSupportReason}
                     multiline
-                    rows={4}
+                    rows={7}
                     disabled={isReadOnly}
                   />
                   <TextField
@@ -959,7 +1006,7 @@ export function ApplyFormFlow() {
                     onChange={(value) => updateField("conditions", value)}
                     placeholder="Nhập câu trả lời của bạn"
                     multiline
-                    rows={4}
+                    rows={7}
                     disabled={isReadOnly}
                   />
                   <TextField
@@ -968,23 +1015,16 @@ export function ApplyFormFlow() {
                     onChange={(value) => updateField("extraInfo", value)}
                     placeholder="Nhập câu trả lời của bạn"
                     multiline
-                    rows={4}
+                    rows={7}
                     disabled={isReadOnly}
                   />
-                  <FileField
-                    label="Hồ sơ (CV/Resume)"
-                    fileName={activeData.resumeName}
-                    fileSizeLabel={activeData.resumeSizeLabel}
-                    onFileChange={(file) => {
-                      if (!file) {
-                        updateField("resumeName", "");
-                        updateField("resumeSizeLabel", "");
-                        return;
-                      }
 
-                      updateField("resumeName", file.name);
-                      updateField("resumeSizeLabel", formatFileSize(file.size));
-                    }}
+                  <TextField
+                    label="Hồ sơ (CV/Resume)"
+                    description="(Không bắt buộc)"
+                    value={activeData.resumeName}
+                    onChange={(value) => updateField("resumeName", value)}
+                    placeholder="Dán link CV/Resume của bạn (Google Drive, website cá nhân...)"
                     disabled={isReadOnly}
                   />
                 </StepSection>
@@ -1035,26 +1075,32 @@ export function ApplyFormFlow() {
                 </>
               )}
             </div>
+            {submitError ? (
+              <p className="mt-5 text-center font-lexend text-[0.98rem] text-[#FF6E3D]">
+                {submitError}
+              </p>
+            ) : null}
           </article>
         )}
       </div>
 
       <ConfirmModal
         open={confirmAction === "submit"}
+        confirmDisabled={isSubmitting}
         title="Xác nhận nộp đơn"
         description="Bạn có chắc chắn muốn nộp đơn không? Hãy kiểm tra lại câu trả lời của bạn trước khi nộp."
         confirmLabel="Nộp đơn"
         onCancel={() => setConfirmAction(null)}
-        onConfirm={() => {
+        onConfirm={async () => {
+          await handleSubmit();
           setConfirmAction(null);
-          handleSubmit();
         }}
       />
 
       <ConfirmModal
         open={confirmAction === "reset"}
         title="Xác nhận nộp đơn mới"
-        description="Bạn có chắc chắn muốn tạo đơn mới không? Hành động này sẽ đặt lại biểu mẫu hiện tại và xóa bản nháp cũ."
+        description="Bạn có chắc chắn muốn tạo đơn mới không? Hệ thống sẽ xóa bản nháp cũ và đặt lại biểu mẫu mới."
         confirmLabel="Nộp đơn mới"
         onCancel={() => setConfirmAction(null)}
         onConfirm={() => {
