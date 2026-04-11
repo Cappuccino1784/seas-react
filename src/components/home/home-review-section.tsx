@@ -12,7 +12,7 @@ const cards = [
   },
   {
     name: "Nguyễn Tấn Minh",
-    extra: "Computer Science - The Chinese University of Hong Kong (Đại học Trung văn Hồng Kông",
+    extra: "Computer Science - The Chinese University of Hong Kong (Đại học Trung văn Hồng Kông)",
     role: "Trại sinh SEAS 2025",
     content: "SEAS lúc đấy như là một cứu cánh cho mùa hè đầy biến động của tuổi 18. Là một Học sinh giỏi Quốc gia Tin học, xa rời những bài tập Competitive Programming đặc thù làm mình đôi lúc vẫn chưa hiểu định hướng của bản thân, và bằng cách nào để hiện thực hóa những dự định ấy. Điều đấy càng làm SEAS thêm giá trị, vì SEAS có thứ mình cần nhất - một người dẫn đường.",
     image: "/images/layout/home-review/tan-minh.jpeg"
