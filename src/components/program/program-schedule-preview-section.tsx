@@ -5,6 +5,7 @@ import { HiArrowLeft, HiArrowRight } from "react-icons/hi";
 import { PillButton } from "@/components/shared/pill-button";
 import { SelectDropdown } from "@/components/shared/select-dropdown";
 import { ComingSoonCard } from "../shared/coming-soon-card";
+import { useRevealOnView } from "@/components/shared/use-reveal-on-view";
 
 type PreviewSlot = {
   time: string;
@@ -244,6 +245,7 @@ const previewYears = Object.keys(previewSchedule) as Array<
 >;
 
 export function ProgramSchedulePreviewSection() {
+  const { ref, isVisible } = useRevealOnView<HTMLElement>();
   const [activeYear, setActiveYear] =
     useState<(typeof previewYears)[number]>("SEAS 2025");
   const [activeWeekIndex, setActiveWeekIndex] = useState(0);
@@ -259,19 +261,40 @@ export function ProgramSchedulePreviewSection() {
   );
 
   return (
-    <section className="py-12 md:py-16" id="program-preview">
+    <section ref={ref} className="py-12 md:py-16" id="program-preview">
       <div className="container">
         <div className="mb-8 flex flex-col gap-6 md:mb-10 lg:flex-row lg:items-start lg:justify-between">
           <div>
-            <p className="mb-4 font-lexend text-[1.05rem] uppercase font-medium text-[#ff6d2d] md:text-lg">
+            <p
+              className={[
+                "mb-4 font-lexend text-[1.05rem] font-medium uppercase text-[#ff6d2d] transition-all duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)] md:text-lg",
+                isVisible
+                  ? "translate-y-0 opacity-100 [transition-delay:80ms]"
+                  : "translate-y-8 opacity-0",
+              ].join(" ")}
+            >
               Kế hoạch
             </p>
-            <h2 className="font-space-grotesk text-[2.5rem] font-bold uppercase leading-[1] tracking-[-0.04em] text-[#04536E] md:text-6xl">
+            <h2
+              className={[
+                "font-space-grotesk text-[2.5rem] font-bold uppercase leading-[1] tracking-[-0.04em] text-[#04536E] transition-all duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)] md:text-6xl",
+                isVisible
+                  ? "translate-y-0 opacity-100 [transition-delay:160ms]"
+                  : "translate-y-10 opacity-0",
+              ].join(" ")}
+            >
               Lịch trình SEAS
             </h2>
           </div>
 
-          <div className="flex gap-3">
+          <div
+            className={[
+              "flex gap-3 transition-all duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)]",
+              isVisible
+                ? "translate-y-0 opacity-100 [transition-delay:260ms]"
+                : "translate-y-8 opacity-0",
+            ].join(" ")}
+          >
             {previewYears.map((year) => {
               const isActive = year === activeYear;
 
@@ -292,7 +315,14 @@ export function ProgramSchedulePreviewSection() {
         </div>
 
         {hasSchedule ? (
-          <div className="rounded-[30px] bg-white px-5 py-6 shadow-[0_24px_56px_rgba(150,199,224,0.18)] md:px-8 md:py-8">
+          <div
+            className={[
+              "rounded-[30px] bg-white px-5 py-6 shadow-[0_24px_56px_rgba(150,199,224,0.18)] transition-all duration-[850ms] ease-[cubic-bezier(0.16,1,0.3,1)] md:px-8 md:py-8",
+              isVisible
+                ? "translate-y-0 opacity-100 [transition-delay:360ms]"
+                : "translate-y-12 opacity-0",
+            ].join(" ")}
+          >
             <div className="mb-6 flex flex-col gap-5 md:grid md:grid-cols-[176px_1fr] md:items-center md:gap-5 lg:grid-cols-[216px_1fr]">
               <div className="flex items-center justify-center gap-4 md:justify-start md:gap-4 lg:gap-6">
                 <button
