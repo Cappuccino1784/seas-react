@@ -49,8 +49,7 @@ function ProjectCard({
         )}
       </div>
 
-      {/* Title + badge */}
-      <div className="flex items-start gap-3 px-5 pb-3 pt-4 md:px-6">
+      <div className="flex items-center gap-3 px-5 pb-3 pt-4 md:px-6">
         <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#2D8BBA]/10 font-space-grotesk text-[0.72rem] font-bold text-[#2D8BBA]">
           {String(project.id).padStart(2, "0")}
         </span>
@@ -59,7 +58,6 @@ function ProjectCard({
         </h3>
       </div>
 
-      {/* Team preview */}
       <div className="mt-auto border-t border-[#7fc8ef]/20 px-5 py-3 md:px-6">
         <p className="truncate font-lexend text-[0.75rem] text-[#4D5761]/70">
           <span className="font-semibold text-[#04536E]/70">Nhóm:</span>{" "}
