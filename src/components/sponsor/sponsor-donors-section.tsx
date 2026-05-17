@@ -27,7 +27,7 @@ const donors2025 = [
   },
   {
     date: "13-07-2025",
-    donor: "Cấn Thành Trung",
+    donor: "Cấn Trần Thành Trung",
     amount: "10,000,000 ₫"
   },
   {
