@@ -4,7 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-import { staffMembers2025 } from "@/components/staff/staff-members-content";
+import {
+  staffMembers2025,
+  staffMembers2026,
+} from "@/components/staff/staff-members-content";
 import { ComingSoonCard } from "../shared/coming-soon-card";
 import { PillButton } from "@/components/shared/pill-button";
 
@@ -13,13 +16,16 @@ const mobilePageSize = 6;
 
 export function StaffMembersSection() {
   const [activeYear, setActiveYear] =
-    useState<(typeof memberYears)[number]>("SEAS 2025");
+    useState<(typeof memberYears)[number]>("SEAS 2026");
   const [mobilePage, setMobilePage] = useState(1);
   const mobileSectionTopRef = useRef<HTMLDivElement | null>(null);
   const shouldScrollRef = useRef(false);
 
-  const totalMobilePages = Math.ceil(staffMembers2025.length / mobilePageSize);
-  const mobileMembers = staffMembers2025.slice(
+  const currentMembers =
+    activeYear === "SEAS 2025" ? staffMembers2025 : staffMembers2026;
+
+  const totalMobilePages = Math.ceil(currentMembers.length / mobilePageSize);
+  const mobileMembers = currentMembers.slice(
     (mobilePage - 1) * mobilePageSize,
     mobilePage * mobilePageSize,
   );
@@ -76,7 +82,7 @@ export function StaffMembersSection() {
           })}
         </div>
 
-        {activeYear === "SEAS 2025" ? (
+        {activeYear === "SEAS 2025" || activeYear === "SEAS 2026" ? (
           <>
             <div className="grid grid-cols-2 gap-5 md:hidden">
               {mobileMembers.map((member) => (
@@ -161,7 +167,7 @@ export function StaffMembersSection() {
             </div>
 
             <div className="hidden gap-5 md:grid md:grid-cols-2 xl:grid-cols-4">
-              {staffMembers2025.map((member) => (
+              {currentMembers.map((member) => (
                 <div
                   key={member.name}
                   className="group bg-white rounded-[20px] border-[2px] border-[#edf3f8] px-6 py-5 text-center shadow-[0_16px_38px_rgba(150,199,224,0.12)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#2D8BBA] hover:shadow-[0_22px_50px_rgba(45,139,186,0.2)]"
