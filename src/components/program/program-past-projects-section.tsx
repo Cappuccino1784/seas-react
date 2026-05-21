@@ -25,7 +25,7 @@ function ProjectCard({
   return (
     <a
       href={`/project/${year}/${project.slug}`}
-      className="group flex flex-col overflow-hidden rounded-[20px] border border-[#7fc8ef]/50 bg-white shadow-[0_8px_32px_rgba(150,199,224,0.1)] transition-all duration-300 hover:shadow-[0_16px_48px_rgba(150,199,224,0.2)] md:rounded-[24px]"
+      className="group flex flex-col overflow-hidden rounded-[20px] border border-[#7fc8ef]/50 bg-white shadow-[0_16px_38px_rgba(150,199,224,0.12)] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-[#2D8BBA] hover:shadow-[0_22px_50px_rgba(45,139,186,0.2)] md:rounded-[24px] border-[2px]"
     >
       {/* Thumbnail */}
       <div className="relative aspect-video w-full overflow-hidden bg-gradient-to-br from-[#04536E] via-[#2D8BBA] to-[#7fc8ef]">
