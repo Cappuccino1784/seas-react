@@ -8,6 +8,7 @@ type ScheduleCell = {
   text: string;
   tone?: "pink" | "gold" | "orange" | "green" | "mint" | "cyan" | "indigo" | "plain";
   rowSpan?: number;
+  colSpan?: number;
 };
 
 type ScheduleTable = {
@@ -20,6 +21,10 @@ type ScheduleTable = {
   }>;
 };
 
+type RenderableScheduleRow = Omit<ScheduleTable["rows"][number], "cells"> & {
+  cells: Array<ScheduleCell | null>;
+};
+
 const cellToneClasses: Record<NonNullable<ScheduleCell["tone"]>, string> = {
   pink: "bg-[#ef6d97]",
   gold: "bg-[#fae8b4]",
@@ -30,6 +35,54 @@ const cellToneClasses: Record<NonNullable<ScheduleCell["tone"]>, string> = {
   indigo: "bg-[#7d87eb] text-white",
   plain: "bg-white",
 };
+
+function buildRenderableRows(table: ScheduleTable): RenderableScheduleRow[] {
+  const maxColumns = table.headers.length - 1;
+  const renderRows: RenderableScheduleRow[] = [];
+
+  table.rows.forEach((row) => {
+    if (row.lunch) {
+      renderRows.push(row);
+      return;
+    }
+
+    const cells: Array<ScheduleCell | null> = [];
+    let sourceIndex = 0;
+    let previousVisibleCell: ScheduleCell | null = null;
+
+    for (let columnIndex = 0; columnIndex < maxColumns; columnIndex += 1) {
+      const cell = row.cells[sourceIndex];
+      if (!cell) {
+        cells.push(null);
+        break;
+      }
+
+      sourceIndex += 1;
+
+      const canMergeWithPreviousCell =
+        Boolean(previousVisibleCell) &&
+        previousVisibleCell?.text === cell.text &&
+        previousVisibleCell?.tone === cell.tone;
+
+      if (canMergeWithPreviousCell && previousVisibleCell) {
+        previousVisibleCell.colSpan = (previousVisibleCell.colSpan ?? 1) + 1;
+        cells.push(null);
+        continue;
+      }
+
+      const renderableCell: ScheduleCell = { ...cell };
+      cells.push(renderableCell);
+      previousVisibleCell = renderableCell;
+    }
+
+    renderRows.push({
+      ...row,
+      cells,
+    });
+  });
+
+  return renderRows;
+}
 
 const detailedSchedules: Record<"SEAS 2025" | "SEAS 2026", ScheduleTable[]> = {
   "SEAS 2025": [
@@ -258,75 +311,82 @@ export function ProgramDetailedScheduleSection() {
 
         {tables.length > 0 ? (
           <div className="space-y-10">
-            {tables.map((table) => (
-              <div key={table.title}>
-                <div className="mb-6 text-center">
-                  <h3 className="font-space-grotesk text-[2rem] font-bold text-[#04536E] md:text-[2.4rem]">
-                    {table.title}
-                  </h3>
-                  <div className="mx-auto mt-3 h-[5px] w-[120px] rounded-full bg-[linear-gradient(90deg,transparent_0%,#8fd2ee_22%,#2D8BBA_50%,#8fd2ee_78%,transparent_100%)]" />
-                </div>
+            {tables.map((table) => {
+              const renderRows = buildRenderableRows(table);
 
-                <div className="overflow-hidden rounded-[22px] border border-[#d7e9f3] bg-white shadow-[0_18px_44px_rgba(150,199,224,0.18)]">
-                  <div className="overflow-x-auto">
-                    <table className="min-w-[980px] border-collapse">
-                      <thead>
-                        <tr className="bg-[linear-gradient(90deg,#0d617d,#2D8BBA)] text-white">
-                          {table.headers.map((header, index) => (
-                            <th
-                              key={`${table.title}-${header}`}
-                              className={[
-                                "border-r border-[rgba(255,255,255,0.15)] px-4 py-4 text-left font-lexend text-[0.98rem] font-semibold last:border-r-0",
-                                index === 0 ? "min-w-[132px]" : "min-w-[180px]",
-                              ].join(" ")}
-                            >
-                              {header.split("\n").map((line) => (
-                                <span key={line} className="block">
-                                  {line}
-                                </span>
-                              ))}
-                            </th>
-                          ))}
-                        </tr>
-                      </thead>
+              return (
+                <div key={table.title}>
+                  <div className="mb-6 text-center">
+                    <h3 className="font-space-grotesk text-[2rem] font-bold text-[#04536E] md:text-[2.4rem]">
+                      {table.title}
+                    </h3>
+                    <div className="mx-auto mt-3 h-[5px] w-[120px] rounded-full bg-[linear-gradient(90deg,transparent_0%,#8fd2ee_22%,#2D8BBA_50%,#8fd2ee_78%,transparent_100%)]" />
+                  </div>
 
-                      <tbody>
-                        {table.rows.map((row) =>
-                          row.lunch ? (
-                            <tr key={`${table.title}-${row.time}`}>
-                              <td
-                                colSpan={table.headers.length}
-                                className="bg-[#98a1ad] px-4 py-3 text-center font-space-grotesk text-[1.35rem] font-bold text-white"
+                  <div className="overflow-hidden rounded-[22px] border border-[#d7e9f3] bg-white shadow-[0_18px_44px_rgba(150,199,224,0.18)]">
+                    <div className="overflow-x-auto">
+                      <table className="min-w-[980px] border-collapse">
+                        <thead>
+                          <tr className="bg-[linear-gradient(90deg,#0d617d,#2D8BBA)] text-white">
+                            {table.headers.map((header, index) => (
+                              <th
+                                key={`${table.title}-${header}`}
+                                className={[
+                                  "border-r border-[rgba(255,255,255,0.15)] px-4 py-4 text-left font-lexend text-[0.98rem] font-semibold last:border-r-0",
+                                  index === 0 ? "min-w-[132px]" : "min-w-[180px]",
+                                ].join(" ")}
                               >
-                                {row.time}
-                              </td>
-                            </tr>
-                          ) : (
-                            <tr key={`${table.title}-${row.time}`} className="align-top">
-                              <td className="border-r border-t border-[#d7e9f3] bg-[#fafbfd] px-4 py-6 font-lexend text-[1rem] font-medium text-[#111111]">
-                                {row.time}
-                              </td>
-                              {row.cells.map((cell, cellIndex) => (
+                                {header.split("\n").map((line) => (
+                                  <span key={line} className="block">
+                                    {line}
+                                  </span>
+                                ))}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          {renderRows.map((row) =>
+                            row.lunch ? (
+                              <tr key={`${table.title}-${row.time}`}>
                                 <td
-                                  key={`${table.title}-${row.time}-${cellIndex}-${cell.text}`}
-                                  rowSpan={cell.rowSpan ?? 1}
-                                  className={[
-                                    "border-r border-t border-[#d7e9f3] px-4 py-5 align-top font-lexend text-[0.98rem] leading-[1.55] text-[#111111] last:border-r-0",
-                                    cellToneClasses[cell.tone ?? "plain"],
-                                  ].join(" ")}
+                                  colSpan={table.headers.length}
+                                  className="bg-[#98a1ad] px-4 py-3 text-center font-space-grotesk text-[1.35rem] font-bold text-white"
                                 >
-                                  {cell.text}
+                                  {row.time}
                                 </td>
-                              ))}
-                            </tr>
-                          ),
-                        )}
-                      </tbody>
-                    </table>
+                              </tr>
+                            ) : (
+                              <tr key={`${table.title}-${row.time}`} className="align-top">
+                                <td className="border-r border-t border-[#d7e9f3] bg-[#fafbfd] px-4 py-6 font-lexend text-[1rem] font-medium text-[#111111]">
+                                  {row.time}
+                                </td>
+                                {row.cells.map((cell, cellIndex) =>
+                                  cell ? (
+                                    <td
+                                      key={`${table.title}-${row.time}-${cellIndex}-${cell.text}`}
+                                      colSpan={cell.colSpan ?? 1}
+                                      rowSpan={cell.rowSpan ?? 1}
+                                      className={[
+                                        "border-r border-t border-[#d7e9f3] px-4 py-5 align-top font-lexend text-[0.98rem] leading-[1.55] text-[#111111] last:border-r-0",
+                                        cellToneClasses[cell.tone ?? "plain"],
+                                      ].join(" ")}
+                                    >
+                                      {cell.text}
+                                    </td>
+                                  ) : null,
+                                )}
+                              </tr>
+                            ),
+                          )}
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         ) : (
           <div className="rounded-[30px] bg-white px-6 py-10 text-center shadow-[0_24px_56px_rgba(150,199,224,0.18)] md:px-10 md:py-14">
