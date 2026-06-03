@@ -258,7 +258,240 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
       ],
     },
   ],
-  "SEAS 2026": [],
+  "SEAS 2026": [
+    {
+      label: "Tuần 1",
+      days: [
+        {
+          label: "Thứ 2",
+          date: "21/7",
+          slots: [
+            { time: "8:00 - 9:00", title: "Lễ chào mừng", tone: "bg-[#7d87eb] text-white" },
+            { time: "9:00 - 10:00", title: "Bài giảng khách mời 1", tone: "bg-[#7d87eb] text-white" },
+            { time: "10:00 - 11:00", title: "Đại số tuyến tính 1: Cơ bản", tone: "bg-[#7d87eb] text-white" },
+            {
+              time: "11:00 - 12:00",
+              title:
+                "Đại số tuyến tính 2: Biến đổi tuyến tính (Linear transformations)",
+                tone: "bg-[#7d87eb] text-white",
+            },
+            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            { time: "13:00 - 14:30", title: "Lập trình Python 1", tone: "bg-[#cfffde] text-[#111111]" },
+            { time: "14:30 - 16:00", title: "Bài tập toán trên Python 1", tone: "bg-[#cfffde] text-[#111111]" },
+          ],
+        },
+        {
+          label: "Thứ 3",
+          date: "22/7",
+          slots: [
+            {
+              time: "8:00 - 9:00",
+              title:
+                "Đại số tuyến tính 3: Ma trận nghịch đảo (Matrix inversion)",
+              tone: "bg-[#fae8b4] text-[#111111]",
+            },
+            {
+              time: "9:00 - 10:00",
+              title:
+                "Đại số tuyến tính 4: Phép phân tích riêng (Eigendecomposition)",
+              tone: "bg-[#fae8b4] text-[#111111]",
+            },
+            { time: "10:00 - 11:00", title: "Xác suất thống kê 1: Cơ bản", tone: "bg-[#fae8b4] text-[#111111]" },
+            { time: "11:00 - 12:00", title: "Học máy 1: Giới thiệu", tone: "bg-[#abdde0] text-[#111111]" },
+            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            { time: "13:00 - 14:30", title: "Lập trình Python 2", tone: "bg-[#cfffde] text-[#111111]" },
+            { time: "14:30 - 16:00", title: "Bài tập toán trên Python 2", tone: "bg-[#cfffde] text-[#111111]" },
+          ],
+        },
+        {
+          label: "Thứ 4",
+          date: "23/7",
+          slots: [
+            {
+              time: "8:00 - 9:00",
+              title: "Đại số tuyến tính 5: Giải tích ma trận (Matrix calculus)",
+              tone: "bg-[#fae8b4] text-[#111111]",
+            },
+            {
+              time: "9:00 - 10:00",
+              title: "Xác suất thống kê 2: Mô hình thống kê",
+              tone: "bg-[#fae8b4] text-[#111111]",
+            },
+            {
+              time: "10:00 - 11:00",
+              title:
+                "Xác suất thống kê 3: Hồi quy tuyến tính (Linear regression)",
+              tone: "bg-[#fae8b4] text-[#111111]",
+            },
+            {
+              time: "11:00 - 12:00",
+              title: "Học máy 2: Học giám sát (Supervised learning)",
+              tone: "bg-[#abdde0] text-[#111111]",
+            },
+            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            { time: "13:00 - 14:30", title: "Lập trình Python 3", tone: "bg-[#cfffde] text-[#111111]" },
+            { time: "14:30 - 16:00", title: "Bài tập toán trên Python 3", tone: "bg-[#cfffde] text-[#111111]" },
+          ],
+        },
+        {
+          label: "Thứ 5",
+          date: "24/7",
+          slots: [
+            {
+              time: "8:00 - 9:00",
+              title: "Đại số tuyến tính 6: Tổng kết & Ví dụ ứng dụng",
+              tone: "bg-[#fae8b4] text-[#111111]",
+            },
+            {
+              time: "9:00 - 10:00",
+              title: "Học máy 3: Thuật toán giảm độ dốc (Gradient descent)",
+              tone: "bg-[#abdde0] text-[#111111]",
+            },
+            {
+              time: "10:00 - 11:00",
+              title: "Học máy 4: Học không giám sát (Unsupervised learning)",
+              tone: "bg-[#abdde0] text-[#111111]",
+            },
+            { time: "11:00 - 12:00", title: "Bài giảng khách mời 2", tone: "bg-[#ef6d97] text-white" },
+            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            { time: "13:00 - 14:30", title: "Lập trình Python 4", tone: "bg-[#cfffde] text-[#111111]" },
+            { time: "14:30 - 16:00", title: "Bài tập toán trên Python 4", tone: "bg-[#cfffde] text-[#111111]" },
+          ],
+        },
+        {
+          label: "Thứ 6",
+          date: "25/7",
+          slots: [
+            {
+              time: "8:00 - 9:00",
+              title: "Học máy 5: Mạng thần kinh nhân tạo (Neural networks)",
+              tone: "bg-[#abdde0] text-[#111111]",
+            },
+            {
+              time: "9:00 - 10:00",
+              title: "Học máy 6: Tổng kết & Giới thiệu các chủ đề khác",
+              tone: "bg-[#abdde0] text-[#111111]",
+            },
+            { time: "10:00 - 11:00", title: "-", tone: "bg-[#f8fbfd] text-[#95a8b6]" },
+            { time: "11:00 - 12:00", title: "-", tone: "bg-[#f8fbfd] text-[#95a8b6]" },
+            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            {
+              time: "13:00 - 14:30",
+              title: "Giới thiệu dự án nhóm tuần 2 (dự án ứng dụng thực tiễn)",
+              tone: "bg-[#abdde0] text-[#111111]",
+            },
+            {
+              time: "14:30 - 16:00",
+              title: "Giới thiệu dự án nhóm tuần 2 (dự án ứng dụng khoa học)",
+              tone: "bg-[#abdde0] text-[#111111]",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      label: "Tuần 2",
+      days: [
+        {
+          label: "Thứ 2",
+          date: "28/7",
+          slots: [
+            {
+              time: "8:00 - 9:00",
+              title: "Bài giảng liên quan dự án nhóm ứng dụng thực tiễn",
+              tone: "bg-[#abdde0] text-[#111111]",
+            },
+            {
+              time: "9:00 - 10:00",
+              title: "-",
+              tone: "bg-[#abdde0] text-[#111111]",
+            },
+            {
+              time: "10:00 - 11:00",
+              title: "Bài giảng liên quan dự án nhóm ứng dụng khoa học",
+              tone: "bg-[#ffe18f] text-[#111111]",
+            },
+            { time: "11:00 - 12:00", title: "Học viên làm dự án nhóm", tone: "bg-[#abdde0] text-[#111111]" },
+            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#7d87eb] text-white" },
+            { time: "14:30 - 16:00", title: "-", tone: "bg-[#7d87eb] text-[#95a8b6]" },
+          ],
+        },
+        {
+          label: "Thứ 3",
+          date: "29/7",
+          slots: [
+            {
+              time: "8:00 - 9:00",
+              title: "Bài giảng liên quan dự án nhóm ứng dụng thực tiễn",
+              tone: "bg-[#abdde0] text-[#111111]",
+            },
+            {
+              time: "9:00 - 10:00",
+              title: "-",
+              tone: "bg-[#abdde0] text-[#111111]",
+            },
+            {
+              time: "10:00 - 11:00",
+              title: "Bài giảng liên quan dự án nhóm ứng dụng khoa học",
+              tone: "bg-[#ffe18f] text-[#111111]",
+            },
+            { time: "11:00 - 12:00", title: "Học viên làm dự án nhóm", tone: "bg-[#abdde0] text-[#111111]" },
+            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#7d87eb] text-white" },
+            { time: "14:30 - 16:00", title: "-", tone: "bg-[#7d87eb] text-[#95a8b6]" },
+          ],
+        },
+        {
+          label: "Thứ 4",
+          date: "30/7",
+          slots: [
+            { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
+            { time: "9:00 - 10:00", title: "-", tone: "bg-[#bff7ff] text-[#95a8b6]" },
+            { time: "10:00 - 11:00", title: "-", tone: "bg-[#bff7ff] text-[#95a8b6]" },
+            { time: "11:00 - 12:00", title: "-", tone: "bg-[#bff7ff] text-[#95a8b6]" },
+            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            {
+              time: "13:00 - 14:30",
+              title: "Hoạt động: Công viên Đông Mỹ Biên Nhật Lệ",
+              tone: "bg-[#69c8c2] text-white",
+            },
+            { time: "14:30 - 16:00", title: "-", tone: "bg-[#69c8c2] text-[#95a8b6]" },
+          ],
+        },
+        {
+          label: "Thứ 5",
+          date: "31/7",
+          slots: [
+            { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
+            { time: "9:00 - 10:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
+            { time: "10:00 - 11:00", title: "Bài giảng khách mời 3", tone: "bg-[#ef6d97] text-white" },
+            {
+              time: "11:00 - 12:00",
+              title: "Bài giảng khách mời 4 / Giao lưu hỏi & đáp",
+              tone: "bg-[#ef6d97] text-white",
+            },
+            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#7d87eb] text-white" },
+            { time: "14:30 - 16:00", title: "-", tone: "bg-[#7d87eb] text-[#95a8b6]" },
+          ],
+        },
+        {
+          label: "Thứ 6",
+          date: "1/8",
+          slots: [
+            { time: "8:00 - 9:00", title: "Thuyết trình dự án nhóm", tone: "bg-[#abdde0] text-[#111111]" },
+            { time: "9:00 - 10:00", title: "-", tone: "bg-[#abdde0] text-[#95a8b6]" },
+            { time: "10:00 - 11:00", title: "-", tone: "bg-[#abdde0] text-[#95a8b6]" },
+            { time: "11:00 - 12:00", title: "-", tone: "bg-[#abdde0] text-[#95a8b6]" },
+            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            { time: "13:00 - 14:30", title: "Thảo luận", tone: "bg-[#7d87eb] text-white" },
+            { time: "14:30 - 16:00", title: "Lễ tổng kết", tone: "bg-[#7d87eb] text-white" },
+          ],
+        },
+      ],
+    },
+  ],
 };
 
 const previewYears = Object.keys(previewSchedule) as Array<

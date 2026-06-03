@@ -6,7 +6,7 @@ import { HiChevronDown } from "react-icons/hi2";
 
 import { PillArrowButton } from "@/components/shared/pill-arrow-button";
 
-const COUNTDOWN_TARGET = new Date("2026-06-22T23:59:59").getTime();
+const COUNTDOWN_TARGET = new Date("2026-07-20T23:59:59").getTime();
 const FLOATING_CTA_COLLAPSED_KEY = "seas-floating-cta-collapsed";
 const INITIAL_COUNTDOWN = [
   { value: "00", label: "NGÀY" },
