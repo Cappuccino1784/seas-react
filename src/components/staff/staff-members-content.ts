@@ -64,9 +64,8 @@ export const staffFounders: StaffMember[] = [
     bio: "Researcher @ Ericsson Research, Chuyên Phan Bội Châu K43",
     image: "/images/team/founders/minh-tran-huu-binh.jpg",
     profileSummary:
-      "Đây là đoạn giới thiệu tạm thời về founder của SEAS. Bạn có thể bổ sung lại thông tin chi tiết và câu chuyện riêng sau.",
-    highlights: [
       "Researcher @ Ericsson Research, Chuyên Phan Bội Châu K43",
+    highlights: [
       "Chuyên viên nghiên cứu tại Ericsson Research, tập trung vào công nghệ lõi cho mạng viễn thông 6G.",
       "Ngoài Ericsson Research, từng tham gia nghiên cứu về AI và mạng viễn thông ở Sony, Aerospaceresearch.net, và Quỹ Đầu tư Công nghệ Tiên tiến Đại học Tokyo (UTEC).",
       "Nhận Học bổng Chính phủ Nhật Bản (MEXT) để hoành thành bậc Đại học & Thạc sĩ tại Viện Khoa học Tokyo (Science Tokyo). Các dự án nghiên cứu ở Viện được tài trợ bởi Bộ Nội vụ & Truyền thông Nhật Bản (MIC) và Hội Kỹ sư Điện & Điện tử Hoa Kỳ (IEEE).",
