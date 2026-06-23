@@ -55,6 +55,13 @@ export type ApplicationRow = {
   submitted_at: string;
 };
 
+const applicationOpenAt = new Date("2026-04-11T20:00:00+07:00");
+const applicationCloseAt = new Date("2026-06-20T23:59:59+07:00");
+
+export function isApplicationOpen(now = new Date()) {
+  return now >= applicationOpenAt && now <= applicationCloseAt;
+}
+
 const requiredStringFields: Array<keyof ApplicationPayload> = [
   "fullName",
   "email",

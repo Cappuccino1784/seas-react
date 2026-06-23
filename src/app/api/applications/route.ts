@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import {
+  isApplicationOpen,
   normalizeApplicationPayload,
   toApplicationRow,
   validateApplicationPayload,
@@ -8,6 +9,16 @@ import { insertApplication } from "@/lib/supabase-admin";
 
 export async function POST(request: Request) {
   try {
+    if (!isApplicationOpen()) {
+      return NextResponse.json(
+        {
+          ok: false,
+          message: "Đơn đăng ký hiện đã đóng.",
+        },
+        { status: 403 },
+      );
+    }
+
     const body = (await request.json()) as Record<string, unknown>;
     const payload = normalizeApplicationPayload(body);
     const validation = validateApplicationPayload(payload);
