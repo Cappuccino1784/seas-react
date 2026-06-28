@@ -400,6 +400,30 @@ export const staffMembers2025: StaffMember[] = [
 
 export const staffMembers2026: StaffMember[] = [
   {
+    slug: "le-anh-vu-2025",
+    name: "Lê Anh Vũ",
+    role: "Ban tổ chức tại địa phương",
+    bio: "Thầy Giáo tại Trường Chuyên Võ Nguyên Giáp",
+    image: "/images/team/2025/le-anh-vu.jpg",
+    profileSummary: "Thầy Giáo tại Trường Chuyên Võ Nguyên Giáp",
+    highlights: [],
+    quote: "",
+    links: [],
+    group: "member",
+  },
+  {
+    slug: "nguyen-thi-hai-yen-2025",
+    name: "Nguyễn Thị Hải Yến",
+    role: "Ban tổ chức tại địa phương",
+    bio: "Hiệu trưởng tại Trường Chuyên Võ Nguyên Giáp",
+    image: "/images/team/2025/nguyen-thi-hai-yen.jpg",
+    profileSummary: "Hiệu trưởng tại Trường Chuyên Võ Nguyên Giáp",
+    highlights: [],
+    quote: "",
+    links: [],
+    group: "member",
+  },
+  {
     slug: "quang-pham-2026",
     name: "Quang Phạm",
     role: "BTC (Teaching Leader)",
