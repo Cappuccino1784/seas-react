@@ -264,7 +264,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
       days: [
         {
           label: "Thứ 2",
-          date: "21/7",
+          date: "20/7",
           slots: [
             { time: "8:00 - 9:00", title: "Lễ chào mừng", tone: "bg-[#7d87eb] text-white" },
             { time: "9:00 - 10:00", title: "Bài giảng khách mời 1", tone: "bg-[#7d87eb] text-white" },
@@ -282,7 +282,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
         },
         {
           label: "Thứ 3",
-          date: "22/7",
+          date: "21/7",
           slots: [
             {
               time: "8:00 - 9:00",
@@ -305,7 +305,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
         },
         {
           label: "Thứ 4",
-          date: "23/7",
+          date: "22/7",
           slots: [
             {
               time: "8:00 - 9:00",
@@ -335,7 +335,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
         },
         {
           label: "Thứ 5",
-          date: "24/7",
+          date: "23/7",
           slots: [
             {
               time: "8:00 - 9:00",
@@ -360,7 +360,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
         },
         {
           label: "Thứ 6",
-          date: "25/7",
+          date: "24/7",
           slots: [
             {
               time: "8:00 - 9:00",
@@ -394,7 +394,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
       days: [
         {
           label: "Thứ 2",
-          date: "28/7",
+          date: "27/7",
           slots: [
             {
               time: "8:00 - 9:00",
@@ -419,7 +419,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
         },
         {
           label: "Thứ 3",
-          date: "29/7",
+          date: "28/7",
           slots: [
             {
               time: "8:00 - 9:00",
@@ -444,7 +444,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
         },
         {
           label: "Thứ 4",
-          date: "30/7",
+          date: "29/7",
           slots: [
             { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
             { time: "9:00 - 10:00", title: "-", tone: "bg-[#bff7ff] text-[#95a8b6]" },
@@ -461,7 +461,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
         },
         {
           label: "Thứ 5",
-          date: "31/7",
+          date: "30/7",
           slots: [
             { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
             { time: "9:00 - 10:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
@@ -478,7 +478,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
         },
         {
           label: "Thứ 6",
-          date: "1/8",
+          date: "31/7",
           slots: [
             { time: "8:00 - 9:00", title: "Thuyết trình dự án nhóm", tone: "bg-[#abdde0] text-[#111111]" },
             { time: "9:00 - 10:00", title: "-", tone: "bg-[#abdde0] text-[#95a8b6]" },

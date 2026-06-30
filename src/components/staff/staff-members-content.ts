@@ -138,6 +138,18 @@ export const staffMembers2025: StaffMember[] = [
     group: "member",
   },
   {
+    slug: "cao-xuan-hai-2026",
+    name: "Cao Xuân Hải",
+    role: "Ban tổ chức tại địa phương",
+    bio: "Thầy Giáo tại Trường Chuyên Võ Nguyên Giáp",
+    image: "/images/team/2026/cao-xuan-hai-2026.jpg",
+    profileSummary: "Thầy Giáo tại Trường Chuyên Võ Nguyên Giáp",
+    highlights: [],
+    quote: "",
+    links: [],
+    group: "member",
+  },
+  {
     slug: "vu-phan-khanh-2025",
     name: "Vũ Phan Khánh",
     role: "Trợ Giảng (Teaching Assistant)",
