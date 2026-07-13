@@ -4,21 +4,26 @@ import { useState } from "react";
 
 import { PillButton } from "@/components/shared/pill-button";
 import { ComingSoonCard } from "../shared/coming-soon-card";
+import SponsorDonorsSectionTable from "./sponsor-donors-section-table"; 
 
 const donorYears = ["SEAS 2025", "SEAS 2026"] as const;
 
-const donors2025 = [
+export type DonorsList = {
+  date: string;
+  donor: string;
+  amount: string;
+}[];
+
+const donors2025: DonorsList = [
   {
     date: "25-07-2025",
     donor: "Công Ty TNHH Tư Vấn KS-TK Hoành Sơn",
     amount: "5,000,000 ₫",
-    highlighted: true,
   },
   {
     date: "25-07-2025",
     donor: "UBND Tỉnh Quảng Trị",
     amount: "10,000,000 ₫",
-    highlighted: true,
   },
   {
     date: "23-07-2025",
@@ -127,6 +132,40 @@ const donors2025 = [
   }
 ];
 
+const donors2026: DonorsList = [
+  {
+    date: "13-07-2026",
+    donor: "Nhà xe Hưng Long",
+    amount: "Hỗ trợ đi lại của học viên và trợ giảng từ các tỉnh Hà Nội vào Quảng Bình"
+  },
+  {
+    date: "13-07-2026",
+    donor: "Tấn Phát Sport",
+    amount: "Toàn bộ áo quần, mũ, phù hiệu, ngoài ra còn hỗ trợ nước uống và hỗ trợ thêm trong chuyến đi Phong Nha"
+  },
+  {
+    date: "13-07-2026",
+    donor: "THPT chuyên Võ Nguyên Giáp",
+    amount: "Miễn phí chi phí ký túc xá, vật chất giảng dạy"
+  },
+  {
+    date: "13-07-2026",
+    donor: "Vật Lý Chill",
+    amount: "1,500 $"
+  },
+  {
+    date: "13-07-2026",
+    donor: "Nhà tài trợ giấu tên",
+    amount: "40,000,000 ₫"
+  },
+  {
+    date: "13-07-2026",
+    donor: "Nguyễn Ngọc Khánh Chi",
+    amount: "10,000,000 ₫"
+  },
+
+];
+
 function formatMobileDate(date: string) {
   const [day, month, year] = date.split(/[-/]/);
 
@@ -168,44 +207,9 @@ export function SponsorDonorsSection() {
         </div>
 
         {activeYear === "SEAS 2025" ? (
-          <div className="overflow-hidden rounded-[24px] border border-[#b9e7f7] bg-white shadow-[0_20px_48px_rgba(150,199,224,0.14)]">
-            <div className="grid grid-cols-[72px_1.2fr_1.2fr] bg-[#dff2fb] font-space-grotesk text-[0.98rem] font-bold uppercase text-[#04536E] md:grid-cols-[170px_1.5fr_1.4fr] md:text-[1rem]">
-              <div className="border-r border-[#b9e7f7] px-3 py-4 md:px-5 md:py-5">
-                Ngay
-              </div>
-              <div className="border-r border-[#b9e7f7] px-3 py-4 md:px-5 md:py-5">
-                Ten
-              </div>
-              <div className="px-3 py-4 md:px-5 md:py-5">
-                So tien hoac vat chat
-              </div>
-            </div>
-
-            {donors2025.map((donor, index) => (
-              <div
-                key={`${donor.donor}-${index}`}
-                className={[
-                  "grid grid-cols-[72px_1.2fr_1.2fr] border-t border-[#d7eaf4] font-lexend text-[0.98rem] md:grid-cols-[170px_1.5fr_1.4fr] md:text-[1rem]",
-                  donor.highlighted ? "bg-[#f7fbff]" : "bg-white",
-                ].join(" ")}
-              >
-                <div className="px-3 py-4 leading-[1.35] text-[#4D5761] md:px-5 md:py-5">
-                  <span className="md:hidden">
-                    {formatMobileDate(donor.date)}
-                  </span>
-                  <span className="hidden md:inline">{donor.date}</span>
-                </div>
-                <div className="px-3 py-4 font-semibold text-[#111111] md:px-5 md:py-5">
-                  {donor.donor}
-                </div>
-                <div className="px-3 py-4 font-medium text-[#2D8BBA] md:px-5 md:py-5">
-                  {donor.amount}
-                </div>
-              </div>
-            ))}
-          </div>
+          SponsorDonorsSectionTable({ donors: donors2025, formatMobileDate }) 
         ) : (
-          <ComingSoonCard />
+          SponsorDonorsSectionTable({ donors: donors2026, formatMobileDate })
         )}
       </div>
     </section>
