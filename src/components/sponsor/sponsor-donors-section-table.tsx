@@ -6,13 +6,13 @@ const SponsorDonorsSectionTable = ({ donors, formatMobileDate }: { donors: Donor
     <div className="overflow-hidden rounded-[24px] border border-[#b9e7f7] bg-white shadow-[0_20px_48px_rgba(150,199,224,0.14)]">
             <div className="grid grid-cols-[72px_1.2fr_1.2fr] bg-[#dff2fb] font-space-grotesk text-[0.98rem] font-bold uppercase text-[#04536E] md:grid-cols-[170px_1.5fr_1.4fr] md:text-[1rem]">
               <div className="border-r border-[#b9e7f7] px-3 py-4 md:px-5 md:py-5">
-                Ngay
+                Ngày
               </div>
               <div className="border-r border-[#b9e7f7] px-3 py-4 md:px-5 md:py-5">
-                Ten
+                Tên
               </div>
               <div className="px-3 py-4 md:px-5 md:py-5">
-                So tien hoac vat chat
+                Số tiền hoặc vật chất
               </div>
             </div>
 

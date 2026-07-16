@@ -163,6 +163,11 @@ const donors2026: DonorsList = [
     donor: "Nguyễn Ngọc Khánh Chi",
     amount: "10,000,000 ₫"
   },
+  {
+    date: "10-07-2026",
+    donor: "Nguyễn Hữu Quang",
+    amount: "38,000 ₫"
+  },
 
 ];
 
