@@ -145,6 +145,11 @@ const donors2026: DonorsList = [
   },
   {
     date: "13-07-2026",
+    donor: "Duy Nguyen",
+    amount: "200 $"
+  },
+  {
+    date: "13-07-2026",
     donor: "Nhà xe Hưng Long",
     amount: "Hỗ trợ đi lại của học viên và trợ giảng từ các tỉnh Hà Nội vào Quảng Bình"
   },
