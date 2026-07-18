@@ -501,7 +501,7 @@ const previewYears = Object.keys(previewSchedule) as Array<
 export function ProgramSchedulePreviewSection() {
   const { ref, isVisible } = useRevealOnView<HTMLElement>();
   const [activeYear, setActiveYear] =
-    useState<(typeof previewYears)[number]>("SEAS 2025");
+    useState<(typeof previewYears)[number]>("SEAS 2026");
   const [activeWeekIndex, setActiveWeekIndex] = useState(0);
 
   const weeks = previewSchedule[activeYear];
