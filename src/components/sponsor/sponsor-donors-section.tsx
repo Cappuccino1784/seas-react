@@ -134,6 +134,16 @@ const donors2025: DonorsList = [
 
 const donors2026: DonorsList = [
   {
+    date: "14-07-2026",
+    donor: "Lê Mai Hương",
+    amount: "1,000,000 ₫"
+  },
+  {
+    date: "14-07-2026",
+    donor: "Trần Hữu Đức",
+    amount: "10,000,000 ₫"
+  },
+  {
     date: "13-07-2026",
     donor: "Nhà xe Hưng Long",
     amount: "Hỗ trợ đi lại của học viên và trợ giảng từ các tỉnh Hà Nội vào Quảng Bình"
@@ -141,7 +151,7 @@ const donors2026: DonorsList = [
   {
     date: "13-07-2026",
     donor: "Tấn Phát Sport",
-    amount: "Toàn bộ áo quần, mũ, phù hiệu, ngoài ra còn hỗ trợ nước uống và hỗ trợ thêm trong chuyến đi Phong Nha"
+    amount: "Toàn bộ áo quần, mũ, phù hiệu, ngoài ra còn hỗ trợ nước uống và hỗ trợ thêm trong hoạt động ngoại khoá"
   },
   {
     date: "13-07-2026",
@@ -149,26 +159,30 @@ const donors2026: DonorsList = [
     amount: "Miễn phí chi phí ký túc xá, vật chất giảng dạy"
   },
   {
-    date: "13-07-2026",
-    donor: "Vật Lý Chill",
-    amount: "1,500 $"
+    date: "12-07-2026",
+    donor: "Nguyễn Hữu Quang",
+    amount: "38,000 ₫"
   },
   {
-    date: "13-07-2026",
-    donor: "Nhà tài trợ giấu tên",
-    amount: "40,000,000 ₫"
+    date: "08-07-2026",
+    donor: "Hồ Việt Lâm",
+    amount: "5,000,000 ₫"
   },
   {
-    date: "13-07-2026",
+    date: "07-07-2026",
     donor: "Nguyễn Ngọc Khánh Chi",
     amount: "10,000,000 ₫"
   },
   {
-    date: "10-07-2026",
-    donor: "Nguyễn Hữu Quang",
-    amount: "38,000 ₫"
+    date: "01-07-2026",
+    donor: "Vật Lý Chill",
+    amount: "1,500 $"
   },
-
+  {
+    date: "29-06-2026",
+    donor: "Nhà tài trợ giấu tên",
+    amount: "40,000,000 ₫"
+  },
 ];
 
 function formatMobileDate(date: string) {
@@ -185,7 +199,7 @@ function formatMobileDate(date: string) {
 
 export function SponsorDonorsSection() {
   const [activeYear, setActiveYear] =
-    useState<(typeof donorYears)[number]>("SEAS 2025");
+    useState<(typeof donorYears)[number]>("SEAS 2026");
 
   return (
     <section className="py-12 pb-20 md:py-16 md:pb-24">
