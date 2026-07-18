@@ -282,7 +282,7 @@ const detailedSchedules: Record<"SEAS 2025" | "SEAS 2026", ScheduleTable[]> = {
 const detailYears = Object.keys(detailedSchedules) as Array<keyof typeof detailedSchedules>;
 
 export function ProgramDetailedScheduleSection() {
-  const [activeYear, setActiveYear] = useState<(typeof detailYears)[number]>("SEAS 2025");
+  const [activeYear, setActiveYear] = useState<(typeof detailYears)[number]>("SEAS 2026");
   const tables = detailedSchedules[activeYear];
 
   return (
