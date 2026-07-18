@@ -90,10 +90,10 @@ export const staffFounders: StaffMember[] = [
     bio: "Nghiên Cứu Sinh Tiến Sĩ tại Harvard, Chuyên Võ Nguyên Giáp K21.",
     image: "/images/team/founders/quynh-nguyen.jpeg",
     profileSummary:
-      "Hiện là nghiên cứu sinh tiến sĩ ngành Vật lý lượng tử tại Đại học Harvard, nghiên cứu về điện toán lượng tử, lý thuyết khoa học máy tính, và các mối liên kết với vật lý cơ bản.",
+      "Tiến sĩ ngành Khoa học lượng tử tại Đại học Harvard, nghiên cứu về điện toán lượng tử, lý thuyết khoa học máy tính, và các mối liên kết với vật lý cơ bản.",
     highlights: [
       "Tốt nghiệp cử nhân song ngành Vật lý & Khoa học máy tính tại Viện công nghệ Massachusetts (MIT).",
-      "Kinh nghiệm thực tập tại Amazon Web Services (AWS) và Trung tâm nghiên cứu quốc gia Los Alamos về điện toán và học máy lượng tử.",
+      "Kinh nghiệm thực tập tại Google Quantum AI, Amazon Web Services (AWS), và Trung tâm nghiên cứu quốc gia Los Alamos về điện toán và học máy lượng tử.",
       "Học bổng tiến sĩ của tập đoàn công nghệ IBM và học bổng James Mills Peirce của Harvard.",
       "Giải thưởng công bố khoa học xuất sắc nhất tại Hội thảo Điện toán lượng tử Quốc tế (QIP) năm 2025.",
       "Huy chương Vàng Olympic Vật lý Quốc tế (IPhO) năm 2016 & 2017.",
@@ -266,21 +266,6 @@ export const staffMembers2025: StaffMember[] = [
     highlights: [
       "Hiện là trợ lý nghiên cứu tại Centre for Quantum Technologies, Singapore.",
       "Nghiên cứu của mình thiên về lý thuyết thông tin lượng tử và các mối liên hệ tới các bài toán trong hệ nhiều hạt.",
-    ],
-    quote: "",
-    links: [],
-    group: "member",
-  },
-  {
-    slug: "ngo-hong-phuc-2025",
-    name: "Ngô Hồng Phúc",
-    role: "Trợ Giảng (Teaching Assistant)",
-    bio: "Research Assistant, MIT",
-    image: "/images/team/2025/phuc-ngo.jpg",
-    profileSummary: "Research Assistant, MIT",
-    highlights: [
-      "Chào mọi người, mình là Phúc! Mình đã có 3 năm làm nghiên cứu tại MIT BCS và CSAIL, nơi mình có cơ hội làm việc ở giao điểm của nhiều lĩnh vực như computer vision, cognitive science, và NLP",
-      "Các dự án của mình tập trung vào việc đo lường sự khác biệt giữa con người và mô hình máy tính ở cả cấp độ neuron và hành vi. Khi mình không chạy nghiên cứu thì mình hay tập gym và leo núi.",
     ],
     quote: "",
     links: [],
