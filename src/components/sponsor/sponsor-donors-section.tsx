@@ -185,7 +185,7 @@ const donors2026: DonorsList = [
   },
   {
     date: "29-06-2026",
-    donor: "Nhà tài trợ giấu tên",
+    donor: "Cựu Ban Tổ chức SEAS 2025",
     amount: "40,000,000 ₫"
   },
 ];
