@@ -134,6 +134,11 @@ const donors2025: DonorsList = [
 
 const donors2026: DonorsList = [
   {
+    date: "23-07-2026",
+    donor: "Hoàng Thị Hiền Lương",
+    amount: "10,000,000 ₫"
+  },
+  {
     date: "21-07-2026",
     donor: "Nhà tài trợ giấu tên",
     amount: "20,000,000 ₫"
