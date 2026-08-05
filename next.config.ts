@@ -10,6 +10,7 @@ const csp = [
   "img-src 'self' data:",
   "font-src 'self' https://fonts.gstatic.com",
   "connect-src 'self' https://api.example.com",
+  "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
   "frame-ancestors 'none'",
 ].join('; ');
 

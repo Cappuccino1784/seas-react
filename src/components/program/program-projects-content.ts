@@ -98,7 +98,7 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         ],
       },
       slideThumbnail: "/images/project-thumbnails/2025/MÔ HÌNH DỰ BÁO LŨ LỤT Ở MIỀN TRUNG.png",
-      videoLink: "",
+      videoLink: "https://www.youtube.com/watch?v=TVKq89qgKrM",
       slug: "mo-hinh-du-bao-lu-lut-o-mien-trung",
     },
     // MẠNG NƠ-RO ĐỒ THỊ VÀ TÍNH DỄ BỊ TỔN THƯƠNG TRONG ỨNG DỤNG THỰC TẾ
@@ -143,7 +143,7 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         ],
       },
       slideThumbnail: "/images/project-thumbnails/2025/MẠNG NƠ-RON ĐỒ THỊ VÀ TÍNH DỄ BỊ TỔN THƯƠNG TRONG ỨNG DỤNG THỰC TẾ.png",
-      videoLink: "https://www.youtube.com/watch?v=TVKq89qgKrM",
+      videoLink: "https://www.youtube.com/watch?v=Gf8p88GySDI",
       slug: "mang-no-ron-do-thi-va-tinh-de-bi-ton-thuong-trong-ung-dung-thuc-te",
     },
     // ỨNG DỤNG HỌC KHÔNG GIÁM SÁT TRONG XỬ LÝ ẢNH MƯA
@@ -235,7 +235,7 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         ],
       },
       slideThumbnail: "/images/project-thumbnails/2025/MẠNG NƠ-RON CHO VẬT LÝ NHIỀU HẠT LƯỢNG TỬ.png",
-      videoLink: "",
+      videoLink: "https://www.youtube.com/watch?v=1YikVMO2c04",
       slug: "mang-no-ron-cho-vat-ly-nhieu-hat-luong-tu",
     },
     // NHẬN DIỆN MÓN ĂN QUA HÌNH ẢNH VÀ VĂN BẢN
