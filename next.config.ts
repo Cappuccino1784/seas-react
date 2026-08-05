@@ -36,7 +36,9 @@ const nextConfig: NextConfig = {
     if (!isDev) {
       base.unshift({ key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains; preload' });
       base.push({ key: 'Cross-Origin-Opener-Policy', value: 'same-origin' });
-      base.push({ key: 'Cross-Origin-Embedder-Policy', value: 'require-corp' });
+      // NOTE: Cross-Origin-Embedder-Policy ('require-corp') blocks cross-origin
+      // iframe embeds (e.g., YouTube). Remove or enable only when needed.
+      // base.push({ key: 'Cross-Origin-Embedder-Policy', value: 'require-corp' });
     }
 
     return [
