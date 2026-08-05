@@ -33,13 +33,13 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
           date: "21/7",
           slots: [
             { time: "8:00 - 9:00", title: "Lễ chào mừng", tone: "bg-[#7d87eb] text-white" },
-            { time: "9:00 - 10:00", title: "Bài giảng khách mời 1", tone: "bg-[#7d87eb] text-white" },
-            { time: "10:00 - 11:00", title: "Đại số tuyến tính 1: Cơ bản", tone: "bg-[#7d87eb] text-white" },
+            { time: "9:00 - 10:00", title: "Bài giảng khách mời 1", tone: "bg-[#ef6d97] text-white" },
+            { time: "10:00 - 11:00", title: "Đại số tuyến tính 1: Cơ bản", tone: "bg-[#b0c5ff] text-[#111111]" },
             {
               time: "11:00 - 12:00",
               title:
                 "Đại số tuyến tính 2: Biến đổi tuyến tính (Linear transformations)",
-                tone: "bg-[#7d87eb] text-white",
+                tone: "bg-[#b0c5ff] text-[#111111]",
             },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
             { time: "13:00 - 14:30", title: "Lập trình Python 1", tone: "bg-[#cfffde] text-[#111111]" },
@@ -54,13 +54,13 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
               time: "8:00 - 9:00",
               title:
                 "Đại số tuyến tính 3: Ma trận nghịch đảo (Matrix inversion)",
-              tone: "bg-[#fae8b4] text-[#111111]",
+              tone: "bg-[#b0c5ff] text-[#111111]",
             },
             {
               time: "9:00 - 10:00",
               title:
                 "Đại số tuyến tính 4: Phép phân tích riêng (Eigendecomposition)",
-              tone: "bg-[#fae8b4] text-[#111111]",
+              tone: "bg-[#b0c5ff] text-[#111111]",
             },
             { time: "10:00 - 11:00", title: "Xác suất thống kê 1: Cơ bản", tone: "bg-[#fae8b4] text-[#111111]" },
             { time: "11:00 - 12:00", title: "Học máy 1: Giới thiệu", tone: "bg-[#abdde0] text-[#111111]" },
@@ -138,8 +138,8 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
               title: "Học máy 6: Tổng kết & Giới thiệu các chủ đề khác",
               tone: "bg-[#abdde0] text-[#111111]",
             },
-            { time: "10:00 - 11:00", title: "-", tone: "bg-[#f8fbfd] text-[#95a8b6]" },
-            { time: "11:00 - 12:00", title: "-", tone: "bg-[#f8fbfd] text-[#95a8b6]" },
+            { time: "10:00 - 11:00", title: "", tone: "bg-[#f8fbfd] text-[#95a8b6]" },
+            { time: "11:00 - 12:00", title: "", tone: "bg-[#f8fbfd] text-[#95a8b6]" },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
             {
               time: "13:00 - 14:30",
@@ -169,7 +169,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
             },
             {
               time: "9:00 - 10:00",
-              title: "-",
+              title: "",
               tone: "bg-[#abdde0] text-[#111111]",
             },
             {
@@ -179,8 +179,8 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
             },
             { time: "11:00 - 12:00", title: "Học viên làm dự án nhóm", tone: "bg-[#abdde0] text-[#111111]" },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
-            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#7d87eb] text-white" },
-            { time: "14:30 - 16:00", title: "-", tone: "bg-[#7d87eb] text-[#95a8b6]" },
+            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
+            { time: "14:30 - 16:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
           ],
         },
         {
@@ -194,7 +194,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
             },
             {
               time: "9:00 - 10:00",
-              title: "-",
+              title: "",
               tone: "bg-[#abdde0] text-[#111111]",
             },
             {
@@ -204,33 +204,33 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
             },
             { time: "11:00 - 12:00", title: "Học viên làm dự án nhóm", tone: "bg-[#abdde0] text-[#111111]" },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
-            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#7d87eb] text-white" },
-            { time: "14:30 - 16:00", title: "-", tone: "bg-[#7d87eb] text-[#95a8b6]" },
+            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
+            { time: "14:30 - 16:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
           ],
         },
         {
           label: "Thứ 4",
           date: "30/7",
           slots: [
-            { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
-            { time: "9:00 - 10:00", title: "-", tone: "bg-[#bff7ff] text-[#95a8b6]" },
-            { time: "10:00 - 11:00", title: "-", tone: "bg-[#bff7ff] text-[#95a8b6]" },
-            { time: "11:00 - 12:00", title: "-", tone: "bg-[#bff7ff] text-[#95a8b6]" },
+            { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
+            { time: "9:00 - 10:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
+            { time: "10:00 - 11:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
+            { time: "11:00 - 12:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
             {
               time: "13:00 - 14:30",
               title: "Hoạt động: Công viên Đông Mỹ Biên Nhật Lệ",
               tone: "bg-[#69c8c2] text-white",
             },
-            { time: "14:30 - 16:00", title: "-", tone: "bg-[#69c8c2] text-[#95a8b6]" },
+            { time: "14:30 - 16:00", title: "", tone: "bg-[#69c8c2] text-[#95a8b6]" },
           ],
         },
         {
           label: "Thứ 5",
           date: "31/7",
           slots: [
-            { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
-            { time: "9:00 - 10:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
+            { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
+            { time: "9:00 - 10:00", title: "", tone: "bg-[#c2a3ff] text-[#111111]" },
             { time: "10:00 - 11:00", title: "Bài giảng khách mời 3", tone: "bg-[#ef6d97] text-white" },
             {
               time: "11:00 - 12:00",
@@ -238,8 +238,8 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
               tone: "bg-[#ef6d97] text-white",
             },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
-            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#7d87eb] text-white" },
-            { time: "14:30 - 16:00", title: "-", tone: "bg-[#7d87eb] text-[#95a8b6]" },
+            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
+            { time: "14:30 - 16:00", title: "-", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
           ],
         },
         {
@@ -247,9 +247,9 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
           date: "1/8",
           slots: [
             { time: "8:00 - 9:00", title: "Thuyết trình dự án nhóm", tone: "bg-[#abdde0] text-[#111111]" },
-            { time: "9:00 - 10:00", title: "-", tone: "bg-[#abdde0] text-[#95a8b6]" },
-            { time: "10:00 - 11:00", title: "-", tone: "bg-[#abdde0] text-[#95a8b6]" },
-            { time: "11:00 - 12:00", title: "-", tone: "bg-[#abdde0] text-[#95a8b6]" },
+            { time: "9:00 - 10:00", title: "", tone: "bg-[#abdde0] text-[#95a8b6]" },
+            { time: "10:00 - 11:00", title: "", tone: "bg-[#abdde0] text-[#95a8b6]" },
+            { time: "11:00 - 12:00", title: "", tone: "bg-[#abdde0] text-[#95a8b6]" },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
             { time: "13:00 - 14:30", title: "Thảo luận", tone: "bg-[#7d87eb] text-white" },
             { time: "14:30 - 16:00", title: "Lễ tổng kết", tone: "bg-[#7d87eb] text-white" },
@@ -267,17 +267,13 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
           date: "20/7",
           slots: [
             { time: "8:00 - 9:00", title: "Lễ chào mừng", tone: "bg-[#7d87eb] text-white" },
-            { time: "9:00 - 10:00", title: "Bài giảng khách mời 1", tone: "bg-[#7d87eb] text-white" },
-            { time: "10:00 - 11:00", title: "Đại số tuyến tính 1: Cơ bản", tone: "bg-[#7d87eb] text-white" },
-            {
-              time: "11:00 - 12:00",
-              title:
-                "Đại số tuyến tính 2: Biến đổi tuyến tính (Linear transformations)",
-                tone: "bg-[#7d87eb] text-white",
-            },
-            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
-            { time: "13:00 - 14:30", title: "Lập trình Python 1", tone: "bg-[#cfffde] text-[#111111]" },
-            { time: "14:30 - 16:00", title: "Bài tập toán trên Python 1", tone: "bg-[#cfffde] text-[#111111]" },
+            { time: "9:00 - 10:00", title: "Đại số tuyến tính 1: Cơ bản", tone: "bg-[#b0c5ff] text-[#111111]" },
+            { time: "10:00 - 11:00", title: "Đại số tuyến tính 2: Biến đổi tuyến tính (Linear transformations)", tone: "bg-[#b0c5ff] text-[#111111]" },
+            { time: "11:00 - 12:00", title: "Xác suất thống kê 1: Cơ bản", tone: "bg-[#fae8b4] text-[#111111]"},
+            { time: "12:00 - 14:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            { time: "14:00 - 15:30", title: "Lập trình Python 1", tone: "bg-[#cfffde] text-[#111111]" },
+            { time: "15:30 - 17:00", title: "Bài tập toán trên Python 1", tone: "bg-[#cfffde] text-[#111111]" },
+            { time: "20:00 - 21:00", title: "Office Hour: Founders Minh Đức và Bình Minh", tone: "bg-[#6bff63] text-[#111111]" },
           ],
         },
         {
@@ -288,19 +284,19 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
               time: "8:00 - 9:00",
               title:
                 "Đại số tuyến tính 3: Ma trận nghịch đảo (Matrix inversion)",
-              tone: "bg-[#fae8b4] text-[#111111]",
+              tone: "bg-[#b0c5ff] text-[#111111]",
             },
             {
               time: "9:00 - 10:00",
               title:
                 "Đại số tuyến tính 4: Phép phân tích riêng (Eigendecomposition)",
-              tone: "bg-[#fae8b4] text-[#111111]",
+              tone: "bg-[#b0c5ff] text-[#111111]",
             },
-            { time: "10:00 - 11:00", title: "Xác suất thống kê 1: Cơ bản", tone: "bg-[#fae8b4] text-[#111111]" },
-            { time: "11:00 - 12:00", title: "Học máy 1: Giới thiệu", tone: "bg-[#abdde0] text-[#111111]" },
-            { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
-            { time: "13:00 - 14:30", title: "Lập trình Python 2", tone: "bg-[#cfffde] text-[#111111]" },
-            { time: "14:30 - 16:00", title: "Bài tập toán trên Python 2", tone: "bg-[#cfffde] text-[#111111]" },
+            { time: "10:00 - 11:00", title: "Học máy 1: Giới thiệu", tone: "bg-[#abdde0] text-[#111111]" },
+            { time: "11:00 - 12:00", title: "Học máy 2: Học giám sát (Supervised learning)", tone: "bg-[#abdde0] text-[#111111]" },
+            { time: "12:00 - 14:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
+            { time: "14:00 - 15:30", title: "Lập trình Python 2", tone: "bg-[#cfffde] text-[#111111]" },
+            { time: "15:30 - 17:00", title: "Bài tập toán trên Python 2", tone: "bg-[#cfffde] text-[#111111]" },
           ],
         },
         {
@@ -309,27 +305,27 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
           slots: [
             {
               time: "8:00 - 9:00",
-              title: "Đại số tuyến tính 5: Giải tích ma trận (Matrix calculus)",
-              tone: "bg-[#fae8b4] text-[#111111]",
-            },
-            {
-              time: "9:00 - 10:00",
               title: "Xác suất thống kê 2: Mô hình thống kê",
               tone: "bg-[#fae8b4] text-[#111111]",
             },
             {
+              time: "9:00 - 10:00",
+              title: "Bài giảng khách mời 1",
+              tone: "bg-[#ef6d97] text-white",
+            },
+            {
               time: "10:00 - 11:00",
               title:
-                "Xác suất thống kê 3: Hồi quy tuyến tính (Linear regression)",
-              tone: "bg-[#fae8b4] text-[#111111]",
+                "Đại số tuyến tính 5: Giải tích ma trận (Matrix calculus)",
+              tone: "bg-[#b0c5ff] text-[#111111]",
             },
             {
               time: "11:00 - 12:00",
-              title: "Học máy 2: Học giám sát (Supervised learning)",
-              tone: "bg-[#abdde0] text-[#111111]",
+              title: "Đại số tuyến tính 6/Lập trình Python 3",
+              tone: "bg-[#b0c5ff] text-[#111111]",
             },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
-            { time: "13:00 - 14:30", title: "Lập trình Python 3", tone: "bg-[#cfffde] text-[#111111]" },
+            { time: "13:00 - 14:30", title: "Học máy 3: Thuật toán giảm độ dốc (Gradient descent)", tone: "bg-[#abdde0] text-[#111111]" },
             { time: "14:30 - 16:00", title: "Bài tập toán trên Python 3", tone: "bg-[#cfffde] text-[#111111]" },
           ],
         },
@@ -339,20 +335,20 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
           slots: [
             {
               time: "8:00 - 9:00",
-              title: "Đại số tuyến tính 6: Tổng kết & Ví dụ ứng dụng",
+              title: "Xác suất thống kê 3: Hồi quy tuyến tính (Linear regression)",
               tone: "bg-[#fae8b4] text-[#111111]",
             },
             {
               time: "9:00 - 10:00",
-              title: "Học máy 3: Thuật toán giảm độ dốc (Gradient descent)",
-              tone: "bg-[#abdde0] text-[#111111]",
+              title: "Bài giảng khách mời 2",
+              tone: "bg-[#ef6d97] text-white",
             },
             {
               time: "10:00 - 11:00",
-              title: "Học máy 4: Học không giám sát (Unsupervised learning)",
-              tone: "bg-[#abdde0] text-[#111111]",
+              title: "Đại số tuyến tính 7: Tổng kết & Ví dụ ứng dụng",
+              tone: "bg-[#b0c5ff] text-[#111111]",
             },
-            { time: "11:00 - 12:00", title: "Bài giảng khách mời 2", tone: "bg-[#ef6d97] text-white" },
+            { time: "11:00 - 12:00", title: "Học máy 4: Học không giám sát (Unsupervised learning)", tone: "bg-[#abdde0] text-[#111111]" },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
             { time: "13:00 - 14:30", title: "Lập trình Python 4", tone: "bg-[#cfffde] text-[#111111]" },
             { time: "14:30 - 16:00", title: "Bài tập toán trên Python 4", tone: "bg-[#cfffde] text-[#111111]" },
@@ -372,17 +368,17 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
               title: "Học máy 6: Tổng kết & Giới thiệu các chủ đề khác",
               tone: "bg-[#abdde0] text-[#111111]",
             },
-            { time: "10:00 - 11:00", title: "-", tone: "bg-[#f8fbfd] text-[#95a8b6]" },
-            { time: "11:00 - 12:00", title: "-", tone: "bg-[#f8fbfd] text-[#95a8b6]" },
+            { time: "10:00 - 11:00", title: "", tone: "bg-[#abdde0] text-[#95a8b6]" },
+            { time: "11:00 - 12:00", title: "Office Hour: Founder Thế Quỳnh", tone: "bg-[#6bff63] text-[#111111]" },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
             {
               time: "13:00 - 14:30",
-              title: "Giới thiệu dự án nhóm tuần 2 (dự án ứng dụng thực tiễn)",
+              title: "Giới thiệu dự án nhóm tuần 2",
               tone: "bg-[#abdde0] text-[#111111]",
             },
             {
               time: "14:30 - 16:00",
-              title: "Giới thiệu dự án nhóm tuần 2 (dự án ứng dụng khoa học)",
+              title: "",
               tone: "bg-[#abdde0] text-[#111111]",
             },
           ],
@@ -398,23 +394,24 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
           slots: [
             {
               time: "8:00 - 9:00",
-              title: "Bài giảng liên quan dự án nhóm ứng dụng thực tiễn",
+              title: "Thị giác máy tính (Computer vision)",
               tone: "bg-[#abdde0] text-[#111111]",
             },
             {
               time: "9:00 - 10:00",
-              title: "-",
-              tone: "bg-[#abdde0] text-[#111111]",
+              title: "Bài giảng khách mời 3",
+              tone: "bg-[#ef6d97] text-white",
             },
             {
               time: "10:00 - 11:00",
-              title: "Bài giảng liên quan dự án nhóm ứng dụng khoa học",
-              tone: "bg-[#ffe18f] text-[#111111]",
+              title: "Mô hình Transformer",
+              tone: "bg-[#bff7ff] text-[#111111]",
             },
-            { time: "11:00 - 12:00", title: "Học viên làm dự án nhóm", tone: "bg-[#abdde0] text-[#111111]" },
+            { time: "11:00 - 12:00", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
-            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#7d87eb] text-white" },
-            { time: "14:30 - 16:00", title: "-", tone: "bg-[#7d87eb] text-[#95a8b6]" },
+            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
+            { time: "14:30 - 16:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
+            { time: "20:00 - 21:00", title: "Office Hour: Founder Cảnh Hoàng", tone: "bg-[#6bff63] text-[#111111]" },
           ],
         },
         {
@@ -423,57 +420,57 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
           slots: [
             {
               time: "8:00 - 9:00",
-              title: "Bài giảng liên quan dự án nhóm ứng dụng thực tiễn",
-              tone: "bg-[#abdde0] text-[#111111]",
+              title: "Mô hình tạo sinh (Generative models)",
+              tone: "bg-[#7d87eb] text-[#111111]",
             },
             {
               time: "9:00 - 10:00",
-              title: "-",
-              tone: "bg-[#abdde0] text-[#111111]",
+              title: "Thông tin: Chương trình cử nhân tại MBZUAI",
+              tone: "bg-[#69c8c2] text-[#111111]",
             },
             {
               time: "10:00 - 11:00",
-              title: "Bài giảng liên quan dự án nhóm ứng dụng khoa học",
+              title: "LLMs/LoRA/Quant/RL",
               tone: "bg-[#ffe18f] text-[#111111]",
             },
-            { time: "11:00 - 12:00", title: "Học viên làm dự án nhóm", tone: "bg-[#abdde0] text-[#111111]" },
+            { time: "11:00 - 12:00", title: "Hệ thống đề xuất (Recommendation Systems)", tone: "bg-[#7d87eb] text-[#111111]" },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
-            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#7d87eb] text-white" },
-            { time: "14:30 - 16:00", title: "-", tone: "bg-[#7d87eb] text-[#95a8b6]" },
+            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
+            { time: "14:30 - 16:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
           ],
         },
         {
           label: "Thứ 4",
           date: "29/7",
           slots: [
-            { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
-            { time: "9:00 - 10:00", title: "-", tone: "bg-[#bff7ff] text-[#95a8b6]" },
-            { time: "10:00 - 11:00", title: "-", tone: "bg-[#bff7ff] text-[#95a8b6]" },
-            { time: "11:00 - 12:00", title: "-", tone: "bg-[#bff7ff] text-[#95a8b6]" },
+            { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
+            { time: "9:00 - 10:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
+            { time: "10:00 - 11:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
+            { time: "11:00 - 12:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
             {
               time: "13:00 - 14:30",
-              title: "Hoạt động: Công viên Đông Mỹ Biên Nhật Lệ",
-              tone: "bg-[#69c8c2] text-white",
+              title: "Học viên làm dự án nhóm (Địa điểm tự do)",
+              tone: "bg-[#c2a3ff] text-[#111111]",
             },
-            { time: "14:30 - 16:00", title: "-", tone: "bg-[#69c8c2] text-[#95a8b6]" },
+            { time: "14:30 - 16:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
           ],
         },
         {
           label: "Thứ 5",
           date: "30/7",
           slots: [
-            { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
-            { time: "9:00 - 10:00", title: "Học viên làm dự án nhóm", tone: "bg-[#bff7ff] text-[#111111]" },
-            { time: "10:00 - 11:00", title: "Bài giảng khách mời 3", tone: "bg-[#ef6d97] text-white" },
+            { time: "8:00 - 9:00", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
+            { time: "9:00 - 10:00", title: "Workshop kỹ năng thuyết trình", tone: "bg-[#9effe2] text-[#111111]" },
+            { time: "10:00 - 11:00", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
             {
               time: "11:00 - 12:00",
-              title: "Bài giảng khách mời 4 / Giao lưu hỏi & đáp",
-              tone: "bg-[#ef6d97] text-white",
+              title: "",
+              tone: "bg-[#c2a3ff] text-white",
             },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
-            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#7d87eb] text-white" },
-            { time: "14:30 - 16:00", title: "-", tone: "bg-[#7d87eb] text-[#95a8b6]" },
+            { time: "13:00 - 14:30", title: "Học viên làm dự án nhóm", tone: "bg-[#c2a3ff] text-[#111111]" },
+            { time: "14:30 - 16:00", title: "", tone: "bg-[#c2a3ff] text-[#95a8b6]" },
           ],
         },
         {
@@ -481,12 +478,12 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
           date: "31/7",
           slots: [
             { time: "8:00 - 9:00", title: "Thuyết trình dự án nhóm", tone: "bg-[#abdde0] text-[#111111]" },
-            { time: "9:00 - 10:00", title: "-", tone: "bg-[#abdde0] text-[#95a8b6]" },
-            { time: "10:00 - 11:00", title: "-", tone: "bg-[#abdde0] text-[#95a8b6]" },
-            { time: "11:00 - 12:00", title: "-", tone: "bg-[#abdde0] text-[#95a8b6]" },
+            { time: "9:00 - 10:00", title: "", tone: "bg-[#abdde0] text-[#95a8b6]" },
+            { time: "10:00 - 11:00", title: "", tone: "bg-[#abdde0] text-[#95a8b6]" },
+            { time: "11:00 - 12:00", title: "", tone: "bg-[#abdde0] text-[#95a8b6]" },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
-            { time: "13:00 - 14:30", title: "Thảo luận", tone: "bg-[#7d87eb] text-white" },
-            { time: "14:30 - 16:00", title: "Lễ tổng kết", tone: "bg-[#7d87eb] text-white" },
+            { time: "13:00 - 14:30", title: "BTC Thảo luận", tone: "bg-[#7d87eb] text-[#111111]" },
+            { time: "14:30 - 16:00", title: "Lễ tổng kết", tone: "bg-[#7d87eb] text-[#111111]" },
           ],
         },
       ],
@@ -678,7 +675,7 @@ export function ProgramSchedulePreviewSection() {
                               slot?.tone ?? "bg-[#f8fbfd] text-[#95a8b6]",
                             ].join(" ")}
                           >
-                            {slot?.title ?? "-"}
+                            {slot?.title ?? ""}
                           </td>
                         ))}
                       </tr>
