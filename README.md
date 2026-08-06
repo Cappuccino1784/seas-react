@@ -28,6 +28,24 @@ The `/apply/form` flow supports:
 
 The export is a CSV file that can be opened in Excel.
 
+## Project assets
+
+Project thumbnails and PDFs are currently served from the `public/` directory:
+
+- Thumbnails: `public/images/project-thumbnails/...`
+- PDFs: `public/pdfs/...`
+
+If you want to move these assets to Supabase Storage, create buckets for project thumbnails and project PDFs, upload the files there, and then update the project data to store the public file URLs instead of local paths.
+
+Recommended bucket layout:
+
+- `project-thumbnails/2025/...`
+- `project-thumbnails/2026/...`
+- `project-pdfs/2025/...`
+- `project-pdfs/2026/...`
+
+For a Supabase-backed media workflow, keep the bucket public if the assets should be publicly viewable, or use signed URLs if you want to restrict access.
+
 ## Environment
 
 Copy `.env.example` to `.env.local` and set the required values. Key environment variables used by the app:
