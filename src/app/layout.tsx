@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Lexend, Space_Grotesk } from 'next/font/google';
 import '@/app/globals.css';
 import { FloatingCtaCard } from '@/components/shared/floating-cta-card';
+import { Analytics } from '@vercel/analytics/next';
 
 const lexend = Lexend({
   subsets: ['latin', 'latin-ext'],
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={`${lexend.variable} ${spaceGrotesk.variable} font-space-grotesk`}>
         {children}
         <FloatingCtaCard />
+        <Analytics />
       </body>
     </html>
   );

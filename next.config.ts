@@ -5,11 +5,11 @@ const isDev = process.env.NODE_ENV !== 'production';
 // Security header metadata. Adjust sources (fonts, analytics, APIs) as needed.
 const csp = [
   "default-src 'self'",
-  "script-src 'self' https://www.googletagmanager.com 'unsafe-inline'",
+  "script-src 'self' https://www.googletagmanager.com https://va.vercel-scripts.com 'unsafe-inline'",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data:",
   "font-src 'self' https://fonts.gstatic.com",
-  "connect-src 'self' https://api.example.com",
+  "connect-src 'self' https://api.example.com https://va.vercel-scripts.com",
   "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
   "frame-ancestors 'none'",
 ].join('; ');
