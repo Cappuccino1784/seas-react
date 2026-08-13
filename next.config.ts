@@ -3,9 +3,15 @@ import type { NextConfig } from 'next';
 const isDev = process.env.NODE_ENV !== 'production';
 
 // Security header metadata. Adjust sources (fonts, analytics, APIs) as needed.
+const scriptSrc = ["'self'", "https://www.googletagmanager.com", "'unsafe-inline'"];
+
+if (isDev) {
+  scriptSrc.push("'unsafe-eval'");
+}
+
 const csp = [
   "default-src 'self'",
-  "script-src 'self' https://www.googletagmanager.com 'unsafe-inline'",
+  `script-src ${scriptSrc.join(' ')}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data:",
   "font-src 'self' https://fonts.gstatic.com",

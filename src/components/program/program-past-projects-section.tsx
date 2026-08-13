@@ -76,7 +76,9 @@ function ProjectCard({
           <span className="font-semibold text-[#04536E]/70">Nhóm:</span>{" "}
           {project.teamMembers.members.slice().join(", ")}
           <br />
-          <span className="font-semibold text-[#04536E]/70">Giảng viên:</span>{" "}
+          <span className="font-semibold text-[#04536E]/70">
+            Giảng viên:
+          </span>{" "}
           {project.teamMembers.instructors.slice().join(", ")}
         </p>
       </div>
@@ -87,7 +89,7 @@ function ProjectCard({
 export function ProgramPastProjectsSection() {
   const { ref, isVisible } = useRevealOnView<HTMLElement>();
   const [activeYear, setActiveYear] =
-    useState<(typeof projectYears)[number]>("SEAS 2025");
+    useState<(typeof projectYears)[number]>("SEAS 2026");
 
   const yearProjects = projects[activeYear];
   const hasProjects = yearProjects.length > 0;
