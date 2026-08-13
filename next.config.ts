@@ -17,11 +17,11 @@ const csp = [
   "font-src 'self' https://fonts.gstatic.com",
   "connect-src 'self' https://api.example.com",
   "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
-  "frame-ancestors 'none'",
+  "frame-ancestors 'self' https://www.youtube.com https://www.youtube-nocookie.com",
 ].join('; ');
 
 const securityHeaders = [
-  { key: 'X-Frame-Options', value: 'DENY' },
+  { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
   { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
