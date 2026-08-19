@@ -473,7 +473,39 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
           },
         ],
       },
-      faq: [],
+      faq: [
+        {
+          question:
+            "Ý tưởng dự án xuất phát từ đâu, hoặc bài toán thực tế nào mà dự án muốn giải quyết?",
+          answer: [
+            "Khi lên ý tưởng cho dự án của SEAS, mình nghĩ rằng AI Safety (An toàn AI) là một đề tài hay và thú vị. Với tốc độ phát triển của các mô hình AI/ML ngày nay, mình nghĩ rằng đề tài này sẽ giúp được các bạn (1) tìm hiểu về điểm yếu của các mô hình AI/ML, biết rằng chúng không toàn năng và không hoàn hảo (2) bên cạnh đó, việc đào sâu vào các điểm mạnh và điểm yếu của các mô hình AI/ML cũng giúp các bạn hiểu hơn về bản chất và kiến trúc các mô hình, cách các mô hình được huấn luyện và tối ưu.",
+            "Trong học máy, mô hình nhận diện vật thể rất phổ biến và có nhiều ứng dụng trên các hệ thống camera giám sát, xe tự hành, … Trong dự án này, các bạn học viên sẽ đóng vai trò là một kẻ tấn công, tìm cách khai thác điểm yếu của mô hình nhận diện vật thể, thông qua đó làm sai lệch kết quả đầu ra của mô hình. Bên cạnh đó, các bạn cũng sẽ dành thời gian để tìm hiểu về các phương pháp phòng thủ, nhằm tăng độ tin cậy của các mô hình nhận diện vật thể.",
+          ],
+          author: "Nguyễn Tiết Nguyên Khôi – Trợ giảng",
+        },
+        {
+          question: "Dự án sử dụng chủ yếu nền tảng kiến thức và mô hình nào?",
+          answer: [
+            "Để có thể thực hiện dự án, các bạn học viên cần hiểu rõ bản chất của mô hình học máy nói chung và mô hình nhận diện vật thể nói riêng. Từ kiến trúc mạng nơ-ron đến cách các mô hình được huấn luyện. Từ đó, các thuật toán tấn công chủ yếu khai thác vào những lỗ hổng của mô hình trong mạng kiến trúc hoặc cách mô hình được huấn luyện. Mô hình bọn mình sử dụng cho dự án này là YOLOv3. Mặc dù gần đây có nhiều phiên bản YOLO mới và tiên tiến hơn, nhưng YOLOv3 là một phiên bản khá tổng quát, việc này sẽ giúp các bạn học viên dễ tiếp cận và tiếp thu hơn. Thuật toán dùng để tấn công là một thuật toán whitebox có tên là TOG.",
+          ],
+          author: "Nguyễn Tiết Nguyên Khôi – Trợ giảng",
+        },
+        {
+          question:
+            "Thách thức kỹ thuật lớn nhất mà nhóm gặp phải là gì và mọi người đã vượt qua nó ra sao?",
+          answer: [
+            "Mình nghĩ đây là một bài toán khó. Vì học viên vừa phải tìm hiểu về mô hình nhận diện vật thể, vừa phải tìm hiểu về các thuật toán tấn công. Riêng việc học và hiểu các mô hình computer vision thường phải tốn vài tuần theo chương trình đại học cơ bản. Mình để ý tuần đầu các bạn gặp rất nhiều khó khăn trong việc hiểu về gradient descent. Tuy nhiên, các bạn rất chủ động trong việc phân công công việc và chia các khối lượng công việc ra thành từng phần nhỏ, mỗi bạn đảm nhiệm một phần, và sau khi tìm hiểu sẽ giải thích lại cho cả nhóm. Mình cho rằng cách làm này hay và giúp các bạn có cơ hội trao đổi và ghi nhớ kiến thức lâu hơn. Nhờ vậy, chỉ sau tuần đầu tiên, các bạn cũng hiểu được khái quát các khái niệm cơ bản. Trong tuần thứ 2, chủ yếu các bạn bắt tay vào code, và cũng chia công việc thành các phẩn nhỏ để các bạn trong team cùng làm với nhau. ",
+          ],
+          author: "Nguyễn Tiết Nguyên Khôi – Trợ giảng",
+        },
+        {
+          question: "TA đã chuẩn bị những gì trước, và học viên đã tự thực hiện những phần việc nào?",
+          answer: [
+            "Đối với 2 TA là Đức và Khôi, bên cạnh việc chuẩn bị tài liệu cùng template code, bọn mình muốn định hướng cho các bạn học viên rèn luyện tư duy nghiên cứu. Do vậy, bên cạnh việc đưa ra các hướng đi chính, bọn mình cố gắng khuyến khích các bạn suy nghĩ sâu hơn về (1) mục đích và câu hỏi đặt ra của bài toán là gì, (2) tại sao thuật toán này lại tồn tại, và thuật toán này khai thác về vấn đề gì của mô hình, (3) làm sao để đánh giá kết quả của đề tài. Phần đánh giá rất quan trọng. Các bạn học viên cùng nhau thảo luận với nhau về đề tài, và cùng nhau code các phần thuật toán chính"
+          ],
+          author: "Nguyễn Tiết Nguyên Khôi – Trợ giảng",
+        }
+      ],
       teamMembers: {
         instructors: ["Nguyễn Tiết Nguyên Khôi", "Nguyễn Xuân Minh Đức"],
         members: [
@@ -550,7 +582,40 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
           },
         ],
       },
-      faq: [],
+      faq: [
+        {
+          question:
+            "Ý tưởng dự án xuất phát từ đâu, hoặc bài toán thực tế nào mà dự án muốn giải quyết?",
+          answer: [
+            'Mình thường xem những video phục dựng màu cho ảnh chân dung của các thương binh, liệt sĩ được chia sẻ trên mạng xã hội. Mỗi lần xem, mình đều cảm nhận được một điều gì đó rất đặc biệt: màu sắc dường như "thổi hồn" vào những gương mặt vốn chỉ còn lại trong sắc trắng đen, khiến lịch sử trở nên gần gũi và sống động hơn rất nhiều. Nhưng rồi mình nhận ra rằng, không chỉ con người mà cả một giai đoạn bi hùng của đất nước, những con phố, mái nhà, khung cảnh sinh hoạt đời thường ở Huế hay Hội An cũng đang dần phai nhạt cùng với những bức ảnh đen trắng ấy. Những chi tiết màu sắc nguyên bản đã mất đi vĩnh viễn theo thời gian, và thế hệ sau chỉ có thể tưởng tượng chứ không thể thực sự "nhìn thấy" quá khứ theo đúng cách nó đã từng tồn tại. Chính suy nghĩ đó đã thôi thúc mình tìm một phương pháp để phục dựng lại màu sắc cho những bức ảnh lịch sử này, như một cách để kết nối lại với ký ức và bảo tồn hình ảnh của Huế, Hội An trong một giai đoạn đáng nhớ của dân tộc.',
+          ],
+          author: "Nguyễn Phúc Lương – Trợ giảng",
+        },
+        {
+          question: "Dự án sử dụng chủ yếu nền tảng kiến thức và mô hình nào?",
+          answer: [
+            "Dự án được xây dựng dựa trên nền tảng kiến thức cơ bản về Computer Vision, trong đó trọng tâm là mạng nơ-ron tích chập (CNN) và kiến trúc Encoder-Decoder, vốn rất phù hợp cho các bài toán chuyển đổi ảnh (image-to-image translation) như tô màu ảnh đen trắng. Bên cạnh đó, nhóm còn áp dụng kỹ thuật LoRA (Low-Rank Adaptation) để tinh chỉnh mô hình một cách hiệu quả mà không cần huấn luyện lại toàn bộ tham số, giúp tiết kiệm tài nguyên tính toán trong khi vẫn đảm bảo chất lượng đầu ra. Ngoài kiến trúc mô hình, dự án còn đòi hỏi hiểu biết về các kỹ thuật và metrics để theo dõi, đánh giá quá trình huấn luyện, từ đó đảm bảo model học đúng hướng.",
+          ],
+          author: "Nguyễn Phúc Lương – Trợ giảng",
+        },
+        {
+          question:
+            "Thách thức kỹ thuật lớn nhất mà nhóm gặp phải là gì và mọi người đã vượt qua nó ra sao?",
+          answer: [
+            "Thách thức lớn nhất mà các bạn học viên phải đối mặt là tự mình điều chỉnh các tham số huấn luyện (hyperparameters) và thiết lập cấu hình khởi tạo sao cho model đạt được kết quả tốt nhất trên bộ ảnh inference cho sẵn. Đây là một quá trình đòi hỏi thử nghiệm nhiều lần, quan sát kỹ và điều chỉnh linh hoạt. Không dừng lại ở việc huấn luyện, học viên còn cần chứng minh và giải thích được kết quả của mình theo hai hướng: định tính, thông qua việc trình bày trực quan các bức ảnh đã được tô màu để người xem có thể tự đánh giá; và định lượng, thông qua việc so sánh các thông số, chỉ số đo lường (metrics) giữa các lần thử nghiệm khác nhau để chứng minh sự cải thiện một cách khoa học và có cơ sở.",
+          ],
+          author: "Nguyễn Phúc Lương – Trợ giảng",
+        },
+        {
+          question:
+            "TA đã chuẩn bị những gì trước, và học viên đã tự thực hiện những phần việc nào?",
+          answer: [
+            'Về phía TA, nhóm đã chuẩn bị sẵn một bộ khung sườn (framework) cơ bản để kết nối các thành phần chính của hệ thống lại với nhau, bao gồm model, LoRA adapter, dataset, và pipeline inference. Bộ khung này đóng vai trò như một "bộ khung xương" giúp học viên hình dung được luồng hoạt động tổng thể của dự án.',
+            "Về phía học viên, các bạn sẽ tự tay code chi tiết từng module bên trong khung sườn đó, đồng thời tự tinh chỉnh các tham số để tiến hành huấn luyện model. Học viên cũng chủ động tìm kiếm, thu thập và sàng lọc bộ dữ liệu (dataset) phù hợp cho bài toán tô màu ảnh Huế và Hội An. Cuối cùng, các bạn cần tự phối hợp trong nhóm để tổng hợp, trình bày quá trình thực hiện cũng như kết quả đạt được trước ban giám khảo một cách mạch lạc và thuyết phục.",
+          ],
+          author: "Nguyễn Phúc Lương – Trợ giảng",
+        },
+      ],
       teamMembers: {
         instructors: [
           "Nguyễn Phúc Lương",
@@ -1003,7 +1068,44 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         {
           question:
             "Ý tưởng dự án xuất phát từ đâu, hoặc bài toán thực tế nào mà dự án muốn giải quyết?",
-          answer: [""],
+          answer: [
+            "Có 3 lí do chính dẫn tới việc mình lựa chọn bài toán này:",
+            "Trong quá trình theo dõi các TA khác đề xuất ý tưởng của bản thân, thì mình nhận thấy là đa phần mọi người sẽ tập trung vào các mảng hot hiện tại trong AI như LLM, NLP, Computer Vision và chưa có ai làm về mảng Reinforcement Learning. Chính vì vậy mình cũng muốn nhân dịp này giới thiệu cho các bạn 1 mảng khá niche là Reinforcement Learning. Và trong vô vàn các ứng dụng và bài toán mà Reinforcement Learning có thể xử lý như Robotics, Game, Self-Driving, AI Agentic, etc… thì mình quyết định chọn hướng ứng dụng RL vào trong Quant Finance, Quant Trading. Đối với các bạn giỏi Toán, Lý, Lập trình thì ngoài việc làm nghiên cứu ở các lĩnh vực về khoa học tự nhiên hay trí tuệ nhân tạo thì làm Quant ở các hedge fund, bank cũng là một hướng đi rất tốt và đem lại thu nhập rất lớn.",
+          ],
+          author: "Đỗ Châu Tuấn – Trợ giảng",
+        },
+        {
+          question: "Dự án sử dụng chủ yếu nền tảng kiến thức và mô hình nào?",
+          answer: [
+            "Khi tham gia dự án này thì các bạn học viên sẽ được trang bị các kiến thức về:",
+            "• Toán: Xác suất thống kê, quá trình ngẫu nhiên, đại số tuyến tính, tối ưu hóa.",
+            "• Lập trình: cấu trúc dữ liệu, quy hoạch động, vv..",
+            "• Reinforcement Learning: Markov Decision Process, Bellman equation, Deep Q-Learning, PPO, etc..",
+          ],
+          author: "Đỗ Châu Tuấn – Trợ giảng",
+        },
+        {
+          question:
+            "Thách thức kỹ thuật lớn nhất mà nhóm gặp phải là gì và mọi người đã vượt qua nó ra sao?",
+          answer: [
+            "Tảng đá lớn nhất mà team mình phải đối diện chính là việc hiểu được các concept cơ bản của tài chính để có thể áp dụng được các kiến thức kỹ thuật đã được học. Về mặt kỹ thuật và kiến thức nền tảng như Toán, lập trình, AI thì mình rất ngạc nhiên và cũng siêu tự hào là các thành viên nhóm mình rất thông minh.",
+          ],
+          author: "Đỗ Châu Tuấn – Trợ giảng",
+        },
+        {
+          question:
+            "TA đã chuẩn bị những gì trước, và học viên đã tự thực hiện những phần việc nào?",
+          answer: [
+            "Chính vì lượng kiến thức khổng lồ cần thiết để có thể thực hiện project này, mình đã chuẩn bị các notebook chi tiết về kiến thức kèm code lab để thực hành ứng với mỗi chủ đề mà các bạn học sinh cần nắm được để hoàn thành chủ đề này. Ví dụ trên notebook về Markov Chain, Introduction to Reinforcement Learning, Q-Learning, Deep Q-Learning, Project Demo và dành trọn 2 ngày đầu tiên để các bạn làm quen và nắm bắt các kiến thức cần cho project. Tiếp theo đó thì các bạn học viên đã tự research về các potential project mà có thể áp dụng được từ các kiến thức đã học. Trong quá trình thực hiện thì mình rất bất ngờ về khả năng tìm hiểu và tự học của cả nhóm, từ những kiến thức nhập môn cơ bản, cả nhóm đã tự mình tìm hiểu rất nhiều mô hình và kỹ thuật advance và sáng tạo làm mới đi so với các project mà trước đây đã được thực hiện trên mạng.",
+          ],
+          author: "Đỗ Châu Tuấn – Trợ giảng",
+        },
+        {
+          question:
+            "Đánh giá ngắn gọn về hiệu năng/kết quả mà mô hình đạt được?",
+          answer: [
+            "Không dừng lại ở việc xây dựng code “chạy được” với kết quả những con trading agent chỉ được backtest và đạt được kết quả tốt trên dữ liệu lịch sử của thị trường  mà nhóm mình đã xây dựng được 1 hệ thống live trading trên dữ liệu real-time được cào trực tiếp qua API và showcase được cho tất cả mọi người cách agent đưa ra hành động (buy, hold, sell) và số lượng vào từng mã cổ phiếu và crypto. Kết quả mà mô hình đạt được vẫn còn khá là khiêm tốn do thời gian có hạn và các signal bọn mình sử dụng làm state còn tương đối cơ bản chỉ phụ thuộc thuần vào bản chất giá của tài sản chưa có thêm các yếu tố bên ngoài như chính trị, social media. Chính vì vậy mà tương lai project này sẽ còn có khả năng phát triển thêm rất nhiều và biết đâu vid ở đầu bài thuyết trình lại thành hiện thực 😂.",
+          ],
           author: "Đỗ Châu Tuấn – Trợ giảng",
         },
       ],

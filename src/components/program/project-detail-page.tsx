@@ -273,7 +273,7 @@ export function ProjectDetailPage({
         {project.interview ? <ProjectInterview interview={project.interview} /> : null}
 
         {/* FAQ */}
-        {/* {project.faq?.length ? <ProjectFaq faq={project.faq} /> : null} */}
+        {project.faq?.length ? <ProjectFaq faq={project.faq} /> : null}
 
         <div className="mb-8">
           <h1 className="mb-2 font-space-grotesk text-[2rem] font-bold uppercase leading-[1.1] tracking-[-0.04em] text-[#04536E] md:text-[2.6rem]">
