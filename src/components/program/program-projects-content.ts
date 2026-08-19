@@ -520,7 +520,7 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         "/images/project-thumbnails/2026/Nhóm 1. NGHIÊN CỨU TẤN CÔNG ĐỐI KHÁNG TRÊN BÀI TOÁN NHẬN DIỆN VẬT THỂ.jpg",
       slidePdf:
         "/pdfs/PROJECTS 2026/Nhóm 1. NGHIÊN CỨU TẤN CÔNG ĐỐI KHÁNG TRÊN BÀI TOÁN NHẬN DIỆN VẬT THỂ.pdf",
-      videoLink: "",
+      videoLink: "https://www.youtube.com/watch?v=dB-AoBHEkTk",
       slug: "nghien-cuu-tan-cong-doi-khang-tren-bai-toan-nhan-dien-vat-the",
     },
     // Nhóm 2 - TÔ MÀU ẢNH TƯ LIỆU LỊCH SỬ MIỀN TRUNG VIỆT NAM BẰNG HỌC SÂU
@@ -634,7 +634,7 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         "/images/project-thumbnails/2026/Nhóm 2. TÔ MÀU ẢNH TƯ LIỆU LỊCH SỬ MIỀN TRUNG VIỆT NAM BẰNG HỌC SÂU.jpg",
       slidePdf:
         "/pdfs/PROJECTS 2026/Nhóm 2. TÔ MÀU ẢNH TƯ LIỆU LỊCH SỬ MIỀN TRUNG VIỆT NAM BẰNG HỌC SÂU.pdf",
-      videoLink: "",
+      videoLink: "https://www.youtube.com/watch?v=nxj-9avTAWQ",
       slug: "to-mau-anh-tu-lieu-lich-su-mien-trung-viet-nam-bang-hoc-sau",
     },
     // Nhóm 3 - ĐÁNH GIÁ ĐỘ BỀN VỮNG CỦA CÁC MÔ HÌNH NGÔN NGỮ LỚN TRÊN PHƯƠNG NGỮ TIẾNG VIỆT
@@ -746,7 +746,7 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         "/images/project-thumbnails/2026/Nhóm 3. ĐÁNH GIÁ ĐỘ BỀN VỮNG CỦA CÁC MÔ HÌNH NGÔN NGỮ LỚN TRÊN PHƯƠNG NGỮ TIẾNG VIỆT.jpg",
       slidePdf:
         "/pdfs/PROJECTS 2026/Nhóm 3. ĐÁNH GIÁ ĐỘ BỀN VỮNG CỦA CÁC MÔ HÌNH NGÔN NGỮ LỚN TRÊN PHƯƠNG NGỮ TIẾNG VIỆT.pdf",
-      videoLink: "",
+      videoLink: "https://www.youtube.com/watch?v=Vw9kjl754yw",
       slug: "danh-gia-do-ben-vung-cua-cac-mo-hinh-ngon-ngu-lon-tren-phuong-ngu-tieng-viet",
     },
     // Nhóm 4 - PHÂN LOẠI BỆNH LÁ TRÊN CÂY LÚA DÀNH CHO NÔNG DÂN SỬ DỤNG MÔ HÌNH AI
@@ -872,7 +872,7 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         "/images/project-thumbnails/2026/Nhóm 4. PHÂN LOẠI BỆNH LÁ TRÊN CÂY LÚA DÀNH CHO NÔNG DÂN SỬ DỤNG MÔ HÌNH AI.jpg",
       slidePdf:
         "/pdfs/PROJECTS 2026/Nhóm 4. PHÂN LOẠI BỆNH LÁ TRÊN CÂY LÚA DÀNH CHO NÔNG DÂN SỬ DỤNG MÔ HÌNH AI.pdf",
-      videoLink: "",
+      videoLink: "https://www.youtube.com/watch?v=Ct7ODV2zfmY",
       slug: "phan-loai-benh-la-tren-cay-lua-danh-cho-nong-dan-su-dung-mo-hinh-ai",
     },
     // Nhóm 5 - HỆ THỐNG GỢI Ý ĐỊA ĐIỂM DU LỊCH VÀ LÊN KẾ HOẠCH CHO DU LỊCH MIỀN TRUNG VIỆT NAM
@@ -1002,7 +1002,7 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         "/images/project-thumbnails/2026/Nhóm 5. HỆ THỐNG GỢI Ý ĐỊA ĐIỂM DU LỊCH VÀ LÊN KẾ HOẠCH CHO DU LỊCH MIỀN TRUNG VIỆT NAM.jpg",
       slidePdf:
         "/pdfs/PROJECTS 2026/Nhóm 5. HỆ THỐNG GỢI Ý ĐỊA ĐIỂM DU LỊCH VÀ LÊN KẾ HOẠCH CHO DU LỊCH MIỀN TRUNG VIỆT NAM.pdf",
-      videoLink: "",
+      videoLink: "https://www.youtube.com/watch?v=TkSBEK4E7i0",
       slug: "he-thong-goi-y-dia-diem-du-lich-va-len-ke-hoach-cho-du-lich-mien-trung-viet-nam",
     },
     // Nhóm 6 - ỨNG DỤNG HỌC TĂNG CƯỜNG TRONG TÀI CHÍNH ĐỊNH LƯỢNG
@@ -1123,7 +1123,7 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         "/images/project-thumbnails/2026/Nhóm 6. ỨNG DỤNG HỌC TĂNG CƯỜNG TRONG TÀI CHÍNH ĐỊNH LƯỢNG.jpg",
       slidePdf:
         "/pdfs/PROJECTS 2026/Nhóm 6. ỨNG DỤNG HỌC TĂNG CƯỜNG TRONG TÀI CHÍNH ĐỊNH LƯỢNG.pdf",
-      videoLink: "",
+      videoLink: "https://www.youtube.com/watch?v=hZnkS8wXCwc",
       slug: "ung-dung-hoc-tang-cuong-trong-tai-chinh-dinh-luong",
     },
     // Nhóm 7 - ỨNG DỤNG MÔ HÌNH SINH TẠO POSTER QUẢNG BÁ DU LỊCH CHO QUẢNG BÌNH
@@ -1245,7 +1245,7 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         "/images/project-thumbnails/2026/Nhóm 7. ỨNG DỤNG MÔ HÌNH SINH TẠO POSTER QUẢNG BÁ DU LỊCH CHO QUẢNG BÌNH.jpg",
       slidePdf:
         "/pdfs/PROJECTS 2026/Nhóm 7. ỨNG DỤNG MÔ HÌNH SINH TẠO POSTER QUẢNG BÁ DU LỊCH CHO QUẢNG BÌNH.pdf",
-      videoLink: "",
+      videoLink: "https://www.youtube.com/watch?v=HXevt_YpXhg",
       slug: "ung-dung-mo-hinh-sinh-tao-poster-quang-ba-du-lich-cho-quang-binh",
     },
     // Nhóm 8 - DỰ ĐOÁN KHẢ NĂNG SỐNG SÓT CỦA BỆNH NHÂN UNG THƯ
@@ -1383,7 +1383,7 @@ export const projects: Record<"SEAS 2025" | "SEAS 2026", Project[]> = {
         "/images/project-thumbnails/2026/Nhóm 8. DỰ ĐOÁN KHẢ NĂNG SỐNG SÓT CỦA BỆNH NHÂN UNG THƯ.jpg",
       slidePdf:
         "/pdfs/PROJECTS 2026/Nhóm 8. DỰ ĐOÁN KHẢ NĂNG SỐNG SÓT CỦA BỆNH NHÂN UNG THƯ.pdf",
-      videoLink: "",
+      videoLink: "https://www.youtube.com/watch?v=Q4WojSlrGKw",
       slug: "du-bao-kha-nang-song-sot-cua-benh-nhan-ung-thu",
     },
   ],
