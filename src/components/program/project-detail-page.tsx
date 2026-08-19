@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import {
   HiArrowLeft,
@@ -37,158 +37,156 @@ function DetailSection({ label, items }: { label: string; items: string[] }) {
   );
 }
 
-function PdfSlidesPreview({ src, title }: { src: string; title: string }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [visiblePageCount, setVisiblePageCount] = useState(6);
-  const [totalPageCount, setTotalPageCount] = useState(0);
-  const hasMoreSlides = totalPageCount > visiblePageCount;
+function ProjectInterview({
+  interview,
+}: {
+  interview: NonNullable<Project["interview"]>;
+}) {
+  return (
+    <section className="mb-8" aria-labelledby="project-interview-heading">
+      <h2
+        id="project-interview-heading"
+        className="mb-4 font-space-grotesk text-[1.5rem] font-bold uppercase leading-[1.1] tracking-[-0.04em] text-[#04536E] md:text-[1.9rem]"
+      >
+        Phỏng vấn thành viên dự án
+      </h2>
 
-  useEffect(() => {
-    let cancelled = false;
+      <div className="overflow-hidden rounded-[24px] border border-[#cfe9f7] bg-white p-4 shadow-[0_8px_24px_rgba(45,139,186,0.1)] md:p-6">
+        <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center">
+          {interview.intervieweePhotoUrl ? (
+            <img
+              src={interview.intervieweePhotoUrl}
+              alt={interview.interviewee}
+              className="aspect-[4/5] rounded-[15%] object-cover border border-[#d6effc] bg-[#f3fbff] shadow-[0_8px_20px_rgba(45,139,186,0.12)] w-[120px] shrink-0 md:w-[140px]"
+            />
+          ) : null}
+          <div>
+            <p className="mb-1 font-lexend text-[0.9rem] font-semibold uppercase tracking-[0.08em] text-[#2D8BBA] sm:text-[1rem] md:text-[1.05rem]">
+              Học viên SEAS 2026
+            </p>
+            <h3 className="font-space-grotesk text-[1.8rem] font-bold uppercase leading-[1.1] tracking-[-0.04em] text-[#04536E] sm:text-[2rem] md:text-[2.4rem]">
+              {interview.interviewee}
+            </h3>
+          </div>
+        </div>
 
-    async function renderPdf() {
-      const container = containerRef.current;
+        <div className="space-y-5">
+          {interview.questions.map((entry, index) => (
+            <article
+              key={`${entry.question}-${index}`}
+              className="rounded-[18px] border border-[#e5f2fb] bg-[#f9fcff] p-4 md:p-5"
+            >
+              <p className="mb-3 font-lexend text-[1rem] font-semibold text-[#04536E] md:text-[1.05rem]">
+                {entry.question}
+              </p>
+              <div className="space-y-2 font-lexend text-[0.95rem] leading-[1.8] text-[#4D5761] md:text-[1rem]">
+                {entry.answer.map((paragraph, answerIndex) => (
+                  <p key={answerIndex}>{paragraph}</p>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
-      if (!container) {
-        return;
-      }
+function ProjectFaq({
+  faq,
+}: {
+  faq: NonNullable<Project["faq"]>;
+}) {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
 
-      container.innerHTML = "";
-      setIsLoading(true);
-      setError(null);
-
-      try {
-        const pdfjs = await import("pdfjs-dist");
-
-        pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-          "pdfjs-dist/build/pdf.worker.min.mjs",
-          import.meta.url,
-        ).toString();
-
-        const loadingTask = pdfjs.getDocument({ url: src });
-        const pdf = await loadingTask.promise;
-
-        if (cancelled || !containerRef.current) {
-          loadingTask.destroy();
-          return;
-        }
-
-        setTotalPageCount(pdf.numPages);
-
-        const pagesToRender = Math.min(visiblePageCount, pdf.numPages);
-
-        for (let pageNumber = 1; pageNumber <= pagesToRender; pageNumber += 1) {
-          const page = await pdf.getPage(pageNumber);
-
-          if (cancelled || !containerRef.current) {
-            break;
-          }
-
-          const pageWrap = document.createElement("div");
-          pageWrap.className =
-            "min-w-0 overflow-hidden rounded-[18px] bg-white shadow-[0_10px_30px_rgba(45,139,186,0.12)]";
-
-          const pageHeader = document.createElement("div");
-          pageHeader.className =
-            "border-b border-[#e5f2fb] bg-[#f7fbff] px-4 py-2 font-lexend text-[0.8rem] font-medium uppercase tracking-[0.06em] text-[#2D8BBA]";
-          pageHeader.textContent = `${title} - Trang ${pageNumber}`;
-
-          const canvas = document.createElement("canvas");
-          const context = canvas.getContext("2d");
-
-          if (!context) {
-            throw new Error("Không thể khởi tạo canvas để hiển thị slides.");
-          }
-
-          pageWrap.appendChild(pageHeader);
-          pageWrap.appendChild(canvas);
-          container.appendChild(pageWrap);
-
-          await new Promise<void>((resolve) => {
-            window.requestAnimationFrame(() => resolve());
-          });
-
-          const pageWidth = Math.max(
-            pageWrap.getBoundingClientRect().width,
-            320,
-          );
-          const baseViewport = page.getViewport({ scale: 1 });
-          const displayScale = pageWidth / baseViewport.width;
-          const renderScale = displayScale * window.devicePixelRatio;
-          const renderViewport = page.getViewport({ scale: renderScale });
-
-          canvas.width = Math.floor(renderViewport.width);
-          canvas.height = Math.floor(renderViewport.height);
-          canvas.style.width = `${Math.floor(baseViewport.width * displayScale)}px`;
-          canvas.style.height = `${Math.floor(baseViewport.height * displayScale)}px`;
-          canvas.className = "block h-auto w-full";
-
-          await page.render({
-            canvasContext: context,
-            canvas,
-            viewport: renderViewport,
-          }).promise;
-        }
-
-        if (!cancelled) {
-          setIsLoading(false);
-        }
-      } catch (err) {
-        if (!cancelled) {
-          setError(
-            err instanceof Error
-              ? err.message
-              : "Không thể tải slides của dự án.",
-          );
-          setIsLoading(false);
-        }
-      }
-    }
-
-    renderPdf();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [src, title, visiblePageCount]);
+  const toggleItem = (index: number) => {
+    setOpenIndex((current) => (current === index ? null : index));
+  };
 
   return (
-    <div className="rounded-[24px] border border-[#7fc8ef]/35 bg-[#f3faff] p-4 shadow-[0_16px_48px_rgba(45,139,186,0.18)] md:p-5">
-      <div className="mb-4 flex items-center justify-between gap-3">
-        {isLoading ? (
-          <span className="font-lexend text-[0.8rem] text-[#4D5761]">
-            Đang tải...
-          </span>
-        ) : null}
-      </div>
+    <section className="mb-8" aria-labelledby="project-faq-heading">
+      <h2
+        id="project-faq-heading"
+        className="mb-4 font-space-grotesk text-[1.5rem] font-bold uppercase leading-[1.1] tracking-[-0.04em] text-[#04536E] md:text-[1.9rem]"
+      >
+        Câu hỏi thường gặp
+      </h2>
+      <div className="space-y-3">
+        {faq.map((item, index) => {
+          const isOpen = openIndex === index;
 
-      {error ? (
-        <div className="rounded-[18px] bg-white px-4 py-5 font-lexend text-[0.95rem] text-[#4D5761] shadow-[0_10px_30px_rgba(45,139,186,0.12)]">
-          {error}
-        </div>
-      ) : (
-        <>
-          <div
-            ref={containerRef}
-            className="grid grid-cols-1 gap-4 md:grid-cols-2"
-            aria-label={`${title} slides`}
-          />
-
-          {hasMoreSlides ? (
-            <div className="mt-4 flex justify-center">
+          return (
+            <div
+              key={`${item.question}-${index}`}
+              className="overflow-hidden rounded-[18px] border border-[#cfe9f7] bg-white shadow-[0_8px_24px_rgba(45,139,186,0.1)]"
+            >
               <button
                 type="button"
-                onClick={() => setVisiblePageCount(totalPageCount)}
-                className="inline-flex items-center justify-center rounded-full border border-[#2D8BBA]/20 bg-white px-5 py-3 font-lexend text-[0.95rem] font-semibold text-[#04536E] transition-colors hover:border-[#2D8BBA] hover:text-[#0f6e98]"
+                onClick={() => toggleItem(index)}
+                aria-expanded={isOpen}
+                aria-controls={`faq-answer-${index}`}
+                className="flex w-full cursor-pointer items-center justify-between gap-4 px-5 py-4 text-left font-lexend text-[0.95rem] font-semibold leading-[1.55] text-[#04536E] md:px-6 md:text-[1rem]"
               >
-                See more slides
+                {item.question}
+                <span
+                  className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#e7f5fc] text-[1.25rem] font-medium text-[#2D8BBA] transition-transform duration-300 ease-out ${
+                    isOpen ? "rotate-45" : "rotate-0"
+                  }`}
+                >
+                  +
+                </span>
               </button>
+
+              <div
+                id={`faq-answer-${index}`}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                  isOpen
+                    ? "grid-rows-[1fr] opacity-100"
+                    : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <div className="border-t border-[#e5f2fb] px-5 py-4 md:px-6">
+                    <div className="space-y-3 font-lexend text-[0.95rem] leading-[1.75] text-[#4D5761] md:text-[1rem]">
+                      {item.answer.every((entry) => /^[-*•]\s/.test(entry.trim())) ? (
+                        <ul className="list-disc space-y-1 pl-5">
+                          {item.answer.map((entry, answerIndex) => (
+                            <li key={answerIndex}>{entry.replace(/^[-*•]\s*/, "")}</li>
+                          ))}
+                        </ul>
+                      ) : (
+                        item.answer.map((paragraph, answerIndex) => (
+                          <p key={answerIndex}>{paragraph}</p>
+                        ))
+                      )}
+                      {item.author ? (
+                        <p className="mx-[20px] my-2 text-right font-semibold text-[#04536E]">
+                          {item.author}
+                        </p>
+                      ) : null}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          ) : null}
-        </>
-      )}
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function PdfDocumentFrame({ src, title }: { src: string; title: string }) {
+  return (
+    <div className="overflow-hidden rounded-[24px] border border-[#7fc8ef]/35 bg-[#f3faff] p-3 shadow-[0_16px_48px_rgba(45,139,186,0.18)] md:p-4">
+      <div className="overflow-hidden rounded-[18px] border border-[#cfe9f7] bg-white">
+        <iframe
+          src={src}
+          title={`${title} PDF`}
+          className="block aspect-[32/22] min-h-[540px] w-full border-0 bg-white"
+          loading="lazy"
+        />
+      </div>
     </div>
   );
 }
@@ -201,7 +199,7 @@ export function ProjectDetailPage({
   year: string;
 }) {
   const videoId = getYouTubeId(project.videoLink);
-  const showSlides = year === "2025" && Boolean(project.slidePdf);
+  const showSlides = Boolean(project.slidePdf);
   const slidePdf = project.slidePdf;
   const bottomLinkClassName =
     "inline-flex items-center justify-center gap-2 rounded-full border border-[#2D8BBA]/20 bg-white px-5 py-3 font-lexend text-[0.95rem] font-semibold text-[#04536E] transition-colors hover:border-[#2D8BBA] hover:text-[#0f6e98]";
@@ -227,6 +225,14 @@ export function ProjectDetailPage({
             <h1 className="mb-2 font-space-grotesk text-[2rem] font-bold uppercase leading-[1.1] tracking-[-0.04em] text-[#04536E] md:text-[2.6rem]">
               {project.title}
             </h1>
+
+            {project.summary?.length ? (
+              <div className="mt-5 space-y-3 font-lexend text-[0.95rem] leading-[1.75] text-[#4D5761] md:text-[1rem]">
+                {project.summary.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
+            ) : null}
 
             <div className="my-6 h-[4px] w-[74px] rounded-full bg-[linear-gradient(90deg,#b7e2f6_0%,#2D8BBA_100%)]" />
 
@@ -264,6 +270,11 @@ export function ProjectDetailPage({
           </section>
         </div>
 
+        {project.interview ? <ProjectInterview interview={project.interview} /> : null}
+
+        {/* FAQ */}
+        {project.faq?.length ? <ProjectFaq faq={project.faq} /> : null}
+
         <div className="mb-8">
           <h1 className="mb-2 font-space-grotesk text-[2rem] font-bold uppercase leading-[1.1] tracking-[-0.04em] text-[#04536E] md:text-[2.6rem]">
             VIDEO THUYẾT TRÌNH DỰ ÁN
@@ -291,16 +302,13 @@ export function ProjectDetailPage({
           </div>
         ) : null}
 
-        <div className="mb-8">
-          <h1 className="mb-2 font-space-grotesk text-[2rem] font-bold uppercase leading-[1.1] tracking-[-0.04em] text-[#04536E] md:text-[2.6rem]">
-            SLIDES DỰ ÁN
-          </h1>
-        </div>
-
         {showSlides ? (
           <div className="mb-8">
+            <h1 className="mb-3 font-space-grotesk text-[2rem] font-bold uppercase leading-[1.1] tracking-[-0.04em] text-[#04536E] md:text-[2.6rem]">
+              SLIDES DỰ ÁN
+            </h1>
             {slidePdf ? (
-              <PdfSlidesPreview src={slidePdf} title={project.title} />
+              <PdfDocumentFrame src={slidePdf} title={project.title} />
             ) : null}
           </div>
         ) : null}

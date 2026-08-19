@@ -6,18 +6,13 @@ import { PillButton } from "@/components/shared/pill-button";
 const programInfo = {
   "SEAS 2026": [
     { label: "Chủ đề", value: "Trí tuệ nhân tạo & Ứng dụng" },
-    { label: "Thời gian dự kiến", value: "20/07/2026 - 31/07/2026" },
+    { label: "Thời gian", value: "20/07/2026 - 31/07/2026" },
     { label: "Địa điểm", value: "THPT Chuyên Võ Nguyên Giáp, Quảng Trị" },
-    {
-      label: "Quy mô",
-      value: "Tối đa khoảng 40 học sinh xuất sắc, ưu tiên đến từ miền Trung",
-    },
   ],
   "SEAS 2025": [
     { label: "Chủ đề", value: "Trí tuệ nhân tạo & Ứng dụng" },
     { label: "Thời gian", value: "21/07/2025 - 01/08/2025" },
     { label: "Địa điểm", value: "THPT Chuyên Võ Nguyên Giáp, Quảng Bình" },
-    { label: "Quy mô", value: "43 học viên và 12 trợ giảng tham gia" },
   ],
 } as const;
 

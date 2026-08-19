@@ -99,8 +99,9 @@ export function HomeHeroSection() {
             </dl>
           </div>
         </div>
-
-        <div
+        
+        {/* Countdown */}
+        {/* <div
           key={`hero-countdown-${animationCycle}`}
           className="grid grid-cols-4 gap-4 max-md:grid-cols-2"
         >
@@ -118,9 +119,19 @@ export function HomeHeroSection() {
               </span>
             </article>
           ))}
+        </div> */}
+        <div
+          key={`hero-ended-${animationCycle}`}
+          className="hero-rise-up flex justify-center py-2 [animation-delay:720ms] bg-[#2d8bba] rounded-[22px] shadow-[0_4px_30px_rgba(45,139,186,0.18)]"
+        >
+          <p className="font-space-grotesk text-3xl font-bold uppercase tracking-wide text-white max-md:text-2xl">
+            CHƯƠNG TRÌNH SEAS 2026 ĐÃ KẾT THÚC
+          </p>
         </div>
 
-        <div
+        
+
+        {/* <div
           key={`hero-cta-${animationCycle}`}
           className="hero-rise-up flex justify-center pt-4 [animation-delay:900ms]"
         >
@@ -129,7 +140,8 @@ export function HomeHeroSection() {
             label="Đăng Ký Tham Gia"
             className="min-h-[58px] min-w-[220px] border-[2.5px] border-white px-7 max-md:min-h-[54px] max-md:w-full max-md:min-w-0"
           />
-        </div>
+        </div> */}
+
       </div>
     </section>
   );
