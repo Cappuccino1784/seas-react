@@ -86,7 +86,8 @@ export function SiteFooter() {
           </nav>
 
           <p className="m-0 font-lexend text-[1rem] text-[#4d4d4d] md:text-[1rem] max-md:hidden">
-            &copy; 2026 SEAS Center. All rights reserved.
+            &copy; 2026 SEAS Center. All rights reserved. <br />
+            Designed by Tracy Yang - Vật Lý Chill.
           </p>
         </div>
 
@@ -110,7 +111,8 @@ export function SiteFooter() {
         </div>
 
         <p className="hidden font-lexend text-[0.98rem] text-[#4d4d4d] max-md:block">
-          &copy; 2026 SEAS Center. All rights reserved.
+          &copy; 2026 SEAS Center. All rights reserved. <br />
+          Designed by Tracy Yang - Vật Lý Chill.
         </p>
       </div>
     </footer>
