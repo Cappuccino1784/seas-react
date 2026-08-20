@@ -517,6 +517,18 @@ export const staffMembers2026: StaffMember[] = [
     group: "member",
   },
   {
+    slug: "tracy-yang-2026",
+    name: "Tracy Yang",
+    role: "Website Designer",
+    bio: "Vật Lý Chill",
+    image: "/images/team/2026/tracy-yang-2026.jpg",
+    profileSummary: "Vật Lý Chill",
+    highlights: [],
+    quote: "",
+    links: [],
+    group: "member",
+  },
+  {
     slug: "hoang-thi-phuc-nguyen-2026",
     name: "Hoàng Thị Phúc Nguyên",
     role: "External Relations",
