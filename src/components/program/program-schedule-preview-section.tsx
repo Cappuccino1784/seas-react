@@ -4,7 +4,12 @@ import { useState } from "react";
 import { PillButton } from "@/components/shared/pill-button";
 import { ComingSoonCard } from "../shared/coming-soon-card";
 import { useRevealOnView } from "@/components/shared/use-reveal-on-view";
-import { FaGoogleDrive } from "react-icons/fa";
+import { FaVideo, FaBook } from "react-icons/fa";
+
+
+const bottomLinkClassName =
+  "inline-flex items-center justify-center gap-2 rounded-full border border-[#2D8BBA]/20 bg-white px-5 py-3 font-lexend text-[0.95rem] font-semibold text-[#04536E] transition-colors hover:border-[#2D8BBA] hover:text-[#0f6e98]";
+
 
 type PreviewSlot = {
   time: string;
@@ -24,7 +29,12 @@ type PreviewWeek = {
   days: PreviewDay[];
 };
 
-const classRecordings: Record<"SEAS 2025" | "SEAS 2026", string> = {
+const lectureMaterials: Record<"SEAS 2025" | "SEAS 2026", string> = {
+  "SEAS 2025": "https://drive.google.com/drive/folders/1v5yHX0cxMyBpNezWkWJglRDssyGDd5hB?usp=drive_link",
+  "SEAS 2026": "",
+};
+
+const lectureRecordings: Record<"SEAS 2025" | "SEAS 2026", string> = {
   "SEAS 2025": "https://drive.google.com/drive/folders/1VFsiHiX_Jw2UgKxzijSvJZOz1vBY0MqL?usp=drive_link",
   "SEAS 2026": "https://drive.google.com/drive/folders/1-IuWxqdELcarOtBBQ38qZnzuSPo7OlyS?usp=drive_link",
 };
@@ -690,17 +700,35 @@ export function ProgramSchedulePreviewSection() {
                 </tbody>
               </table>
             </div>
-            <a
-              key={activeYear}
-              href={classRecordings[activeYear]}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Open ${activeYear} lesson recordings in Google Drive`}
-              className="group mt-6 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#2D8BBA] bg-white px-6 py-3 font-lexend text-[0.95rem] font-semibold text-[#2D8BBA] shadow-[0_4px_18px_rgba(150,199,224,0.12)] transition-all duration-300 hover:scale-[1.01] hover:border-[#1f88ba] hover:bg-[#f4fbff] hover:text-[#1f88ba] hover:shadow-[0_12px_26px_rgba(45,139,186,0.16)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2D8BBA]"
-            >
-              <FaGoogleDrive className="text-[1.05rem]" />
-              <span>Lesson Recordings</span>
-            </a>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 md:justify-start">
+              {
+                lectureMaterials[activeYear] ? (
+                  <a
+                    key={lectureMaterials[activeYear]}
+                    href={lectureMaterials[activeYear]}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Open ${activeYear} lecture recordings in Google Drive`}
+                    className={bottomLinkClassName}
+                  >
+                    <FaBook className="text-[1.05rem]" />
+                    <span>Lecture Materials</span>
+                  </a>
+                ) : null
+              }
+
+              <a
+                key={lectureRecordings[activeYear]}
+                href={lectureRecordings[activeYear]}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Open ${activeYear} lecture recordings in Google Drive`}
+                className={bottomLinkClassName}
+              >
+                <FaVideo className="text-[1.05rem]" />
+                <span>Lecture Recordings</span>
+              </a>
+            </div>
 
 
             {/*<div className="pt-7">
