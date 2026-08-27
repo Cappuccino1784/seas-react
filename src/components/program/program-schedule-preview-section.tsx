@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PillButton } from "@/components/shared/pill-button";
 import { ComingSoonCard } from "../shared/coming-soon-card";
 import { useRevealOnView } from "@/components/shared/use-reveal-on-view";
+import { FaGoogleDrive } from "react-icons/fa";
 
 type PreviewSlot = {
   time: string;
@@ -23,6 +24,11 @@ type PreviewWeek = {
   days: PreviewDay[];
 };
 
+const classRecordings: Record<"SEAS 2025" | "SEAS 2026", string> = {
+  "SEAS 2025": "https://drive.google.com/drive/folders/1VFsiHiX_Jw2UgKxzijSvJZOz1vBY0MqL?usp=drive_link",
+  "SEAS 2026": "https://drive.google.com/drive/folders/1-IuWxqdELcarOtBBQ38qZnzuSPo7OlyS?usp=drive_link",
+};
+
 const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
   "SEAS 2025": [
     {
@@ -39,7 +45,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
               time: "11:00 - 12:00",
               title:
                 "Đại số tuyến tính 2: Biến đổi tuyến tính (Linear transformations)",
-                tone: "bg-[#b0c5ff] text-[#111111]",
+              tone: "bg-[#b0c5ff] text-[#111111]",
             },
             { time: "12:00 - 13:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
             { time: "13:00 - 14:30", title: "Lập trình Python 1", tone: "bg-[#cfffde] text-[#111111]" },
@@ -269,7 +275,7 @@ const previewSchedule: Record<"SEAS 2025" | "SEAS 2026", PreviewWeek[]> = {
             { time: "8:00 - 9:00", title: "Lễ chào mừng", tone: "bg-[#7d87eb] text-white" },
             { time: "9:00 - 10:00", title: "Đại số tuyến tính 1: Cơ bản", tone: "bg-[#b0c5ff] text-[#111111]" },
             { time: "10:00 - 11:00", title: "Đại số tuyến tính 2: Biến đổi tuyến tính (Linear transformations)", tone: "bg-[#b0c5ff] text-[#111111]" },
-            { time: "11:00 - 12:00", title: "Xác suất thống kê 1: Cơ bản", tone: "bg-[#fae8b4] text-[#111111]"},
+            { time: "11:00 - 12:00", title: "Xác suất thống kê 1: Cơ bản", tone: "bg-[#fae8b4] text-[#111111]" },
             { time: "12:00 - 14:00", title: "Nghỉ trưa", tone: "bg-[#eaf5fb] text-[#04536E]", muted: true },
             { time: "14:00 - 15:30", title: "Lập trình Python 1", tone: "bg-[#cfffde] text-[#111111]" },
             { time: "15:30 - 17:00", title: "Bài tập toán trên Python 1", tone: "bg-[#cfffde] text-[#111111]" },
@@ -626,7 +632,7 @@ export function ProgramSchedulePreviewSection() {
                   </tr>
                   <tr>
                     <th className="border-r border-b border-[#d7e9f3] bg-[#f2f9fd] px-4 py-2 text-center font-lexend text-[0.78rem] font-medium text-[#6e8190] md:text-[0.85rem]">
-                      
+
                     </th>
                     {activeWeek.days.map((day) => (
                       <th
@@ -684,6 +690,18 @@ export function ProgramSchedulePreviewSection() {
                 </tbody>
               </table>
             </div>
+            <a
+              key={activeYear}
+              href={classRecordings[activeYear]}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Open ${activeYear} lesson recordings in Google Drive`}
+              className="group mt-6 inline-flex items-center justify-center gap-2 rounded-full border-2 border-[#2D8BBA] bg-white px-6 py-3 font-lexend text-[0.95rem] font-semibold text-[#2D8BBA] shadow-[0_4px_18px_rgba(150,199,224,0.12)] transition-all duration-300 hover:scale-[1.01] hover:border-[#1f88ba] hover:bg-[#f4fbff] hover:text-[#1f88ba] hover:shadow-[0_12px_26px_rgba(45,139,186,0.16)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2D8BBA]"
+            >
+              <FaGoogleDrive className="text-[1.05rem]" />
+              <span>Lesson Recordings</span>
+            </a>
+
 
             {/*<div className="pt-7">
               <PillArrowButton
