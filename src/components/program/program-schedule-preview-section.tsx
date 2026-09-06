@@ -31,7 +31,7 @@ type PreviewWeek = {
 
 const lectureMaterials: Record<"SEAS 2025" | "SEAS 2026", string> = {
   "SEAS 2025": "https://drive.google.com/drive/folders/1v5yHX0cxMyBpNezWkWJglRDssyGDd5hB?usp=drive_link",
-  "SEAS 2026": "",
+  "SEAS 2026": "https://drive.google.com/drive/folders/1n3DhWB0pViAaLExwz3Wazi2Pime3M_Gs?usp=sharing",
 };
 
 const lectureRecordings: Record<"SEAS 2025" | "SEAS 2026", string> = {
