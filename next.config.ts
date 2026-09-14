@@ -15,7 +15,7 @@ const csp = [
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data:",
   "font-src 'self' https://fonts.gstatic.com",
-  "connect-src 'self' https://api.example.com",
+  "connect-src 'self' https://api.example.com https://vercel-insights.com https://vitals.vercel-insights.com",
   "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com",
   "frame-ancestors 'self' https://www.youtube.com https://www.youtube-nocookie.com",
 ].join('; ');

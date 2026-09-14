@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Lexend, Space_Grotesk } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import '@/app/globals.css';
 import { FloatingCtaCard } from '@/components/shared/floating-cta-card';
 
@@ -35,6 +36,7 @@ export default function RootLayout({
         {children}
         <FloatingCtaCard />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
