@@ -134,16 +134,6 @@ const donors2025: DonorsList = [
 
 const donors2026: DonorsList = [
   {
-    date: "11-09-2026",
-    donor: "Sở Giáo dục và Đào tạo Tỉnh Quảng Trị",
-    amount: "83,000,000 ₫"
-  },
-  {
-    date: "22-08-2026",
-    donor: "Mohamed bin Zayed University of Artificial Intelligence",
-    amount: "30,000,000 ₫"
-  },
-  {
     date: "23-07-2026",
     donor: "Chú Dì Cảnh - Lương",
     amount: "10,000,000 ₫"
